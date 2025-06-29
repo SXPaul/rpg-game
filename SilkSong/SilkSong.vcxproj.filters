@@ -76,15 +76,6 @@
     <Filter Include="Engine\Math">
       <UniqueIdentifier>{1b0d8621-dd40-4054-87c3-decd5627676c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Project\Enemies\Boss">
-      <UniqueIdentifier>{88b2a1c8-8b01-468c-b9b5-3733e5371f8b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Project\Enemies\Boss\NightMare">
-      <UniqueIdentifier>{89cf8a3c-2471-4e80-a19e-9af0f3553d8a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Project\Enemies\Boss\SoulMaster">
-      <UniqueIdentifier>{40482fb9-44e7-480f-86b6-8938948355af}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Engine\Components\ActorComponent.h">
@@ -153,9 +144,6 @@
     <ClInclude Include="Source\Engine\Tools\CollisionManager.h">
       <Filter>Engine</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Project\TearCityLevel.h">
-      <Filter>Project\Levels</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Engine\Tools\FileManager.h">
       <Filter>Engine\Tools</Filter>
     </ClInclude>
@@ -165,77 +153,14 @@
     <ClInclude Include="Source\Engine\Objects\Character.h">
       <Filter>Engine\Objects</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Project\PlayerAnimator.h">
-      <Filter>Project\Player</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Project\Player.h">
-      <Filter>Project\Player</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Project\Enemy.h">
-      <Filter>Project\Enemies</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Project\Bug.h">
-      <Filter>Project\Enemies</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Engine\Core\World.h">
       <Filter>Engine\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Project\AttackBox.h">
-      <Filter>Project\Player</Filter>
     </ClInclude>
     <ClInclude Include="Source\Engine\Components\AudioPlayer.h">
       <Filter>Engine\Components</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Project\HealParticle.h">
-      <Filter>Project\Player</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Project\Chest.h">
-      <Filter>Project\Items</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Project\Geo.h">
-      <Filter>Project\Items</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Project\RockParticle.h">
-      <Filter>Project\Items</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Project\CloseSkillBox.h">
-      <Filter>Project\Player</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Project\Dart.h">
-      <Filter>Project\Items</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Project\Needle.h">
-      <Filter>Project\Items</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Project\MenuLevel.h">
-      <Filter>Project\Levels</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Project\Pointer.h">
-      <Filter>Project\Menu</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Project\MenuUI.h">
-      <Filter>Project\Menu</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Project\MenuController.h">
-      <Filter>Project\Menu</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Project\DieParticle.h">
-      <Filter>Project\Player</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Project\Chair.h">
-      <Filter>Project\Items</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Project\NewTheme.h">
-      <Filter>Project\Menu</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Project\OldTheme.h">
-      <Filter>Project\Menu</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Engine\Components\WidgetComponent.h">
       <Filter>Engine\Components</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Project\SilkParticle.h">
-      <Filter>Project\Enemies</Filter>
     </ClInclude>
     <ClInclude Include="Source\Project\GameMode.h">
       <Filter>Project\Utilities</Filter>
@@ -276,21 +201,6 @@
     <ClInclude Include="Source\Project\PropertyCarrier.h">
       <Filter>Project\Interfaces</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Project\PlatForm.h">
-      <Filter>Project\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Project\SceneUI.h">
-      <Filter>Project\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Project\GameUI.h">
-      <Filter>Project\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Project\RainProducer.h">
-      <Filter>Project\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Project\VolumeUI.h">
-      <Filter>Project\Menu</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Project\Animated.h">
       <Filter>Project</Filter>
     </ClInclude>
@@ -299,18 +209,6 @@
     </ClInclude>
     <ClInclude Include="Source\Project\Bg.h">
       <Filter>Project</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Project\VolumeBarUI.h">
-      <Filter>Project\Menu</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Project\FragmentParticle.h">
-      <Filter>Project\Items</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Project\RuinHouseLevel.h">
-      <Filter>Project\Levels</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Project\LevelTransformer.h">
-      <Filter>Project\Levels</Filter>
     </ClInclude>
     <ClInclude Include="Source\Engine\Physics\Collisions2D.h">
       <Filter>Engine\Physics2D</Filter>
@@ -336,86 +234,8 @@
     <ClInclude Include="Source\Engine\Math\Segment2D.h">
       <Filter>Engine\Math</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Project\BossLevel.h">
-      <Filter>Project\Levels</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Project\RoarEffect.h">
-      <Filter>Project\Enemies\Boss</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Project\Gate.h">
-      <Filter>Project\Enemies\Boss</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Project\Fly.h">
-      <Filter>Project\Enemies</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Project\GrimmLevel.h">
-      <Filter>Project\Levels</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Project\Torch.h">
-      <Filter>Project\Items</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Project\NightMare.h">
-      <Filter>Project\Enemies\Boss\NightMare</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Project\QuakeParticle.h">
-      <Filter>Project\Enemies\Boss\SoulMaster</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Project\SoulMaster.h">
-      <Filter>Project\Enemies\Boss\SoulMaster</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Project\SoulOrb.h">
-      <Filter>Project\Enemies\Boss\SoulMaster</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Project\SoulOrbManager.h">
-      <Filter>Project\Enemies\Boss\SoulMaster</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Project\SpatterParticle.h">
-      <Filter>Project\Enemies\Boss\SoulMaster</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Project\Wave.h">
-      <Filter>Project\Enemies\Boss\SoulMaster</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Project\Spike.h">
-      <Filter>Project\Enemies\Boss\NightMare</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Project\GrimmSmoke.h">
-      <Filter>Project\Enemies\Boss\NightMare</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Project\FireBat.h">
-      <Filter>Project\Enemies\Boss\NightMare</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Project\FireBall.h">
-      <Filter>Project\Enemies\Boss\NightMare</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Project\SkyFire.h">
-      <Filter>Project\Enemies\Boss\NightMare</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Project\Brumm.h">
-      <Filter>Project\Enemies</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Project\PuffManager.h">
-      <Filter>Project\Enemies\Boss\SoulMaster</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Project\SmokeParticle.h">
-      <Filter>Project\Enemies\Boss\NightMare</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Project\RedShade.h">
-      <Filter>Project\Enemies\Boss\NightMare</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Project\BossNameUI.h">
-      <Filter>Project\Game</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Engine\Components\VideoPlayer.h">
       <Filter>Engine\Components</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Project\Movie.h">
-      <Filter>Project\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Project\StartLevel.h">
-      <Filter>Project\Levels</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Project\SitParticle.h">
-      <Filter>Project\Player</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -479,86 +299,20 @@
     <ClCompile Include="Source\Engine\Tools\LevelManager.cpp">
       <Filter>Engine</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Project\TearCityLevel.cpp">
-      <Filter>Project\Levels</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Engine\Tools\FileManager.cpp">
       <Filter>Engine\Tools</Filter>
     </ClCompile>
     <ClCompile Include="Source\Engine\Objects\Character.cpp">
       <Filter>Engine\Objects</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Project\PlayerAnimator.cpp">
-      <Filter>Project\Player</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Project\Player.cpp">
-      <Filter>Project\Player</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Project\Enemy.cpp">
-      <Filter>Project\Enemies</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Project\Bug.cpp">
-      <Filter>Project\Enemies</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Project\AttackBox.cpp">
-      <Filter>Project\Player</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Engine\Components\AudioPlayer.cpp">
       <Filter>Engine\Components</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Project\HealParticle.cpp">
-      <Filter>Project\Player</Filter>
     </ClCompile>
     <ClCompile Include="Source\Engine\Tools\ResourceManager.cpp">
       <Filter>Engine</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Project\Chest.cpp">
-      <Filter>Project\Items</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Project\Geo.cpp">
-      <Filter>Project\Items</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Project\RockParticle.cpp">
-      <Filter>Project\Items</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Project\CloseSkillBox.cpp">
-      <Filter>Project\Player</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Project\Dart.cpp">
-      <Filter>Project\Items</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Project\Needle.cpp">
-      <Filter>Project\Items</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Project\MenuLevel.cpp">
-      <Filter>Project\Levels</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Project\Pointer.cpp">
-      <Filter>Project\Menu</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Project\MenuUI.cpp">
-      <Filter>Project\Menu</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Project\MenuController.cpp">
-      <Filter>Project\Menu</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Project\DieParticle.cpp">
-      <Filter>Project\Player</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Project\Chair.cpp">
-      <Filter>Project\Items</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Project\OldTheme.cpp">
-      <Filter>Project\Menu</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Project\NewTheme.cpp">
-      <Filter>Project\Menu</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Engine\Components\WidgetComponent.cpp">
       <Filter>Engine\Components</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Project\SilkParticle.cpp">
-      <Filter>Project\Enemies</Filter>
     </ClCompile>
     <ClCompile Include="Source\Engine\Core\Math.cpp">
       <Filter>Engine\Core</Filter>
@@ -590,18 +344,6 @@
     <ClCompile Include="Source\Project\PlayerPropertyComponent.cpp">
       <Filter>Project\Components\Actor</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Project\PlatForm.cpp">
-      <Filter>Project\Game</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Project\SceneUI.cpp">
-      <Filter>Project\Game</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Project\GameUI.cpp">
-      <Filter>Project\Game</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Project\RainProducer.cpp">
-      <Filter>Project\Game</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Project\Bg.cpp">
       <Filter>Project</Filter>
     </ClCompile>
@@ -611,107 +353,19 @@
     <ClCompile Include="Source\Project\Effect.cpp">
       <Filter>Project</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Project\VolumeUI.cpp">
-      <Filter>Project\Menu</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Project\VolumeBarUI.cpp">
-      <Filter>Project\Menu</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Project\Interactive.cpp">
       <Filter>Project</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Project\FragmentParticle.cpp">
-      <Filter>Project\Items</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Project\RuinHouseLevel.cpp">
-      <Filter>Project\Levels</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Project\LevelTransformer.cpp">
-      <Filter>Project\Levels</Filter>
     </ClCompile>
     <ClCompile Include="Source\Engine\Physics\Collisions2D.cpp">
       <Filter>Engine\Physics2D</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Project\BossLevel.cpp">
-      <Filter>Project\Levels</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Project\RoarEffect.cpp">
-      <Filter>Project\Enemies\Boss</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Project\Gate.cpp">
-      <Filter>Project\Enemies\Boss</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Project\Fly.cpp">
-      <Filter>Project\Enemies</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Project\GrimmLevel.cpp">
-      <Filter>Project\Levels</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Project\Torch.cpp">
-      <Filter>Project\Items</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Project\NightMare.cpp">
-      <Filter>Project\Enemies\Boss\NightMare</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Project\QuakeParticle.cpp">
-      <Filter>Project\Enemies\Boss\SoulMaster</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Project\SoulMaster.cpp">
-      <Filter>Project\Enemies\Boss\SoulMaster</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Project\SoulOrb.cpp">
-      <Filter>Project\Enemies\Boss\SoulMaster</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Project\SoulOrbManager.cpp">
-      <Filter>Project\Enemies\Boss\SoulMaster</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Project\SpatterParticle.cpp">
-      <Filter>Project\Enemies\Boss\SoulMaster</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Project\Wave.cpp">
-      <Filter>Project\Enemies\Boss\SoulMaster</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Project\Spike.cpp">
-      <Filter>Project\Enemies\Boss\NightMare</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Project\GrimmSmoke.cpp">
-      <Filter>Project\Enemies\Boss\NightMare</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Project\FireBat.cpp">
-      <Filter>Project\Enemies\Boss\NightMare</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Project\FireBall.cpp">
-      <Filter>Project\Enemies\Boss\NightMare</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Project\SkyFire.cpp">
-      <Filter>Project\Enemies\Boss\NightMare</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Project\Brumm.cpp">
-      <Filter>Project\Enemies</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Project\PuffManager.cpp">
-      <Filter>Project\Enemies\Boss\SoulMaster</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Project\SmokeParticle.cpp">
-      <Filter>Project\Enemies\Boss\NightMare</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Project\RedShade.cpp">
-      <Filter>Project\Enemies\Boss\NightMare</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Project\BossNameUI.cpp">
-      <Filter>Project\Game</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Engine\Components\VideoPlayer.cpp">
       <Filter>Engine\Components</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Project\Movie.cpp">
-      <Filter>Project\Game</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Project\StartLevel.cpp">
-      <Filter>Project\Levels</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Project\SitParticle.cpp">
-      <Filter>Project\Player</Filter>
-    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="readme.md" />
+    <None Include="schedule.md" />
+    <None Include="journal.md" />
   </ItemGroup>
 </Project>
