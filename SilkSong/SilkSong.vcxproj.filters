@@ -364,8 +364,8 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="readme.md" />
-    <None Include="schedule.md" />
-    <None Include="journal.md" />
+    <None Include="..\journal.md" />
+    <None Include="..\readme.md" />
+    <None Include="..\schedule.md" />
   </ItemGroup>
 </Project>
