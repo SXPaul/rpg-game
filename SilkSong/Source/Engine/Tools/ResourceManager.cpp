@@ -27,6 +27,31 @@ void ResourceManager::Initialize()
 	Load("bg1", "Asset/Surroundings/Medieval_Castle/background/layer_2.png", WIN_WIDTH + 50, WIN_HEIGHT + 50);
 	Load("bg2", "Asset/Surroundings/Medieval_Castle/background/layer_3.png", WIN_WIDTH + 50, WIN_HEIGHT + 50);
 
+	// tiles
+	Load("brick_1", "Asset/Surroundings/Medieval_Castle/Tiles/brick_1.png", 50, 50);
+	Load("brick_2", "Asset/Surroundings/Medieval_Castle/Tiles/brick_2.png", 50, 50);
+	Load("brick_3", "Asset/Surroundings/Medieval_Castle/Tiles/brick_3.png", 50, 50);
+	Load("brick_4", "Asset/Surroundings/Medieval_Castle/Tiles/brick_4.png", 50, 50);
+	Load("brick_5", "Asset/Surroundings/Medieval_Castle/Tiles/brick_5.png", 50, 50);
+	Load("brick_6", "Asset/Surroundings/Medieval_Castle/Tiles/brick_6.png", 50, 50);
+	Load("brick_7", "Asset/Surroundings/Medieval_Castle/Tiles/brick_7.png", 50, 50);
+	Load("brick_8", "Asset/Surroundings/Medieval_Castle/Tiles/brick_8.png", 50, 50);
+	Load("brick_9", "Asset/Surroundings/Medieval_Castle/Tiles/brick_9.png", 50, 50);
+	Load("brick_10", "Asset/Surroundings/Medieval_Castle/Tiles/brick_10.png", 50, 50);
+	Load("brick_11", "Asset/Surroundings/Medieval_Castle/Tiles/brick_11.png", 50, 50);
+	Load("brick_12", "Asset/Surroundings/Medieval_Castle/Tiles/brick_12.png", 50, 50);
+	Load("brick_13", "Asset/Surroundings/Medieval_Castle/Tiles/brick_13.png", 50, 50);
+	Load("brick_14", "Asset/Surroundings/Medieval_Castle/Tiles/brick_14.png", 50, 50);
+	Load("brick_15", "Asset/Surroundings/Medieval_Castle/Tiles/brick_15.png", 50, 50);
+	Load("brick_16", "Asset/Surroundings/Medieval_Castle/Tiles/brick_16.png", 50, 50);
+	Load("brick_side_left_1", "Asset/Surroundings/Medieval_Castle/Tiles/brick_side_left_1.png", 50, 50);
+	Load("brick_side_left_2", "Asset/Surroundings/Medieval_Castle/Tiles/brick_side_left_2.png", 50, 50);
+	Load("brick_side_right_1", "Asset/Surroundings/Medieval_Castle/Tiles/brick_side_right_1.png", 50, 50);
+	Load("brick_side_right_2", "Asset/Surroundings/Medieval_Castle/Tiles/brick_side_right_2.png", 50, 50);
+	Load("floor_tile_1", "Asset/Surroundings/Medieval_Castle/Tiles/floor_tile_1.png",30,30);
+	Load("floor_tile_2", "Asset/Surroundings/Medieval_Castle/Tiles/floor_tile_2.png", 30, 30);
+	Load("floor_tile_3", "Asset/Surroundings/Medieval_Castle/Tiles/floor_tile_3.png", 30, 30);
+	Load("floor_tile_4", "Asset/Surroundings/Medieval_Castle/Tiles/floor_tile_4.png", 30, 30);
 
 }
 
