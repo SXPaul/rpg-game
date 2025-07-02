@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Project\boss1level.h" />
+    <ClInclude Include="Source\Project\FirstLevel.h" />
     <ClInclude Include="Source\Project\LevelTransformer.h" />
     <ClInclude Include="Source\Project\PlatForm.h" />
     <ClInclude Include="Source\Engine\Components\VideoPlayer.h" />
@@ -39,6 +40,7 @@
     <ClInclude Include="Source\Project\DamageSystem.h" />
     <ClInclude Include="Source\Project\GameMode.h" />
     <ClInclude Include="Source\Project\GameModeHelper.h" />
+    <ClInclude Include="Source\Project\Player.h" />
     <ClInclude Include="Source\Project\PlayerPropertyComponent.h" />
     <ClInclude Include="Source\Project\PropertyCarrier.h" />
     <ClInclude Include="Source\Project\PropertyComponent.h" />
@@ -73,9 +75,11 @@
     <ClInclude Include="Source\Engine\Tools\VisualInterface.h" />
     <ClInclude Include="Source\Engine\UI\UserInterface.h" />
     <ClInclude Include="Source\Engine\UI\Widgets.h" />
+    <ClInclude Include="Source\Project\StartLevel.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Project\boss1level.cpp" />
+    <ClCompile Include="Source\Project\FirstLevel.cpp" />
     <ClCompile Include="Source\Project\LevelTransformer.cpp" />
     <ClCompile Include="Source\Project\PlatForm.cpp" />
     <ClCompile Include="Source\Engine\Components\VideoPlayer.cpp" />
@@ -88,6 +92,7 @@
     <ClCompile Include="Source\Project\GameMode.cpp" />
     <ClCompile Include="Source\Engine\Components\WidgetComponent.cpp" />
     <ClCompile Include="Source\Project\GameModeHelper.cpp" />
+    <ClCompile Include="Source\Project\Player.cpp" />
     <ClCompile Include="Source\Project\PlayerPropertyComponent.cpp" />
     <ClCompile Include="Source\Project\PropertyComponent.cpp" />
     <ClCompile Include="Source\Engine\Components\AudioPlayer.cpp" />
@@ -116,6 +121,7 @@
     <ClCompile Include="Source\Engine\Tools\VisualInterface.cpp" />
     <ClCompile Include="Source\Engine\UI\UserInterface.cpp" />
     <ClCompile Include="Source\Engine\UI\Widgets.cpp" />
+    <ClCompile Include="Source\Project\StartLevel.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\journal.md" />

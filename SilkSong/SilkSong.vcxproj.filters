@@ -240,6 +240,15 @@
     <ClInclude Include="Source\Project\LevelTransformer.h">
       <Filter>Project\Levels</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Project\FirstLevel.h">
+      <Filter>Project\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Project\StartLevel.h">
+      <Filter>Project\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Project\Player.h">
+      <Filter>Project\Player</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Engine\Components\ActorComponent.cpp">
@@ -364,6 +373,15 @@
     </ClCompile>
     <ClCompile Include="Source\Project\LevelTransformer.cpp">
       <Filter>Project\Levels</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Project\FirstLevel.cpp">
+      <Filter>Project\Levels</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Project\StartLevel.cpp">
+      <Filter>Project\Levels</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Project\Player.cpp">
+      <Filter>Project\Player</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
