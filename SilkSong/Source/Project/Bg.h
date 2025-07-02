@@ -16,7 +16,7 @@ protected:
 
 	FVector2D InitPos;
 
-	class Player* player;
+	//class Player* player;
 
 	bool bAdjust;
 };

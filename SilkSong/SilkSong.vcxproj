@@ -19,6 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Source\Project\boss1level.h" />
+    <ClInclude Include="Source\Project\LevelTransformer.h" />
+    <ClInclude Include="Source\Project\PlatForm.h" />
     <ClInclude Include="Source\Engine\Components\VideoPlayer.h" />
     <ClInclude Include="Source\Engine\Math\Segment2D.h" />
     <ClInclude Include="Source\Engine\Math\Circle.h" />
@@ -41,11 +44,9 @@
     <ClInclude Include="Source\Project\PropertyComponent.h" />
     <ClInclude Include="Source\Engine\Components\WidgetComponent.h" />
     <ClInclude Include="Source\Engine\Components\AudioPlayer.h" />
-    <ClInclude Include="Source\Project\Animated.h" />
     <ClInclude Include="Source\Engine\Objects\Character.h" />
     <ClInclude Include="Source\Engine\Tools\FileManager.h" />
     <ClInclude Include="Source\Project\Bg.h" />
-    <ClInclude Include="Source\Project\Effect.h" />
     <ClInclude Include="Source\Engine\Components\ActorComponent.h" />
     <ClInclude Include="Source\Engine\Components\Animator.h" />
     <ClInclude Include="Source\Engine\Components\Camera.h" />
@@ -74,6 +75,9 @@
     <ClInclude Include="Source\Engine\UI\Widgets.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\Project\boss1level.cpp" />
+    <ClCompile Include="Source\Project\LevelTransformer.cpp" />
+    <ClCompile Include="Source\Project\PlatForm.cpp" />
     <ClCompile Include="Source\Engine\Components\VideoPlayer.cpp" />
     <ClCompile Include="Source\Engine\Core\Object.cpp" />
     <ClCompile Include="Source\Engine\Objects\Level.cpp" />
@@ -84,16 +88,13 @@
     <ClCompile Include="Source\Project\GameMode.cpp" />
     <ClCompile Include="Source\Engine\Components\WidgetComponent.cpp" />
     <ClCompile Include="Source\Project\GameModeHelper.cpp" />
-    <ClCompile Include="Source\Project\Interactive.cpp" />
     <ClCompile Include="Source\Project\PlayerPropertyComponent.cpp" />
     <ClCompile Include="Source\Project\PropertyComponent.cpp" />
     <ClCompile Include="Source\Engine\Components\AudioPlayer.cpp" />
     <ClCompile Include="Source\Engine\Tools\ResourceManager.cpp" />
-    <ClCompile Include="Source\Project\Animated.cpp" />
     <ClCompile Include="Source\Engine\Objects\Character.cpp" />
     <ClCompile Include="Source\Engine\Tools\FileManager.cpp" />
     <ClCompile Include="Source\Project\Bg.cpp" />
-    <ClCompile Include="Source\Project\Effect.cpp" />
     <ClCompile Include="Source\Engine\Components\ActorComponent.cpp" />
     <ClCompile Include="Source\Engine\Components\Animator.cpp" />
     <ClCompile Include="Source\Engine\Components\Camera.cpp" />

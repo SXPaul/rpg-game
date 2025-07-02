@@ -201,12 +201,6 @@
     <ClInclude Include="Source\Project\PropertyCarrier.h">
       <Filter>Project\Interfaces</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Project\Animated.h">
-      <Filter>Project</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Project\Effect.h">
-      <Filter>Project</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Project\Bg.h">
       <Filter>Project</Filter>
     </ClInclude>
@@ -236,6 +230,15 @@
     </ClInclude>
     <ClInclude Include="Source\Engine\Components\VideoPlayer.h">
       <Filter>Engine\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Project\boss1level.h">
+      <Filter>Project\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Project\PlatForm.h">
+      <Filter>Project\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Project\LevelTransformer.h">
+      <Filter>Project\Levels</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -347,20 +350,20 @@
     <ClCompile Include="Source\Project\Bg.cpp">
       <Filter>Project</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Project\Animated.cpp">
-      <Filter>Project</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Project\Effect.cpp">
-      <Filter>Project</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Project\Interactive.cpp">
-      <Filter>Project</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Engine\Physics\Collisions2D.cpp">
       <Filter>Engine\Physics2D</Filter>
     </ClCompile>
     <ClCompile Include="Source\Engine\Components\VideoPlayer.cpp">
       <Filter>Engine\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Project\boss1level.cpp">
+      <Filter>Project\Levels</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Project\PlatForm.cpp">
+      <Filter>Project\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Project\LevelTransformer.cpp">
+      <Filter>Project\Levels</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

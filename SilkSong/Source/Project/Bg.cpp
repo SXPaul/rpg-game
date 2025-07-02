@@ -1,7 +1,7 @@
 #include "Bg.h"
 #include "Components/SpriteRenderer.h"
 #include "GameplayStatics.h"
-#include "Player.h"
+//#include "Player.h"
 
 
 Bg::Bg()
@@ -16,15 +16,15 @@ void Bg::Update(float deltaTime)
 	Actor::Update(deltaTime);
 	if (!bAdjust)return;
 
-	if (player)
-	{
-		if ((player->GetCameraPos() - InitPos).Size() < 0.5f)return;
-		SetLocalPosition(player->GetCameraPos() - (player->GetCameraPos() - InitPos) * pow(1.05, render->GetLayer()));
-	}
-	else
-	{
-		player = GameplayStatics::FindObjectOfClass<Player>();
-	}
+	//if (player)
+	//{
+	//	if ((player->GetCameraPos() - InitPos).Size() < 0.5f)return;
+	//	SetLocalPosition(player->GetCameraPos() - (player->GetCameraPos() - InitPos) * pow(1.05, render->GetLayer()));
+	//}
+	//else
+	//{
+	//	player = GameplayStatics::FindObjectOfClass<Player>();
+	//}
 }
 
 void Bg::Init(std::string path, int layer, bool blur, bool adjust)

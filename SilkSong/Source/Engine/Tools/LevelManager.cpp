@@ -7,26 +7,26 @@
 /**
  * 自定义场景地图头文件
  **/
-#include "TearCityLevel.h"
-#include "MenuLevel.h"
-#include "StartLevel.h"
-#include "RuinHouseLevel.h"
-#include "BossLevel.h"
-#include "GrimmLevel.h"
-
+//#include "TearCityLevel.h"
+//#include "MenuLevel.h"
+//#include "StartLevel.h"
+//#include "RuinHouseLevel.h"
+//#include "BossLevel.h"
+//#include "GrimmLevel.h"
+#include "boss1level.h"
 
 void LevelManager::Initialize()
 {
 	/**
 	 * 添加场景
 	 **/
-	AddLevel<MenuLevel>("Menu");
-	AddLevel<StartLevel>("Start");
-	AddLevel<TearCityLevel>("TearCity");
-	AddLevel<RuinHouseLevel>("RuinHouse");
-	AddLevel<BossLevel>("BossHouse");
-	AddLevel<GrimmLevel>("GrimmTent");
-	SetDefaultLevel("Menu");
+	AddLevel<boss1level>("boss1level");
+	//AddLevel<StartLevel>("Start");
+	//AddLevel<TearCityLevel>("TearCity");
+	//AddLevel<RuinHouseLevel>("RuinHouse");
+	//AddLevel<BossLevel>("BossHouse");
+	//AddLevel<GrimmLevel>("GrimmTent");
+	SetDefaultLevel("boss1level");
 
 //*********                             **********
 //************************************************

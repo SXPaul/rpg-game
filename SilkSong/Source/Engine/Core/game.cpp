@@ -29,7 +29,7 @@ class Engine
 public:
 	static void Init()
 	{
-		WIN_WIDTH = 1200, WIN_HEIGHT = 800;
+		WIN_WIDTH = 900, WIN_HEIGHT = 600;
 		initgraph(WIN_WIDTH, WIN_HEIGHT);
 		
 		SetWindowLong(GetHWnd(), GWL_STYLE, WS_POPUP);
