@@ -16,7 +16,7 @@
  #include "GrimmLevel.h"
 
  */
-
+#include "boss1level.h"
 #include "FirstLevel.h"
 #include "StartLevel.h"
 
@@ -40,8 +40,9 @@ void LevelManager::Initialize()
 
 	AddLevel<FirstLevel>("First");
 	AddLevel<StartLevel>("Start");
+	AddLevel<boss1level>("Boss1");
 
-	level_to_create = levelMap["First"]; // Example: Assign a valid callable from the map
+	level_to_create = levelMap["Boss1"]; // Example: Assign a valid callable from the map
 
 	mainWorld.currentLevel = level_to_create();
 	mainWorld.currentLevel->BeginPlay();

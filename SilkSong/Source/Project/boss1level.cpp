@@ -2,12 +2,20 @@
 #include "boss1level.h"
 #include "GameplayStatics.h"
 #include "PlatForm.h"
+#include "Player.h"
 #include "Bg.h"
 #include "GameModeHelper.h"
 #include "LevelTransformer.h"
 
 boss1level::boss1level()
 {
+
+
+    // 创建玩家
+    Player* player = GameplayStatics::CreateObject<Player>();
+    player->SetLocalPosition({ -0, -1000 });
+
+
     // 获取游戏模式实例
     //GameMode* gameMode = GameModeHelper::GetInstance();
     //gameMode->RefreshVolume();
