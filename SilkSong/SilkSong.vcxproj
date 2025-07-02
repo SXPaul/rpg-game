@@ -41,6 +41,7 @@
     <ClInclude Include="Source\Project\GameMode.h" />
     <ClInclude Include="Source\Project\GameModeHelper.h" />
     <ClInclude Include="Source\Project\Player.h" />
+    <ClInclude Include="Source\Project\PlayerAnimator.h" />
     <ClInclude Include="Source\Project\PlayerPropertyComponent.h" />
     <ClInclude Include="Source\Project\PropertyCarrier.h" />
     <ClInclude Include="Source\Project\PropertyComponent.h" />
@@ -93,6 +94,7 @@
     <ClCompile Include="Source\Engine\Components\WidgetComponent.cpp" />
     <ClCompile Include="Source\Project\GameModeHelper.cpp" />
     <ClCompile Include="Source\Project\Player.cpp" />
+    <ClCompile Include="Source\Project\PlayerAnimator.cpp" />
     <ClCompile Include="Source\Project\PlayerPropertyComponent.cpp" />
     <ClCompile Include="Source\Project\PropertyComponent.cpp" />
     <ClCompile Include="Source\Engine\Components\AudioPlayer.cpp" />

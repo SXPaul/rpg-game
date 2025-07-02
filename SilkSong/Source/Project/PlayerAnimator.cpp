@@ -1,0 +1,28 @@
+#include "PlayerAnimator.h"
+#include "Player.h"
+#include "GameplayStatics.h"
+#include "GameModeHelper.h"
+
+
+PlayerAnimator::PlayerAnimator()
+{
+	idle.Load("player_idle");
+	idle.SetInterval(0.1f);
+	// 将空闲动画插入到动画管理器中
+	Insert("idle", idle);
+	// 设置初始动画节点为空闲状态
+	SetNode("idle");
+	//walk.Load("player_walk");
+	//walk.SetInterval(0.1f);
+	//walkstart.Load("player_walkstart");
+	//walkstart.SetInterval(0.04f);
+	//walkend.Load("player_walkend");
+	//walkend.SetInterval(0.06f);
+
+}
+
+void PlayerAnimator::BeginPlay()
+{
+	Animator::BeginPlay();
+
+}

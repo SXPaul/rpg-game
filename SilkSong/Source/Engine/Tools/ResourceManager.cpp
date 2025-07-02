@@ -15,7 +15,7 @@ void ResourceManager::Initialize()
 
 	/** ¶¯»­ **/
 	//Player
-	Load("player_idle", "Asset/Main Character/Sword+Aim+Throw/idle/", 139, 164, 6);
+	Load("player_idle", "Asset/Main Character/Sword+Aim+Throw/idle/", 138, 88, 6);
 	Load("player_run", "Asset/Main Character/Sword+Aim+Throw/run/", 124, 164, 8);
 	Load("player_idle_to_jump", "Asset/Main Character/Sword+Aim+Throw/idle_to_jump/", 124, 164, 12);
 	Load("player_die", "Asset/Main Character/Sword+Aim+Throw/die/", 124, 164, 11);

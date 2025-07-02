@@ -9,6 +9,7 @@ public:
     Player();
     virtual void Update(float deltaTime) override;
     FVector2D GetCameraPos();
+    virtual void BeginPlay()override;
 
 protected:
     virtual void SetupInputComponent(InputComponent* inputComponent) override;
@@ -18,6 +19,7 @@ private:
     class BoxCollider* box;
     class RigidBody* rigid;
     class Camera* camera;
+    class PlayerAnimator* ani;
 
     int32 walkLock;
 };

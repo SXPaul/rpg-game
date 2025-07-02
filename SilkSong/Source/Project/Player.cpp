@@ -3,16 +3,21 @@
 #include "Components/SpriteRenderer.h"
 #include "Components/RigidBody.h"
 #include "Components/Camera.h"
+#include "PlayerAnimator.h"
 
 Player::Player()
 {
     render = GetComponentByClass<SpriteRenderer>();
+    // 创建 PlayerAnimator 组件
+    ani = ConstructComponent<PlayerAnimator>();
+    //// 将 PlayerAnimator 与渲染器关联
+    ani->SetupAttachment(render);
     if (render) render->SetLayer(1);
 
     box = GetComponentByClass<BoxCollider>();
     if (box) {
-        box->SetSize({ 30, 130 });
-        box->SetLocalPosition({ -5, 10 });
+        box->SetSize({ 30, 70 });
+        box->SetLocalPosition({ -15, 10 });
         box->SetCollisonMode(CollisionMode::Collision);
         box->SetType(CollisionType::Player);
         box->SetPhysicsMaterial(FPhysicsMaterial(0.1f, 0));
@@ -25,6 +30,14 @@ Player::Player()
     }
 
     walkLock = 0;
+}
+
+void Player::BeginPlay()
+{
+    Super::BeginPlay();
+    if (ani) {
+        ani->SetNode("idle");
+    }
 }
 
 void Player::Update(float deltaTime)
