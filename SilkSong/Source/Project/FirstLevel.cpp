@@ -21,6 +21,7 @@ void FirstLevel::BeginPlay()
     player->SetLocalPosition({ -0, -1000 });
     
     printf("Player world pos: %f, %f\n", player->GetWorldPosition().x, player->GetWorldPosition().y);
+    std::cout << "11111" << std::endl;
 
     // 创建平台
 
