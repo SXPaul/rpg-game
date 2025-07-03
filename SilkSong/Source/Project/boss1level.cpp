@@ -43,50 +43,27 @@ boss1level::boss1level()
     Bg* bg1 = GameplayStatics::CreateObject<Bg>();
     bg1->Init("bg1", -15);
     // 创建平台对象
-    //GameplayStatics::CreateObject<PlatForm>({ 0, 1075 })->Init("new_level_floor", { 2000, 200 }, {});
-    //PlatForm* platform1 = GameplayStatics::CreateObject<PlatForm>({ -300, 200 });
-    //platform1->Init("floor_tile_1", { 30, 30 }, { 0, 0 });
-    //PlatForm* platform2 = GameplayStatics::CreateObject<PlatForm>({ -235, 200 });
-    //platform2->Init("floor_tile_2", { 30, 30 }, { 0, 0 });
-    //platform2->SetLocalScale({ 100.0f / 30.0f, 1.0f });
-    //PlatForm* platform3 = GameplayStatics::CreateObject<PlatForm>({ -135, 200 });
-    //platform3->Init("floor_tile_3", { 30, 30 }, { 0, 0 });
-    //platform3->SetLocalScale({ 100.0f / 30.0f, 1.0f });
-    //PlatForm* platform4 = GameplayStatics::CreateObject<PlatForm>({ -70, 200 });
-    //platform4->Init("floor_tile_4", { 30, 30 }, { 0, 0 });
-    //PlatForm* platform5 = GameplayStatics::CreateObject<PlatForm>({ -5, 200 });
-    //platform5->Init("floor_tile_3", { 30, 30 }, { 0, 0 });
-    //platform5->SetLocalScale({ 100.0f / 30.0f, 1.0f });
-    //PlatForm* platform6 = GameplayStatics::CreateObject<PlatForm>({ 95, 200 });
-    //platform6->Init("floor_tile_3", { 30, 30 }, { 0, 0 });
-    //platform6->SetLocalScale({ 100.0f / 30.0f, 1.0f });
-    //PlatForm* platform7 = GameplayStatics::CreateObject<PlatForm>({195, 200 });
-    //platform7->Init("floor_tile_3", { 30, 30 }, { 0, 0 });
-    //platform7->SetLocalScale({ 100.0f / 30.0f, 1.0f });
-    GameplayStatics::CreateObject<PlatForm>({ 0,0 })->Init("aaa", { 30, 70 }, {}); // 人物大小
-    /* ==========坐标========== */
-    GameplayStatics::CreateObject<PlatForm>({ 0,0 })->Init("aaa", { 1200, 0 }, {}); // x
-    GameplayStatics::CreateObject<PlatForm>({ 100,0 })->Init("aaa", { 0, 5 }, {});
-    GameplayStatics::CreateObject<PlatForm>({ -100,0 })->Init("aaa", { 0, 5 }, {});
-    GameplayStatics::CreateObject<PlatForm>({ 200,0 })->Init("aaa", { 0, 5 }, {});
-    GameplayStatics::CreateObject<PlatForm>({ -200,0 })->Init("aaa", { 0, 5 }, {});
-    GameplayStatics::CreateObject<PlatForm>({ 300,0 })->Init("aaa", { 0, 5 }, {});
-    GameplayStatics::CreateObject<PlatForm>({ -300,0 })->Init("aaa", { 0, 5 }, {});
-    GameplayStatics::CreateObject<PlatForm>({ 400,0 })->Init("aaa", { 0, 5 }, {});
-    GameplayStatics::CreateObject<PlatForm>({ -400,0 })->Init("aaa", { 0, 5 }, {});
-    GameplayStatics::CreateObject<PlatForm>({ 0,0 })->Init("aaa", { 0, 800 }, {}); // y
-    GameplayStatics::CreateObject<PlatForm>({ 0,100 })->Init("aaa", { 5, 0 }, {});
-    GameplayStatics::CreateObject<PlatForm>({ 0, -100 })->Init("aaa", { 5, 0 }, {});
-    GameplayStatics::CreateObject<PlatForm>({ 0, 200 })->Init("aaa", { 5, 0 }, {});
-    GameplayStatics::CreateObject<PlatForm>({ 0, -200 })->Init("aaa", { 5, 0 }, {});
-    GameplayStatics::CreateObject<PlatForm>({ 0, 300 })->Init("aaa", { 5, 0 }, {});
-    GameplayStatics::CreateObject<PlatForm>({ 0, -300 })->Init("aaa", { 5, 0 }, {});
-    /* =========================================================================== */
-    //GameplayStatics::CreateObject<PlatForm>({ 0, 100 })->Init("new_level_floor", { 2000, 0 }, {}); // 地平线：y = 100
-    GameplayStatics::CreateObject<PlatForm>({ -400, 200 })->Init("new_level_floor", { 600, 200 }, {});
-    GameplayStatics::CreateObject<PlatForm>({ 0, 300 })->Init("new_level_floor", { 200, 200 }, {});
-    GameplayStatics::CreateObject<PlatForm>({ 175, 225 })->Init("new_level_floor", { 150, 150 }, {});
-    GameplayStatics::CreateObject<PlatForm>({ 425.0, 65.0 })->Init("new_level_floor", { 350, 470 }, {});
+    GameplayStatics::CreateObject<PlatForm>({ 0, 1075 })->Init("new_level_floor", { 2000, 200 }, {});
+    PlatForm* platform1 = GameplayStatics::CreateObject<PlatForm>({ -300, 200 });
+    platform1->Init("floor_tile_1", { 30, 30 }, { 0, 0 });
+    PlatForm* platform2 = GameplayStatics::CreateObject<PlatForm>({ -235, 200 });
+    platform2->Init("floor_tile_2", { 30, 30 }, { 0, 0 });
+    platform2->SetLocalScale({ 100.0f / 30.0f, 1.0f });
+    PlatForm* platform3 = GameplayStatics::CreateObject<PlatForm>({ -135, 200 });
+    platform3->Init("floor_tile_3", { 30, 30 }, { 0, 0 });
+    platform3->SetLocalScale({ 100.0f / 30.0f, 1.0f });
+    PlatForm* platform4 = GameplayStatics::CreateObject<PlatForm>({ -70, 200 });
+    platform4->Init("floor_tile_4", { 30, 30 }, { 0, 0 });
+    PlatForm* platform5 = GameplayStatics::CreateObject<PlatForm>({ -5, 200 });
+    platform5->Init("floor_tile_3", { 30, 30 }, { 0, 0 });
+    platform5->SetLocalScale({ 100.0f / 30.0f, 1.0f });
+    PlatForm* platform6 = GameplayStatics::CreateObject<PlatForm>({ 95, 200 });
+    platform6->Init("floor_tile_3", { 30, 30 }, { 0, 0 });
+    platform6->SetLocalScale({ 100.0f / 30.0f, 1.0f });
+    PlatForm* platform7 = GameplayStatics::CreateObject<PlatForm>({195, 200 });
+    platform7->Init("floor_tile_3", { 30, 30 }, { 0, 0 });
+    platform7->SetLocalScale({ 100.0f / 30.0f, 1.0f });
+
     // 可以添加更多的对象，如道具、敌人等
 
     // 关卡删除时的处理
