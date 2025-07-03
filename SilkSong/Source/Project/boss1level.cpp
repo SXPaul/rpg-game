@@ -10,16 +10,7 @@
 boss1level::boss1level()
 {
     // 创建玩家
-    if (!GameplayStatics::FindObjectOfClass<Player>())
-    {
-        auto player = GameplayStatics::CreateObject<Player>({ 0, 0 });
-        // 设置摄像机跟随玩家
-        //player->GetComponentByClass<Camera>()->SetTarget(player);
-    }
     SetDefaultController<Player>();
-    //Player* player = GameplayStatics::CreateObject<Player>();
-    //player->SetLocalPosition({ -0, -1000 });
-
 
     // 获取游戏模式实例
     //GameMode* gameMode = GameModeHelper::GetInstance();
