@@ -23,9 +23,9 @@ void ResourceManager::Initialize()
 
 	/** Í¼Ïñ **/
 	//Environment
-	Load("bg0", "Asset/Surroundings/Medieval_Castle/background/layer_1.png", WIN_WIDTH + 50, WIN_HEIGHT + 50);
-	Load("bg1", "Asset/Surroundings/Medieval_Castle/background/layer_2.png", WIN_WIDTH + 50, WIN_HEIGHT + 50);
-	Load("bg2", "Asset/Surroundings/Medieval_Castle/background/layer_3.png", WIN_WIDTH + 50, WIN_HEIGHT + 50);
+	Load("bg0", "Asset/Surroundings/Medieval_Castle/background/layer_1.png", WIN_WIDTH + 1000, WIN_HEIGHT + 1000);
+	Load("bg1", "Asset/Surroundings/Medieval_Castle/background/layer_2.png", WIN_WIDTH + 1000, WIN_HEIGHT + 1000);
+	Load("bg2", "Asset/Surroundings/Medieval_Castle/background/layer_3.png", WIN_WIDTH + 1000, WIN_HEIGHT + 1000);
 
 	// tiles
 	Load("brick_1", "Asset/Surroundings/Medieval_Castle/Tiles/brick_1.png", 50, 50);
@@ -52,6 +52,7 @@ void ResourceManager::Initialize()
 	Load("floor_tile_2", "Asset/Surroundings/Medieval_Castle/Tiles/floor_tile_2.png", 30, 30);
 	Load("floor_tile_3", "Asset/Surroundings/Medieval_Castle/Tiles/floor_tile_3.png", 30, 30);
 	Load("floor_tile_4", "Asset/Surroundings/Medieval_Castle/Tiles/floor_tile_4.png", 30, 30);
+	Load("lion_column_8", "Asset/Surroundings/Medieval_Castle/Tiles/lion_column_8.png", 30, 30);
 
 }
 
