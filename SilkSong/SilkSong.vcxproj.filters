@@ -249,6 +249,9 @@
     <ClInclude Include="Source\Project\Player.h">
       <Filter>Project\Player</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Project\PlayerAnimator.h">
+      <Filter>Project\Player</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Engine\Components\ActorComponent.cpp">
@@ -381,6 +384,9 @@
       <Filter>Project\Levels</Filter>
     </ClCompile>
     <ClCompile Include="Source\Project\Player.cpp">
+      <Filter>Project\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Project\PlayerAnimator.cpp">
       <Filter>Project\Player</Filter>
     </ClCompile>
   </ItemGroup>

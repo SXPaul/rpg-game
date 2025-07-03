@@ -26,8 +26,9 @@ public:
 
 private:
 	Animation idle;
-	//Animation walk;
-	
+	Animation run;
+	AnimEdge idle_to_runstart;
+	AnimEdge run_to_idle;
 
 	//AnimEdge idle_to_walkstart;
 };

@@ -59,13 +59,15 @@ void Player::SetupInputComponent(InputComponent* inputComponent)
         {
 			return; // 如果已经在向右走，则不允许向左走
         }
-        walkLock = 1;
+        walkLock = 1; 
         SetMaxWalkingSpeed(400.f);
+        ani->SetFloat("walkingSpeed", 400.f);
         AddInputX(-3.f, true);
         });
     inputComponent->BindAction("WalkLeftEnd", EInputType::Released, [this]() {
         if (walkLock == 1) 
             walkLock = 0;
+        ani->SetFloat("walkingSpeed", 0.f);
         });
     inputComponent->BindAction("WalkRight", EInputType::Holding, [this]() {
         if (walkLock == 1)
@@ -74,11 +76,14 @@ void Player::SetupInputComponent(InputComponent* inputComponent)
 		}
         walkLock = 2;
         SetMaxWalkingSpeed(400.f);
+        ani->SetFloat("walkingSpeed", 400.f);
         AddInputX(3.f, true);
         });
     inputComponent->BindAction("WalkRightEnd", EInputType::Released, [this]() {
         if (walkLock == 2) 
             walkLock = 0;
+        ani->SetFloat("walkingSpeed", 0.f);
+
         });
 }
 
