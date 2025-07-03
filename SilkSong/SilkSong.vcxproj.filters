@@ -249,6 +249,12 @@
     <ClInclude Include="Source\Project\Player.h">
       <Filter>Project\Player</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Project\PlayerAnimator.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="LevelA.h">
+      <Filter>Project\Levels</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Engine\Components\ActorComponent.cpp">
@@ -382,6 +388,12 @@
     </ClCompile>
     <ClCompile Include="Source\Project\Player.cpp">
       <Filter>Project\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Project\PlayerAnimator.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="LevelA.cpp">
+      <Filter>Project\Levels</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

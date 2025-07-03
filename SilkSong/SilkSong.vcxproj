@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Source\Project\LevelA.h" />
     <ClInclude Include="Source\Project\boss1level.h" />
     <ClInclude Include="Source\Project\FirstLevel.h" />
     <ClInclude Include="Source\Project\LevelTransformer.h" />
@@ -124,6 +125,7 @@
     <ClCompile Include="Source\Engine\UI\UserInterface.cpp" />
     <ClCompile Include="Source\Engine\UI\Widgets.cpp" />
     <ClCompile Include="Source\Project\StartLevel.cpp" />
+    <ClCompile Include="Source\Project\LevelA.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\journal.md" />
