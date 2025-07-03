@@ -37,8 +37,10 @@ boss1level::boss1level()
     // 创建背景对象
     Bg* bg0 = GameplayStatics::CreateObject<Bg>();
     bg0->Init("bg0", -30);
+    bg0->SetLocalScale({ 1200.f / 950.f,800.f/650.f });
     Bg* bg1 = GameplayStatics::CreateObject<Bg>();
     bg1->Init("bg1", -15);
+    bg1->SetLocalScale({ 1200.f / 950.f,800.f/650.f });
     // 创建平台对象
     //GameplayStatics::CreateObject<PlatForm>({ 0, 1075 })->Init("new_level_floor", { 2000, 200 }, {});
     //PlatForm* platform1 = GameplayStatics::CreateObject<PlatForm>({ -300, 200 });
@@ -54,7 +56,7 @@ boss1level::boss1level()
     //PlatForm* platform5 = GameplayStatics::CreateObject<PlatForm>({ -5, 200 });
     //platform5->Init("floor_tile_3", { 30, 30 }, { 0, 0 });
     //platform5->SetLocalScale({ 100.0f / 30.0f, 1.0f });
-    PlatForm* platform6 = GameplayStatics::CreateObject<PlatForm>({ 95, 200 });
+    PlatForm* platform6 = GameplayStatics::CreateObject<PlatForm>({ 0, 100 });
     platform6->Init("floor_tile_3", { 30, 30 }, { 0, 0 });
     platform6->SetLocalScale({ 1000.f / 30.0f, 1.0f });
     //PlatForm* platform7 = GameplayStatics::CreateObject<PlatForm>({195, 200 });
