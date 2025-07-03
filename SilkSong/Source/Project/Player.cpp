@@ -4,7 +4,7 @@
 #include "Components/RigidBody.h"
 #include "Components/Camera.h"
 #include "PlayerAnimator.h"
-
+#include <cstdlib>
 Player::Player()
 {
     render = GetComponentByClass<SpriteRenderer>();
@@ -55,6 +55,7 @@ void Player::SetupInputComponent(InputComponent* inputComponent)
 
     inputComponent->BindAction("WalkLeft", EInputType::Holding, [this]() {
         walkLock = 1;
+        SetMaxWalkingSpeed(400.f);
         AddInputX(-3.f, true);
         });
     inputComponent->BindAction("WalkLeftEnd", EInputType::Released, [this]() {

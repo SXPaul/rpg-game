@@ -3,7 +3,7 @@
 
 class Player : public Character
 {
-    DEFINE_SUPER(Character);
+    DEFINE_SUPER(Character)
 
 public:
     Player();

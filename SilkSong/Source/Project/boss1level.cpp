@@ -18,6 +18,7 @@ boss1level::boss1level()
         // ÉèÖÃÉãÏñ»ú¸úËæÍæ¼Ò
         //player->GetComponentByClass<Camera>()->SetTarget(player);
     }
+    SetDefaultController<Player>();
     //Player* player = GameplayStatics::CreateObject<Player>();
     //player->SetLocalPosition({ -0, -1000 });
 
