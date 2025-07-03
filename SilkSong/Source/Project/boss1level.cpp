@@ -9,8 +9,6 @@
 
 boss1level::boss1level()
 {
-
-
     // ´´½¨Íæ¼Ò
     if (!GameplayStatics::FindObjectOfClass<Player>())
     {
@@ -59,7 +57,7 @@ boss1level::boss1level()
     platform5->SetLocalScale({ 100.0f / 30.0f, 1.0f });
     PlatForm* platform6 = GameplayStatics::CreateObject<PlatForm>({ 95, 200 });
     platform6->Init("floor_tile_3", { 30, 30 }, { 0, 0 });
-    platform6->SetLocalScale({ 100.0f / 30.0f, 1.0f });
+    platform6->SetLocalScale({ 1000.f / 30.0f, 1.0f });
     PlatForm* platform7 = GameplayStatics::CreateObject<PlatForm>({195, 200 });
     platform7->Init("floor_tile_3", { 30, 30 }, { 0, 0 });
     platform7->SetLocalScale({ 100.0f / 30.0f, 1.0f });
