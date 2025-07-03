@@ -53,6 +53,10 @@ void ResourceManager::Initialize()
 	Load("floor_tile_2", "Asset/Surroundings/Medieval_Castle/Tiles/floor_tile_2.png", 30, 30);
 	Load("floor_tile_3", "Asset/Surroundings/Medieval_Castle/Tiles/floor_tile_3.png", 30, 30);
 	Load("floor_tile_4", "Asset/Surroundings/Medieval_Castle/Tiles/floor_tile_4.png", 30, 30);
+	Load("carpet_1", "Asset/Surroundings/Medieval_Castle/Tiles/floor_tile_carpet_1.png", 30, 30);
+	Load("carpet_2", "Asset/Surroundings/Medieval_Castle/Tiles/floor_tile_carpet_2.png", 30, 30);
+	Load("carpet_3", "Asset/Surroundings/Medieval_Castle/Tiles/floor_tile_carpet_3.png", 30, 30);
+	Load("carpet_4", "Asset/Surroundings/Medieval_Castle/Tiles/floor_tile_carpet_4.png", 30, 30);
 	Load("lion_column_8", "Asset/Surroundings/Medieval_Castle/Tiles/lion_column_8.png", 30, 30);
 
 }

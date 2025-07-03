@@ -22,6 +22,7 @@
     <ClInclude Include="Source\Project\LevelA.h" />
     <ClInclude Include="Source\Project\boss1level.h" />
     <ClInclude Include="Source\Project\FirstLevel.h" />
+    <ClInclude Include="Source\Project\LevelB.h" />
     <ClInclude Include="Source\Project\LevelTransformer.h" />
     <ClInclude Include="Source\Project\PlatForm.h" />
     <ClInclude Include="Source\Engine\Components\VideoPlayer.h" />
@@ -82,6 +83,7 @@
   <ItemGroup>
     <ClCompile Include="Source\Project\boss1level.cpp" />
     <ClCompile Include="Source\Project\FirstLevel.cpp" />
+    <ClCompile Include="Source\Project\LevelB.cpp" />
     <ClCompile Include="Source\Project\LevelTransformer.cpp" />
     <ClCompile Include="Source\Project\PlatForm.cpp" />
     <ClCompile Include="Source\Engine\Components\VideoPlayer.cpp" />
