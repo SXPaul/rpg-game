@@ -13,6 +13,7 @@ Player::Player()
     //// 将 PlayerAnimator 与渲染器关联
     ani->SetupAttachment(render);
     if (render) render->SetLayer(1);
+	walkLock = 0;
 
     box = GetComponentByClass<BoxCollider>();
     if (box) {
@@ -54,18 +55,30 @@ void Player::SetupInputComponent(InputComponent* inputComponent)
     inputComponent->SetMapping("WalkRightEnd", EKeyCode::VK_D);
 
     inputComponent->BindAction("WalkLeft", EInputType::Holding, [this]() {
+        if (walkLock == 2)
+        {
+			return; // 如果已经在向右走，则不允许向左走
+        }
         walkLock = 1;
+        SetMaxWalkingSpeed(400.f);
         AddInputX(-3.f, true);
         });
     inputComponent->BindAction("WalkLeftEnd", EInputType::Released, [this]() {
-        if (walkLock == 1) walkLock = 0;
+        if (walkLock == 1) 
+            walkLock = 0;
         });
     inputComponent->BindAction("WalkRight", EInputType::Holding, [this]() {
+        if (walkLock == 1)
+		{
+			return; // 如果已经在向左走，则不允许向右走
+		}
         walkLock = 2;
+        SetMaxWalkingSpeed(400.f);
         AddInputX(3.f, true);
         });
     inputComponent->BindAction("WalkRightEnd", EInputType::Released, [this]() {
-        if (walkLock == 2) walkLock = 0;
+        if (walkLock == 2) 
+            walkLock = 0;
         });
 }
 
