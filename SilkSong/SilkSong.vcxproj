@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Source\Project\AttackBox.h" />
     <ClInclude Include="Source\Project\LevelA.h" />
     <ClInclude Include="Source\Project\boss1level.h" />
     <ClInclude Include="Source\Project\FirstLevel.h" />
@@ -80,6 +81,7 @@
     <ClInclude Include="Source\Project\StartLevel.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\Project\AttackBox.cpp" />
     <ClCompile Include="Source\Project\boss1level.cpp" />
     <ClCompile Include="Source\Project\FirstLevel.cpp" />
     <ClCompile Include="Source\Project\LevelTransformer.cpp" />

@@ -6,6 +6,7 @@
 #include "PlayerAnimator.h"
 #include "GameplayStatics.h"
 #include <cstdlib>
+#include "AttackBox.h"
 Player::Player()
 {
     render = GetComponentByClass<SpriteRenderer>();
@@ -35,8 +36,12 @@ Player::Player()
     box->OnComponentHit.AddDynamic(this, &Player::StartCollision);
     box->OnComponentStay.AddDynamic(this, &Player::StayCollision);
 
+
+    curDirection = AttackDirection::Right;
+	lastDirection = curDirection;
     walkLock = 0;
 	jumpLock = 0;
+
     lastJumpTime = 0.0f; // 初始化上次跳跃时间戳
 	isonGround = false;
 }
@@ -62,10 +67,14 @@ void Player::SetupInputComponent(InputComponent* inputComponent)
     inputComponent->SetMapping("WalkRight", EKeyCode::VK_D);
     inputComponent->SetMapping("WalkLeftEnd", EKeyCode::VK_A);
     inputComponent->SetMapping("WalkRightEnd", EKeyCode::VK_D);
+    inputComponent->SetMapping("HoldUp", EKeyCode::VK_W);
+	inputComponent->SetMapping("HoldUpEnd", EKeyCode::VK_W);
+	inputComponent->SetMapping("HoldDown", EKeyCode::VK_S);
+	inputComponent->SetMapping("HoldDownEnd", EKeyCode::VK_S);
 	inputComponent->SetMapping("JumpStart", EKeyCode::VK_Space);
 	inputComponent->SetMapping("Jumping", EKeyCode::VK_Space);
 	inputComponent->SetMapping("JumpEnd", EKeyCode::VK_Space);
-
+	inputComponent->SetMapping("Attack", EKeyCode::VK_J);
 
 
     inputComponent->BindAction("WalkLeft", EInputType::Holding, [this]() {
@@ -77,6 +86,18 @@ void Player::SetupInputComponent(InputComponent* inputComponent)
         SetMaxWalkingSpeed(400.f);
         ani->SetFloat("walkingSpeed", 400.f);
         AddInputX(-3.f, true);
+        if((curDirection != AttackDirection::Up) && (curDirection != AttackDirection::Down)) 
+        {            
+            // 如果当前方向不是向上或向下
+            // 切换到向右的攻击方向
+            curDirection = AttackDirection::Left; // 设置当前方向为左
+		}
+        else
+        {
+			//当前方向是向上或向下
+			lastDirection = AttackDirection::Left; // 记录当前方向
+        }
+
         });
     inputComponent->BindAction("WalkLeftEnd", EInputType::Released, [this]() {
         if (walkLock == 1) 
@@ -85,13 +106,23 @@ void Player::SetupInputComponent(InputComponent* inputComponent)
         });
     inputComponent->BindAction("WalkRight", EInputType::Holding, [this]() {
         if (walkLock == 1)
-		{
-			return; // 如果已经在向左走，则不允许向右走
-		}
+        {
+            return; // 如果已经在向左走，则不允许向右走
+        }
         walkLock = 2;
         SetMaxWalkingSpeed(400.f);
         ani->SetFloat("walkingSpeed", 400.f);
         AddInputX(3.f, true);
+        if ((curDirection != AttackDirection::Up) && (curDirection != AttackDirection::Down))
+        {
+            // 如果当前方向不是向上或向下
+            // 切换到向右的攻击方向
+            curDirection = AttackDirection::Right; // 设置当前方向为右
+        }
+        else
+        {
+			lastDirection = AttackDirection::Right; // 记录当前方向
+        }
         });
     inputComponent->BindAction("WalkRightEnd", EInputType::Released, [this]() {
         if (walkLock == 2) 
@@ -99,6 +130,36 @@ void Player::SetupInputComponent(InputComponent* inputComponent)
         ani->SetFloat("walkingSpeed", 0.f);
 
         });
+
+    inputComponent->BindAction("HoldUp", EInputType::Holding, [this]()
+        {
+			curDirection = AttackDirection::Up; // 设置当前方向为向上
+            
+		});
+
+    inputComponent->BindAction("HoldUpEnd", EInputType::Released, [this]()
+        {
+            if (curDirection == AttackDirection::Up)
+            {
+                curDirection = lastDirection; // 恢复到上次的方向
+            }
+            else return;
+        });
+
+    inputComponent->BindAction("HoldDown", EInputType::Holding, [this]()
+		{
+			if (!isonGround)// 如果玩家不在地面上，则允许向下攻击
+			    curDirection = AttackDirection::Down; // 设置当前方向为向下
+		});
+
+    inputComponent->BindAction("HoldDownEnd", EInputType::Released, [this]()
+        {
+            if (curDirection == AttackDirection::Down)
+            {
+                curDirection = lastDirection; // 恢复到上次的方向
+            }
+			else return; // 如果当前方向不是向下，则不做任何操作
+		});
 
     inputComponent->BindAction("JumpStart", EInputType::Pressed, [this]()
         {
@@ -114,7 +175,7 @@ void Player::SetupInputComponent(InputComponent* inputComponent)
                 //
                 lastJumpTime = GameplayStatics::GetTimeSeconds(); // 记录跳跃时间
                 jumpLock = 1; // 设置跳跃锁，防止连续跳跃,jumpLock = 1 代表已经开始跳跃，但是还没结束跳跃
-            }
+            }  
 			else return; // 如果不在地面上，则不允许跳跃
         });
 
@@ -145,6 +206,42 @@ void Player::SetupInputComponent(InputComponent* inputComponent)
 
                 //
                 //
+            }
+		});
+
+    inputComponent->BindAction("Attack", EInputType::Pressed, [this]()
+        {
+            if (lastAttackTime == 0 || GameplayStatics::GetTimeSeconds() - lastAttackTime > 0.1f)
+            {
+                // 如果上次攻击时间超过0.5秒
+                lastAttackTime = GameplayStatics::GetTimeSeconds(); // 更新上次攻击时间
+                // 执行攻击逻辑
+                //
+                //
+                //
+				AttackBox* attackBox = GameplayStatics::CreateObject<AttackBox>();
+                attackBox->AttachTo(this);
+                switch (curDirection)
+                {
+                    case AttackDirection::Left:
+                        attackBox->Init(AttackDirection::Left);
+                        attackBox->SetLocalPosition(FVector2D(110, 0));
+						break;
+                    case AttackDirection::Right:
+                        attackBox->Init(AttackDirection::Right);
+						attackBox->SetLocalPosition(FVector2D(110, 0));
+                        break;
+                    case AttackDirection::Up:
+						attackBox->Init(AttackDirection::Up);
+                        attackBox->SetLocalPosition(FVector2D(-0, -70));
+                        break;
+					case AttackDirection::Down:
+						attackBox->Init(AttackDirection::Down);
+                        attackBox->SetLocalPosition(FVector2D( 0, 100));
+						break;
+                    default:
+						break;
+                }
             }
 		});
 }
