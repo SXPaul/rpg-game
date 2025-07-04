@@ -96,26 +96,26 @@ level_a::level_a()
     // GameplayStatics::CreateObject<PlatForm>({ 425.0, 65.0 })->Init("floor_tile_3", { 350, 470 }, {});
     // GameplayStatics::CreateObject<PlatForm>({ 0, 1075 })->Init("floor_tile_3", { 2000, 200 }, {});
     /* ==========coordinate========== */
-    GameplayStatics::CreateObject<PlatForm>({ 0,0 })->Init("aaa", { 12000, 0 }, {}); // x
-    GameplayStatics::CreateObject<PlatForm>({ 100,0 })->Init("aaa", { 0, 5 }, {});
-    GameplayStatics::CreateObject<PlatForm>({ -100,0 })->Init("aaa", { 0, 5 }, {});
-    GameplayStatics::CreateObject<PlatForm>({ 200,0 })->Init("aaa", { 0, 5 }, {});
-    GameplayStatics::CreateObject<PlatForm>({ -200,0 })->Init("aaa", { 0, 5 }, {});
-    GameplayStatics::CreateObject<PlatForm>({ 300,0 })->Init("aaa", { 0, 5 }, {});
-    GameplayStatics::CreateObject<PlatForm>({ -300,0 })->Init("aaa", { 0, 5 }, {});
-    GameplayStatics::CreateObject<PlatForm>({ 400,0 })->Init("aaa", { 0, 5 }, {});
-    GameplayStatics::CreateObject<PlatForm>({ -400,0 })->Init("aaa", { 0, 5 }, {});
-    GameplayStatics::CreateObject<PlatForm>({ 500,0 })->Init("aaa", { 0, 5 }, {});
-    GameplayStatics::CreateObject<PlatForm>({ -500,0 })->Init("aaa", { 0, 5 }, {});
-    GameplayStatics::CreateObject<PlatForm>({ 600,0 })->Init("aaa", { 0, 5 }, {});
-    GameplayStatics::CreateObject<PlatForm>({ -600,0 })->Init("aaa", { 0, 5 }, {});
-    GameplayStatics::CreateObject<PlatForm>({ 0,0 })->Init("aaa", { 0, 8000 }, {}); // y
-    GameplayStatics::CreateObject<PlatForm>({ 0,100 })->Init("aaa", { 5, 0 }, {});
-    GameplayStatics::CreateObject<PlatForm>({ 0, -100 })->Init("aaa", { 5, 0 }, {});
-    GameplayStatics::CreateObject<PlatForm>({ 0, 200 })->Init("aaa", { 5, 0 }, {});
-    GameplayStatics::CreateObject<PlatForm>({ 0, -200 })->Init("aaa", { 5, 0 }, {});
-    GameplayStatics::CreateObject<PlatForm>({ 0, 300 })->Init("aaa", { 5, 0 }, {});
-    GameplayStatics::CreateObject<PlatForm>({ 0, -300 })->Init("aaa", { 5, 0 }, {});
+    //GameplayStatics::CreateObject<PlatForm>({ 0,0 })->Init("aaa", { 12000, 0 }, {}); // x
+    //GameplayStatics::CreateObject<PlatForm>({ 100,0 })->Init("aaa", { 0, 5 }, {});
+    //GameplayStatics::CreateObject<PlatForm>({ -100,0 })->Init("aaa", { 0, 5 }, {});
+    //GameplayStatics::CreateObject<PlatForm>({ 200,0 })->Init("aaa", { 0, 5 }, {});
+    //GameplayStatics::CreateObject<PlatForm>({ -200,0 })->Init("aaa", { 0, 5 }, {});
+    //GameplayStatics::CreateObject<PlatForm>({ 300,0 })->Init("aaa", { 0, 5 }, {});
+    //GameplayStatics::CreateObject<PlatForm>({ -300,0 })->Init("aaa", { 0, 5 }, {});
+    //GameplayStatics::CreateObject<PlatForm>({ 400,0 })->Init("aaa", { 0, 5 }, {});
+    //GameplayStatics::CreateObject<PlatForm>({ -400,0 })->Init("aaa", { 0, 5 }, {});
+    //GameplayStatics::CreateObject<PlatForm>({ 500,0 })->Init("aaa", { 0, 5 }, {});
+    //GameplayStatics::CreateObject<PlatForm>({ -500,0 })->Init("aaa", { 0, 5 }, {});
+    //GameplayStatics::CreateObject<PlatForm>({ 600,0 })->Init("aaa", { 0, 5 }, {});
+    //GameplayStatics::CreateObject<PlatForm>({ -600,0 })->Init("aaa", { 0, 5 }, {});
+    //GameplayStatics::CreateObject<PlatForm>({ 0,0 })->Init("aaa", { 0, 8000 }, {}); // y
+    //GameplayStatics::CreateObject<PlatForm>({ 0,100 })->Init("aaa", { 5, 0 }, {});
+    //GameplayStatics::CreateObject<PlatForm>({ 0, -100 })->Init("aaa", { 5, 0 }, {});
+    //GameplayStatics::CreateObject<PlatForm>({ 0, 200 })->Init("aaa", { 5, 0 }, {});
+    //GameplayStatics::CreateObject<PlatForm>({ 0, -200 })->Init("aaa", { 5, 0 }, {});
+    //GameplayStatics::CreateObject<PlatForm>({ 0, 300 })->Init("aaa", { 5, 0 }, {});
+    //GameplayStatics::CreateObject<PlatForm>({ 0, -300 })->Init("aaa", { 5, 0 }, {});
     /* =========================================================================== */
     // �������Ӹ���Ķ�������ߡ����˵�
     //GameplayStatics::CreateObject<Bug>({ 1100,890 }, 0.f, { -1.f,1.f });

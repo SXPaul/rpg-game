@@ -7,15 +7,7 @@
 /**
  * 自定义场景地图头文件
  **/
- /*
- #include "TearCityLevel.h"
- #include "MenuLevel.h"
- #include "StartLevel.h"
- #include "RuinHouseLevel.h"
- #include "BossLevel.h"
- #include "GrimmLevel.h"
 
- */
 #include "boss1level.h"
 #include "FirstLevel.h"
 #include "StartLevel.h"

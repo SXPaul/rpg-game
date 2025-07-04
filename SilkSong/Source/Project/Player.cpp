@@ -53,6 +53,7 @@ void Player::Update(float deltaTime)
 {
     Super::Update(deltaTime);
     // 可选：可以在这里做一些速度限制或动画参数设置
+    ani->SetFloat("fallingSpeed", rigid->GetVelocity().y);
 }
 
 void Player::SetupInputComponent(InputComponent* inputComponent)
@@ -107,7 +108,8 @@ void Player::SetupInputComponent(InputComponent* inputComponent)
                 rigid->SetVelocity(FVector2D(rigid->GetVelocity().x, -400.f)); // 向上跳跃
                 isonGround = false; // 跳跃后标记不在地面上
                 // 切换到跳跃动画
-                //
+                //ani->SetFloat("jumpSpeed", -1.f);
+                //ani->PlayMontage("jump1");
                 //
                 //
                 lastJumpTime = GameplayStatics::GetTimeSeconds(); // 记录跳跃时间
@@ -124,7 +126,7 @@ void Player::SetupInputComponent(InputComponent* inputComponent)
                 // 如果在跳跃状态且跳跃时间小于0.2秒
 				rigid->SetVelocity(FVector2D(rigid->GetVelocity().x, -400.f)); // 持续给一个向上的速度
                 // 跳跃动画
-                //
+                //ani->SetFloat("jumpSpeed", -1.f);
                 //
                 //
             }
@@ -139,7 +141,8 @@ void Player::SetupInputComponent(InputComponent* inputComponent)
                 isonGround = false; // 标记玩家不在地面上
                 rigid->SetVelocity(FVector2D(rigid->GetVelocity().x, 0)); // 重置垂直速度
                 // 切换到站立动画
-                //
+                //ani->SetFloat("fallingSpeed", rigid->GetVelocity().y);
+
                 //
                 //
             }
