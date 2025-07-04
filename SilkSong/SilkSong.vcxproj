@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Source\Project\AttackBox.h" />
     <ClInclude Include="Source\Project\LevelA.h" />
     <ClInclude Include="Source\Project\boss1level.h" />
     <ClInclude Include="Source\Project\FirstLevel.h" />
@@ -81,6 +82,7 @@
     <ClInclude Include="Source\Project\StartLevel.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\Project\AttackBox.cpp" />
     <ClCompile Include="Source\Project\boss1level.cpp" />
     <ClCompile Include="Source\Project\FirstLevel.cpp" />
     <ClCompile Include="Source\Project\LevelB.cpp" />
@@ -101,9 +103,9 @@
     <ClCompile Include="Source\Project\PlayerPropertyComponent.cpp" />
     <ClCompile Include="Source\Project\PropertyComponent.cpp" />
     <ClCompile Include="Source\Engine\Components\AudioPlayer.cpp" />
-    <ClCompile Include="Source\Engine\Tools\ResourceManager.cpp" />
+    <ClCompile Include="Source\Engine\ResourceManager.cpp" />
     <ClCompile Include="Source\Engine\Objects\Character.cpp" />
-    <ClCompile Include="Source\Engine\Tools\FileManager.cpp" />
+    <ClCompile Include="Source\Engine\FileManager.cpp" />
     <ClCompile Include="Source\Project\Bg.cpp" />
     <ClCompile Include="Source\Engine\Components\ActorComponent.cpp" />
     <ClCompile Include="Source\Engine\Components\Animator.cpp" />
@@ -118,9 +120,9 @@
     <ClCompile Include="Source\Engine\Core\World.cpp" />
     <ClCompile Include="Source\Engine\Objects\Actor.cpp" />
     <ClCompile Include="Source\Engine\Objects\Controller.cpp" />
-    <ClCompile Include="Source\Engine\Tools\CollisionManager.cpp" />
+    <ClCompile Include="Source\Engine\CollisionManager.cpp" />
     <ClCompile Include="Source\Engine\Tools\GameplayStatics.cpp" />
-    <ClCompile Include="Source\Engine\Tools\LevelManager.cpp" />
+    <ClCompile Include="Source\Engine\LevelManager.cpp" />
     <ClCompile Include="Source\Engine\Core\Math.cpp" />
     <ClCompile Include="Source\Engine\Tools\Timer.cpp" />
     <ClCompile Include="Source\Engine\Tools\VisualInterface.cpp" />

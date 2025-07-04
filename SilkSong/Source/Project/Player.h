@@ -1,6 +1,14 @@
 #pragma once
 #include "Objects/Character.h"
 
+enum class AttackDirection
+{
+    Left,
+    Right,
+    Up,
+    Down,
+};
+
 class Player : public Character
 {
     DEFINE_SUPER(Character)
@@ -26,7 +34,11 @@ private:
 
 	bool isonGround;
 
+    AttackDirection curDirection;
+    AttackDirection lastDirection;
+
     int32 walkLock = 0;
     int32 jumpLock = 0;
 	float lastJumpTime = 0.0f; // 上次跳跃的时间戳
+	float lastAttackTime = 0.0f; // 上次攻击的时间戳
 };

@@ -27,8 +27,23 @@ public:
 private:
 	Animation idle;
 	Animation run;
+	Animation jump1;
+	Animation jump2;
+	Animation jump_falling;
 	AnimEdge idle_to_runstart;
 	AnimEdge run_to_idle;
+	AnimEdge idle_to_jump1;
+	AnimEdge idle_to_jump2;
+	AnimEdge run_to_jump1;
+	AnimEdge run_to_jump2;
+	AnimEdge jump1_to_falling;
+	AnimEdge jump2_to_falling;
+	//AnimEdge jump2_to_idle;
+	//AnimEdge jump1_to_idle;
+	//AnimEdge jump2_to_run;
+	//AnimEdge jump1_to_run;
+
+
 
 	//AnimEdge idle_to_walkstart;
 };

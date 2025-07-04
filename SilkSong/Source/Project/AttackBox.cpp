@@ -1,11 +1,8 @@
 #include "AttackBox.h"
 #include "Components/Collider.h"
-#include "Enemy.h"
 #include "GameplayStatics.h"
 #include "Effect.h"
-#include "Dart.h"
 #include "Interactive.h"
-#include "Chest.h"
 #include "Player.h"
 #include "GameModeHelper.h"
 
@@ -21,27 +18,27 @@ AttackBox::AttackBox()
 	AttackTimerHandle.Bind(0.03f, [this]() {box->SetCollisonMode(CollisionMode::Trigger); }, false);
 	DestroyTimerHandle.Bind(0.08f, [this]() {Destroy(); }, false);
 
-	box->OnComponentBeginOverlap.AddDynamic(this, &AttackBox::OnOverlap);
+	//box->OnComponentBeginOverlap.AddDynamic(this, &AttackBox::OnOverlap);
 	box->OnComponentEndOverlap.AddDynamic(this, &AttackBox::OnEndOverlap);
 }
 
-void AttackBox::Init(ECharacterDirection direction, int32 damage)
+void AttackBox::Init(AttackDirection direction, int32 damage)
 {
 	this->direction = direction;
-	if (direction == ECharacterDirection::LookUp)
+	if (direction == AttackDirection::Up)
 	{
-		box->SetSize({ 100, 220 });
+		box->SetSize({ 150, 220 });
 		box->AddPosition({ 0, -70 });
 	}
-	else if (direction == ECharacterDirection::LookDown)
+	else if (direction == AttackDirection::Down)
 	{
-		box->SetSize({ 100, 150 });
-		box->AddPosition({ 0, 65 });
+		box->SetSize({ 150, 150 });
+		box->AddPosition({ 0, 25 });
 	}
 	this->damage = damage;
 }
 
-
+/*
 void AttackBox::OnOverlap(Collider* hitComp, Collider* otherComp, Actor* otherActor)
 {
 	if (!GetOwner())return;
@@ -74,7 +71,7 @@ void AttackBox::OnOverlap(Collider* hitComp, Collider* otherComp, Actor* otherAc
 		GameModeHelper::ApplyDamage(this, Cast<IDamagable>(otherActor), 1, EDamageType::Player);
 	}
 }
-
+*/
 void AttackBox::OnEndOverlap(Collider* hitComp, Collider* otherComp, Actor* otherActor)
 {
 	if (hitComp->GetType() == CollisionType::Enemy || hitComp->GetType() == CollisionType::Dart)
