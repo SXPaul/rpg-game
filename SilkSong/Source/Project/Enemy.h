@@ -26,7 +26,7 @@ public:
 
 	bool IsDead()const { return bIsDead; }
 
-	void OnOverlap(class Collider* hitComp, Collider* otherComp, Actor* otherActor);
+	//void OnOverlap(class Collider* hitComp, Collider* otherComp, Actor* otherActor);
 
 protected:
 	virtual void Die();

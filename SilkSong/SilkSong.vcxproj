@@ -20,6 +20,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Project\AttackBox.h" />
+    <ClInclude Include="Source\Project\Effect.h" />
+    <ClInclude Include="Source\Project\Enemy.h" />
+    <ClInclude Include="Source\Project\Enemy1.h" />
     <ClInclude Include="Source\Project\LevelA.h" />
     <ClInclude Include="Source\Project\boss1level.h" />
     <ClInclude Include="Source\Project\FirstLevel.h" />
@@ -78,11 +81,15 @@
     <ClInclude Include="Source\Engine\Tools\VisualInterface.h" />
     <ClInclude Include="Source\Engine\UI\UserInterface.h" />
     <ClInclude Include="Source\Engine\UI\Widgets.h" />
+    <ClInclude Include="Source\Project\SilkParticle.h" />
     <ClInclude Include="Source\Project\StartLevel.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Project\AttackBox.cpp" />
     <ClCompile Include="Source\Project\boss1level.cpp" />
+    <ClCompile Include="Source\Project\Effect.cpp" />
+    <ClCompile Include="Source\Project\Enemy.cpp" />
+    <ClCompile Include="Source\Project\Enemy1.cpp" />
     <ClCompile Include="Source\Project\FirstLevel.cpp" />
     <ClCompile Include="Source\Project\LevelTransformer.cpp" />
     <ClCompile Include="Source\Project\PlatForm.cpp" />
@@ -126,6 +133,7 @@
     <ClCompile Include="Source\Engine\Tools\VisualInterface.cpp" />
     <ClCompile Include="Source\Engine\UI\UserInterface.cpp" />
     <ClCompile Include="Source\Engine\UI\Widgets.cpp" />
+    <ClCompile Include="Source\Project\SilkParticle.cpp" />
     <ClCompile Include="Source\Project\StartLevel.cpp" />
     <ClCompile Include="Source\Project\LevelA.cpp" />
   </ItemGroup>

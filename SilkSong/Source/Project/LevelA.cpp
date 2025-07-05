@@ -5,6 +5,7 @@
 #include "Bg.h"
 #include "GameModeHelper.h"
 #include "LevelTransformer.h"
+#include "Enemy1.h"
 level_a::level_a()
 {
     // �������
@@ -40,6 +41,8 @@ level_a::level_a()
     bg1->Init("bg1", -15);
     // ����ƽ̨����
     PlatForm* temp;
+    GameplayStatics::CreateObject<Enemy1>({ 0,0 });
+    //GameplayStatics::CreateObject<Enemy1>({ 450,500 }, 0.f, { -1.f,1.f });
     temp = GameplayStatics::CreateObject<PlatForm>({ -750.0, 50.0 });
     temp->Init("lion_column_8", { 30, 30 }, {});
     temp->SetLocalScale({ 100.f / 30.0f, 100.f/30.0f });

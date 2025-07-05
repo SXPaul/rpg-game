@@ -30,7 +30,7 @@ Enemy::Enemy()
 	render_death->LoadSprite("death_light");
 	render_death->SetLayer(-1);
 	render_death->Deactivate();
-	
+
 	circle->AttachTo(root);
 	circle->SetRadius(40);
 	circle->SetType(CollisionType::Enemy);
@@ -47,7 +47,7 @@ void Enemy::BeginPlay()
 {
 	Super::BeginPlay();
 
-	circle->OnComponentBeginOverlap.AddDynamic(this, &Enemy::OnOverlap);
+	//circle->OnComponentBeginOverlap.AddDynamic(this, &Enemy::OnOverlap);
 
 	if (!player)
 	{
@@ -57,7 +57,7 @@ void Enemy::BeginPlay()
 
 void Enemy::Update(float deltaTime)
 {
-    Super::Update(deltaTime);
+	Super::Update(deltaTime);
 
 	if (IsDead() && rigid->GetVelocity().Equals(FVector2D::ZeroVector))
 	{
@@ -103,11 +103,11 @@ void Enemy::ExecuteDamageTakenEvent(FDamageCauseInfo extraInfo)
 	hurtTimer = 0.1f;
 	Actor* causer = Cast<Actor>(extraInfo.damageCauser);
 	CHECK_PTR(causer)
-	if (AttackBox* box = Cast<AttackBox>(causer))
-	{
-		causer = box->GetOwner();
-		player->AddSilk(1);
-	}
+		if (AttackBox* box = Cast<AttackBox>(causer))
+		{
+			causer = box->GetOwner();
+			//player->AddSilk(1);
+		}
 	FVector2D normal = (GetWorldPosition() - causer->GetWorldPosition()).GetSafeNormal();
 	float delta_x = causer->GetWorldPosition().x - GetWorldPosition().x;
 
@@ -147,13 +147,13 @@ PropertyComponent* Enemy::GetProperty()
 	return property;
 }
 
-void Enemy::OnOverlap(Collider* hitComp, Collider* otherComp, Actor* otherActor)
-{
-	if (Player* player = Cast<Player>(otherActor))
-	{
-		GameModeHelper::ApplyDamage(this, player, 1, EDamageType::Enemy);
-	}
-}
+//void Enemy::OnOverlap(Collider* hitComp, Collider* otherComp, Actor* otherActor)
+//{
+//	if (Player* player = Cast<Player>(otherActor))
+//	{
+//		GameModeHelper::ApplyDamage(this, player, 1, EDamageType::Enemy);
+//	}
+//}
 
 void Enemy::Die()
 {
@@ -167,9 +167,9 @@ void Enemy::Die()
 	render_death->SetLocalPosition(GetWorldPosition());
 	render_death->DetachFrom(root);
 	render_death->SetOwner(nullptr);//开发者偷懒而使用的危险代码，请勿模仿
-	
-	circle->OnComponentBeginOverlap.RemoveDynamic(this, &Enemy::OnOverlap);
-	circle->SetPhysicsMaterial(FPhysicsMaterial(0.6f,0.6f));
+
+	//circle->OnComponentBeginOverlap.RemoveDynamic(this, &Enemy::OnOverlap);
+	circle->SetPhysicsMaterial(FPhysicsMaterial(0.6f, 0.6f));
 	circle->SetCollisionResponseToType(CollisionType::Dart, false);
 	rigid->SetGravity(1960.f);
 
