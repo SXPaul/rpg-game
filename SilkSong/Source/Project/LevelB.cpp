@@ -51,7 +51,8 @@ level_b::level_b()
     GameplayStatics::CreateObject<PlatForm>({ -175, -5 })->Init("lion_1", { 30, 30 }, {});
     GameplayStatics::CreateObject<PlatForm>({ -145, -5 })->Init("lion_2", { 30, 30 }, {});
     GameplayStatics::CreateObject<PlatForm>({ -115, -5 })->Init("lion_3", { 30, 30 }, {});
-    /* platform 1 */
+    /* platform 1, x: 300 420, y:-50 -70  */ 
+    GameplayStatics::CreateObject<PlatForm>({ 360, -60 })->Init("platform_shadow", { 120, 20 }, {200,200});
     GameplayStatics::CreateObject<PlatForm>({ 315, -52.5 })->Init("platform_shadow", { 30, 5 }, {});
     GameplayStatics::CreateObject<PlatForm>({ 345, -52.5 })->Init("platform_shadow", { 30, 5 }, {});
     GameplayStatics::CreateObject<PlatForm>({ 375, -52.5 })->Init("platform_shadow", { 30, 5 }, {});
@@ -60,6 +61,23 @@ level_b::level_b()
     GameplayStatics::CreateObject<PlatForm>({ 345, -62.5 })->Init("platform_2", { 30, 15 }, {});
     GameplayStatics::CreateObject<PlatForm>({ 375, -62.5 })->Init("platform_3", { 30, 15 }, {});
     GameplayStatics::CreateObject<PlatForm>({ 405, -62.5 })->Init("platform_4", { 30, 15 }, {});
+    /* platform 2, x: 450 570, y:-150 -170  */
+    GameplayStatics::CreateObject<PlatForm>({ 510, -160 })->Init("platform_shadow", { 120, 20 }, {});
+    /* platform 3, x: 850 570, y:-150 -170  */
+    GameplayStatics::CreateObject<PlatForm>({ 910, -160 })->Init("platform_shadow", { 120, 20 }, {});
+    /* platform 4, x: 600 720, y : -150 - 170 */
+    GameplayStatics::CreateObject<PlatForm>({ 910, -160 })->Init("platform_shadow", { 120, 20 }, {});
+    ///* stairs 1 */
+    //int height = 4;
+    //for (float x = 615.0f; x < 720.0f; x += 30.0f, height--)
+    //{
+    //    int count = 0;
+    //    for (float y = 145.0f; count < height; y -= 30.0f, count++)
+    //    {
+    //        if (count == height - 1) GameplayStatics::CreateObject<PlatForm>({ x, y })->Init("stairs_1", { 30, 30 }, {});
+    //        else GameplayStatics::CreateObject<PlatForm>({ x, y })->Init("brick_7", { 30, 30 }, {});
+    //    }
+    //}
     /* block 1 */
     GameplayStatics::CreateObject<PlatForm>({ -300, 200 })->Init("", { 1000, 200 }, {});
     GameplayStatics::CreateObject<PlatForm>({ -785, 115 })->Init("floor_tile_1", { 30, 30 }, {});
@@ -75,49 +93,6 @@ level_b::level_b()
         temp = GameplayStatics::CreateObject<PlatForm>({ 180.0, y });
         temp->Init("brick_1", { 30, 30 }, {});
     }
-    /* block 2 */
-    GameplayStatics::CreateObject<PlatForm>({ 300.0, 575.0 })->Init("", { 200, 850 }, {});
-    for (float x = 215.0f; x < 380.0f; x += 30.0f)
-        GameplayStatics::CreateObject<PlatForm>({ x, 165 })->Init("carpet_2", { 30, 30 }, {});
-    GameplayStatics::CreateObject<PlatForm>({ 395, 165 })->Init("carpet_4", { 30, 30 }, {});
-    for (float y = 195.0f; y < 1000.0f; y += 30.0f)
-        for (float x = 215.0f; x < 400.0f; x += 30.0f)
-            GameplayStatics::CreateObject<PlatForm>({ x, y })->Init("brick_2", { 30, 30 }, {});
-    /* block 3 */
-    GameplayStatics::CreateObject<PlatForm>({ 700.0, 675.0 })->Init("", { 200, 1050 }, {});
-    for (float y = 165.0f; y < 1200.0f; y += 30.0f)
-        for (float x = 615.0f; x < 800.0f; x += 30.0f)
-            GameplayStatics::CreateObject<PlatForm>({ x, y })->Init("brick_3", { 30, 30 }, {});
-    /* block 4 */
-    GameplayStatics::CreateObject<PlatForm>({ 570.0, 285.0 })->Init("", { 60, 30 }, {});
-    GameplayStatics::CreateObject<PlatForm>({ 555, 285 })->Init("carpet_1", { 30, 30 }, {});
-    GameplayStatics::CreateObject<PlatForm>({ 585, 285 })->Init("carpet_2", { 30, 30 }, {});
-    GameplayStatics::CreateObject<PlatForm>({ 435.0, 405.0 })->Init("", { 70, 30 }, {});
-    GameplayStatics::CreateObject<PlatForm>({ 425, 405 })->Init("carpet_3", { 30, 30 }, {});
-    GameplayStatics::CreateObject<PlatForm>({ 455, 405 })->Init("carpet_4", { 30, 30 }, {});
-    GameplayStatics::CreateObject<PlatForm>({ 570.0, 525.0 })->Init("", { 60, 30 }, {});
-    GameplayStatics::CreateObject<PlatForm>({ 555, 525 })->Init("carpet_1", { 30, 30 }, {});
-    GameplayStatics::CreateObject<PlatForm>({ 585, 525 })->Init("carpet_2", { 30, 30 }, {});
-    GameplayStatics::CreateObject<PlatForm>({ 435.0, 645.0 })->Init("", { 70, 30 }, {});
-    GameplayStatics::CreateObject<PlatForm>({ 425, 645 })->Init("carpet_3", { 30, 30 }, {});
-    GameplayStatics::CreateObject<PlatForm>({ 455, 645 })->Init("carpet_4", { 30, 30 }, {});
-    GameplayStatics::CreateObject<PlatForm>({ 570.0, 765.0 })->Init("", { 60, 30 }, {});
-    GameplayStatics::CreateObject<PlatForm>({ 555, 765 })->Init("carpet_1", { 30, 30 }, {});
-    GameplayStatics::CreateObject<PlatForm>({ 585, 765 })->Init("carpet_2", { 30, 30 }, {});
-    GameplayStatics::CreateObject<PlatForm>({ 435.0, 885.0 })->Init("", { 70, 30 }, {});
-    GameplayStatics::CreateObject<PlatForm>({ 425, 885 })->Init("carpet_3", { 30, 30 }, {});
-    GameplayStatics::CreateObject<PlatForm>({ 455, 885 })->Init("carpet_4", { 30, 30 }, {});
-    GameplayStatics::CreateObject<PlatForm>({ 570.0, 1005.0 })->Init("", { 60, 30 }, {});
-    GameplayStatics::CreateObject<PlatForm>({ 555, 1005 })->Init("carpet_1", { 30, 30 }, {});
-    GameplayStatics::CreateObject<PlatForm>({ 585, 1005 })->Init("carpet_2", { 30, 30 }, {});
-    /* block 5 */
-    GameplayStatics::CreateObject<PlatForm>({ 400.0, 1350.0 })->Init("", { 800, 300 }, {});
-    for (float x = 15.0f; x < 800.0f; x += 30.0f)
-        GameplayStatics::CreateObject<PlatForm>({ x, 1215.0f })->Init("floor_tile_3", { 30, 30 }, {});
-    for (float y = 1245.0f; y < 1650.0f; y += 30.0f)
-        for (float x = 15.0f; x < 800.0f; x += 30.0f)
-            GameplayStatics::CreateObject<PlatForm>({ x, y })->Init("brick_5", { 30, 30 }, {});
-    /* block 5 end */
     ///* gate to Level B */
     //GameplayStatics::CreateObject<LevelTransformer>({ 45.0, 1150.0 })->Init("LevelB", { -691,55 }, FRect({ 0.f,1110.f }, { 90.f,1200.f }));
     //GameplayStatics::CreateObject<PlatForm>({ 10, 1185 })->Init("arch_6", { 20, 30 }, {});

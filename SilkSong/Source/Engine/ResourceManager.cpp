@@ -87,6 +87,15 @@ void ResourceManager::Initialize()
 	Load("platform_3", "Asset/Surroundings/Medieval_Castle/Tiles/platform_3.png", 30, 15);
 	Load("platform_4", "Asset/Surroundings/Medieval_Castle/Tiles/platform_4.png", 30, 15);
 	Load("platform_shadow", "Asset/Surroundings/Medieval_Castle/Tiles/platform_shadow.png", 30, 5);
+	/* stair */
+	Load("stairs_1", "Asset/Surroundings/Medieval_Castle/Tiles/stairs_tile_1.png", 30, 30);
+	Load("stairs_2", "Asset/Surroundings/Medieval_Castle/Tiles/stairs_tile_2.png", 30, 30);
+	Load("stairs_3", "Asset/Surroundings/Medieval_Castle/Tiles/stairs_tile_3.png", 30, 30);
+	Load("stairs_4", "Asset/Surroundings/Medieval_Castle/Tiles/stairs_tile_4.png", 30, 30);
+	Load("stairs_carpet_1", "Asset/Surroundings/Medieval_Castle/Tiles/stairs_tile_carpet_1.png", 30, 30);
+	Load("stairs_carpet_2", "Asset/Surroundings/Medieval_Castle/Tiles/stairs_tile_carpet_2.png", 30, 30);
+	Load("stairs_carpet_3", "Asset/Surroundings/Medieval_Castle/Tiles/stairs_tile_carpet_3.png", 30, 30);
+	Load("stairs_carpet_4", "Asset/Surroundings/Medieval_Castle/Tiles/stairs_tile_carpet_4.png", 30, 30);
 	/* blank */
 	Load("blank", "Asset/Surroundings/Medieval_Castle/Tiles/blank.png", 30, 30);
 }
