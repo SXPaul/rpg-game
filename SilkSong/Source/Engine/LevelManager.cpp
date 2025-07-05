@@ -12,6 +12,7 @@
 #include "FirstLevel.h"
 #include "StartLevel.h"
 #include "LevelA.h"
+#include "LevelB.h"
 
 void LevelManager::Initialize()
 {
@@ -35,9 +36,11 @@ void LevelManager::Initialize()
 	AddLevel<StartLevel>("Start");
 	AddLevel<boss1level>("Boss1");
 	AddLevel<level_a>("LevelA");
+	AddLevel<level_b>("LevelB");
+
 
 	//level_to_create = levelMap["Boss1"]; // Example: Assign a valid callable from the map
-	SetDefaultLevel("LevelA");
+	SetDefaultLevel("LevelB");
 	//SetDefaultLevel("Boss1");
 
 	mainWorld.currentLevel = level_to_create();
