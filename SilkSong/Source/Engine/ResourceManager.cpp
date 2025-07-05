@@ -5,33 +5,31 @@
 
 
 //************************************************
-//*********       用户需编辑部分          **********
+//*********       鐢ㄦ埛闇�缂栬緫閮ㄥ垎          **********
 
 void ResourceManager::Initialize()
 {
 	/*************
-	 * 图像资源加载 
+	 * 鍥惧儚璧勬簮鍔犺浇 
 	 *************/
 
-	/** 动画 **/
+	/** 鍔ㄧ敾 **/
 	//Player
 	Load("player_idle", "Asset/Main Character/Sword+Aim+Throw/idle/", 138, 88, 6);
 	Load("player_runstart", "Asset/Main Character/Sword+Aim+Throw/idle_to_runstart/", 138, 88, 4);
 	Load("player_run", "Asset/Main Character/Sword+Aim+Throw/run/", 138, 88, 4);
 	Load("player_idle_to_jump", "Asset/Main Character/Sword+Aim+Throw/idle_to_jump/", 138, 88, 12);
 	Load("player_die", "Asset/Main Character/Sword+Aim+Throw/die/", 138, 88, 11);
-	Load("player_jump_1", "Asset/Main Character/Sword+Aim+Throw/jump_up_1/", 138, 88, 4);
-	Load("player_jump_2", "Asset/Main Character/Sword+Aim+Throw/jump_up_2/", 138, 88, 8);
-	Load("player_jump_falling", "Asset/Main Character/Sword+Aim+Throw/jump_falling/", 138, 88, 4);
+	
 
-
-	/** 图像 **/
+	/** 鍥惧儚 **/
 	//Environment
-	Load("bg0", "Asset/Surroundings/Medieval_Castle/background/layer_1.png", WIN_WIDTH + 50, WIN_HEIGHT + 50);
-	Load("bg1", "Asset/Surroundings/Medieval_Castle/background/layer_2.png", WIN_WIDTH + 50, WIN_HEIGHT + 50);
-	Load("bg2", "Asset/Surroundings/Medieval_Castle/background/layer_3.png", WIN_WIDTH + 50, WIN_HEIGHT + 50);
+	Load("bg0", "Asset/Surroundings/Medieval_Castle/background/layer_1.png", WIN_WIDTH + 2000, WIN_HEIGHT + 2000);
+	Load("bg1", "Asset/Surroundings/Medieval_Castle/background/layer_2.png", WIN_WIDTH + 2000, WIN_HEIGHT + 2000);
+	Load("bg2", "Asset/Surroundings/Medieval_Castle/background/layer_3.png", WIN_WIDTH + 2000, WIN_HEIGHT + 2000);
 
 	// tiles
+	/* brick */
 	Load("brick_1", "Asset/Surroundings/Medieval_Castle/Tiles/brick_1.png", 50, 50);
 	Load("brick_2", "Asset/Surroundings/Medieval_Castle/Tiles/brick_2.png", 50, 50);
 	Load("brick_3", "Asset/Surroundings/Medieval_Castle/Tiles/brick_3.png", 50, 50);
@@ -52,11 +50,45 @@ void ResourceManager::Initialize()
 	Load("brick_side_left_2", "Asset/Surroundings/Medieval_Castle/Tiles/brick_side_left_2.png", 50, 50);
 	Load("brick_side_right_1", "Asset/Surroundings/Medieval_Castle/Tiles/brick_side_right_1.png", 50, 50);
 	Load("brick_side_right_2", "Asset/Surroundings/Medieval_Castle/Tiles/brick_side_right_2.png", 50, 50);
+	/* floor */
 	Load("floor_tile_1", "Asset/Surroundings/Medieval_Castle/Tiles/floor_tile_1.png",30,30);
 	Load("floor_tile_2", "Asset/Surroundings/Medieval_Castle/Tiles/floor_tile_2.png", 30, 30);
 	Load("floor_tile_3", "Asset/Surroundings/Medieval_Castle/Tiles/floor_tile_3.png", 30, 30);
 	Load("floor_tile_4", "Asset/Surroundings/Medieval_Castle/Tiles/floor_tile_4.png", 30, 30);
-
+	/* carpet*/
+	Load("carpet_1", "Asset/Surroundings/Medieval_Castle/Tiles/floor_tile_carpet_1.png", 30, 30);
+	Load("carpet_2", "Asset/Surroundings/Medieval_Castle/Tiles/floor_tile_carpet_2.png", 30, 30);
+	Load("carpet_3", "Asset/Surroundings/Medieval_Castle/Tiles/floor_tile_carpet_3.png", 30, 30);
+	Load("carpet_4", "Asset/Surroundings/Medieval_Castle/Tiles/floor_tile_carpet_4.png", 30, 30);
+	/* arch */
+	Load("arch_1", "Asset/Surroundings/Medieval_Castle/Tiles/arch_1.png", 30, 30);
+	Load("arch_2", "Asset/Surroundings/Medieval_Castle/Tiles/arch_2.png", 30, 20);
+	Load("arch_3", "Asset/Surroundings/Medieval_Castle/Tiles/arch_3.png", 30, 30);
+	Load("arch_4", "Asset/Surroundings/Medieval_Castle/Tiles/arch_4.png", 20, 30);
+	Load("arch_5", "Asset/Surroundings/Medieval_Castle/Tiles/arch_5.png", 20, 30);
+	Load("arch_6", "Asset/Surroundings/Medieval_Castle/Tiles/arch_6.png", 20, 30);
+	Load("arch_7", "Asset/Surroundings/Medieval_Castle/Tiles/arch_7.png", 20, 30);
+	/* lion_column */
+	Load("lion_1", "Asset/Surroundings/Medieval_Castle/Tiles/lion_column_1.png", 30, 30);
+	Load("lion_2", "Asset/Surroundings/Medieval_Castle/Tiles/lion_column_2.png", 30, 30);
+	Load("lion_3", "Asset/Surroundings/Medieval_Castle/Tiles/lion_column_3.png", 30, 30);
+	Load("lion_4", "Asset/Surroundings/Medieval_Castle/Tiles/lion_column_4.png", 30, 30);
+	Load("lion_5", "Asset/Surroundings/Medieval_Castle/Tiles/lion_column_5.png", 30, 30);
+	Load("lion_6", "Asset/Surroundings/Medieval_Castle/Tiles/lion_column_6.png", 30, 30);
+	Load("lion_7", "Asset/Surroundings/Medieval_Castle/Tiles/lion_column_7.png", 30, 30);
+	Load("lion_8", "Asset/Surroundings/Medieval_Castle/Tiles/lion_column_8.png", 30, 30);
+	Load("lion_9", "Asset/Surroundings/Medieval_Castle/Tiles/lion_column_9.png", 30, 30);
+	Load("lion_10", "Asset/Surroundings/Medieval_Castle/Tiles/lion_column_10.png", 30, 30);
+	Load("lion_11", "Asset/Surroundings/Medieval_Castle/Tiles/lion_column_11.png", 30, 30);
+	Load("lion_12", "Asset/Surroundings/Medieval_Castle/Tiles/lion_column_12.png", 30, 30);
+	/* platform */
+	Load("platform_1", "Asset/Surroundings/Medieval_Castle/Tiles/platform_1.png", 30, 15);
+	Load("platform_2", "Asset/Surroundings/Medieval_Castle/Tiles/platform_2.png", 30, 15);
+	Load("platform_3", "Asset/Surroundings/Medieval_Castle/Tiles/platform_3.png", 30, 15);
+	Load("platform_4", "Asset/Surroundings/Medieval_Castle/Tiles/platform_4.png", 30, 15);
+	Load("platform_shadow", "Asset/Surroundings/Medieval_Castle/Tiles/platform_shadow.png", 30, 5);
+	/* blank */
+	Load("blank", "Asset/Surroundings/Medieval_Castle/Tiles/blank.png", 30, 30);
 }
 
 //*********                             **********
@@ -80,14 +112,14 @@ std::wstring ResourceManager::FetchVideo(std::string name)
 	return videoPool[name];
 }
 
-// 加载单张图片
+// 鍔犺浇鍗曞紶鍥剧墖
 void ResourceManager::Load(std::string name, std::string path, int wid, int hei)
 {
 	IMAGE* img = new IMAGE;
 	loadimage(img, LPCTSTR(path.c_str()),wid,hei);
 	imagePool.insert({name, img});
 }
-// 加载一系列动画
+// 鍔犺浇涓�绯诲垪鍔ㄧ敾
 void ResourceManager::Load(std::string name, std::string path, int wid, int hei, int num)
 {
 	IMAGE**images = new IMAGE*[num];
@@ -98,7 +130,7 @@ void ResourceManager::Load(std::string name, std::string path, int wid, int hei,
 	}
 	animationPool.insert({ name, {images,num } });
 }
-// 加载自定义尺寸的系列动画
+// 鍔犺浇鑷畾涔夊昂瀵哥殑绯诲垪鍔ㄧ敾
 void ResourceManager::Load(std::string name, std::string path, const std::vector<FIntVector2>& arr)
 {
 	int num = int(arr.size());
@@ -111,7 +143,7 @@ void ResourceManager::Load(std::string name, std::string path, const std::vector
 	animationPool.insert({ name, {images,int(arr.size())} });
 }
 
-// 加载分割的帧动画
+// 鍔犺浇鍒嗗壊鐨勫抚鍔ㄧ敾
 void ResourceManager::Load(std::string name, std::string path, int wid, int hei, int num, int row, int col)
 {
 	IMAGE** images = new IMAGE * [num];
@@ -144,13 +176,13 @@ void ResourceManager::Load(std::string name, std::string path, int wid, int hei,
 	animationPool.insert({ name, {images,num } });
 }
 
-// 加载音频文件
+// 鍔犺浇闊抽鏂囦欢
 void ResourceManager::Load(std::string name, std::string path)
 {
 	std::string file = std::string("open ") + path + std::string(" alias ") + name;
 	mciSendString(file.c_str(), NULL, 0, NULL);
 }
-//加载视频文件路径
+//鍔犺浇瑙嗛鏂囦欢璺緞
 void ResourceManager::Load(std::string name, std::wstring pszFileName)
 {
 	videoPool[name] = pszFileName;
@@ -163,7 +195,7 @@ void ResourceManager::LoadText(std::string path)
 
 void ResourceManager::LoadCustomCursor(std::string path)
 {
-	// 加载光标文件
+	// 鍔犺浇鍏夋爣鏂囦欢
 	HCURSOR hcur = (HCURSOR)LoadImage(NULL, path.c_str(), IMAGE_CURSOR, 0, 0, LR_LOADFROMFILE);
 	if (hcur == NULL)
 	{
@@ -173,18 +205,18 @@ void ResourceManager::LoadCustomCursor(std::string path)
 	ICONINFO iconInfo;
 	if (GetIconInfo(hcur, &iconInfo))
 	{
-		// 获取光标图像的宽度和高度
+		// 鑾峰彇鍏夋爣鍥惧儚鐨勫搴﹀拰楂樺害
 		BITMAP bm;
 		GetObject(iconInfo.hbmColor, sizeof(BITMAP), &bm);
 		int cursorWidth = bm.bmWidth;
 		int cursorHeight = bm.bmHeight;
 
-		// 设置新的热点位置
+		// 璁剧疆鏂扮殑鐑偣浣嶇疆
 		ICONINFO newIconInfo = iconInfo;
 		newIconInfo.xHotspot = cursorWidth / 2; 
 		newIconInfo.yHotspot = cursorHeight / 2; 
 
-		// 创建新的光标
+		// 鍒涘缓鏂扮殑鍏夋爣
 		HCURSOR newHcur = CreateIconIndirect(&newIconInfo);
 		if (newHcur == NULL)
 		{
@@ -196,7 +228,7 @@ void ResourceManager::LoadCustomCursor(std::string path)
 		DeleteObject(iconInfo.hbmColor);
 		DeleteObject(iconInfo.hbmMask);
 
-		// 设置新的光标
+		// 璁剧疆鏂扮殑鍏夋爣
 		SetClassLongPtr(GetHWnd(), GCLP_HCURSOR, (LONG_PTR)newHcur);
 	}
 	else

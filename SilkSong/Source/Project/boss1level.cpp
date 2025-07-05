@@ -42,7 +42,7 @@ boss1level::boss1level()
     bg1->Init("bg1", -15);
     bg1->SetLocalScale({ 1200.f / 950.f,800.f/650.f });
     // 创建平台对象
-    //GameplayStatics::CreateObject<PlatForm>({ 0, 1075 })->Init("new_level_floor", { 2000, 200 }, {});
+    //GameplayStatics::CreateObject<PlatForm>({ 0, 1075 })->Init("", { 2000, 200 }, {});
     //PlatForm* platform1 = GameplayStatics::CreateObject<PlatForm>({ -300, 200 });
     //platform1->Init("floor_tile_1", { 30, 30 }, { 0, 0 });
     //PlatForm* platform2 = GameplayStatics::CreateObject<PlatForm>({ -235, 200 });

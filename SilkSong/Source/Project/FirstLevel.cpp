@@ -34,7 +34,7 @@ void FirstLevel::BeginPlay()
     Bg* bg1 = GameplayStatics::CreateObject<Bg>();
     bg1->Init("bg1", -15);
     // 创建平台对象
-    //GameplayStatics::CreateObject<PlatForm>({ 0, 1075 })->Init("new_level_floor", { 2000, 200 }, {});
+    //GameplayStatics::CreateObject<PlatForm>({ 0, 1075 })->Init("", { 2000, 200 }, {});
 
     // 可以添加更多的对象，如道具、敌人等
 
