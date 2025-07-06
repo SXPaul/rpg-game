@@ -37,6 +37,8 @@ protected:
 	class SpriteRenderer* render_death;
 	class CircleCollider* circle;
 	class RigidBody* rigid;
+	class BoxCollider* box;
+
 	Animator* ani;
 	class DamageResponseComponent* damageResponse;
 	class PropertyComponent* property;

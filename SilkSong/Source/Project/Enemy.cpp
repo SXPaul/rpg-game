@@ -19,7 +19,8 @@ Enemy::Enemy()
 {
 	render = ConstructComponent<SpriteRenderer>();
 	render->SetLayer(1);
-	circle = ConstructComponent<CircleCollider>();
+	//circle = ConstructComponent<CircleCollider>();
+	box = ConstructComponent<BoxCollider>();
 	rigid = ConstructComponent<RigidBody>();
 	ani = ConstructComponent<Animator>();
 	ani->SetupAttachment(render);
@@ -31,10 +32,14 @@ Enemy::Enemy()
 	render_death->SetLayer(-1);
 	render_death->Deactivate();
 
-	circle->AttachTo(root);
-	circle->SetRadius(40);
-	circle->SetType(CollisionType::Enemy);
-	circle->SetCollisonMode(CollisionMode::Collision);
+	box->AttachTo(root);
+	box->SetSize({ 15, 1000 });
+	box->SetType(CollisionType::Enemy);
+	box->SetCollisonMode(CollisionMode::Collision);
+	//circle->AttachTo(root);
+	//circle->SetRadius(40);
+	//circle->SetType(CollisionType::Enemy);
+	//circle->SetCollisonMode(CollisionMode::Collision);
 	rigid->SetAngularDrag(0.5f);
 
 	damageResponse = ConstructComponent<DamageResponseComponent>();

@@ -8,7 +8,7 @@
 //#include "SilkParticle.h"
 #include "Components/SpriteRenderer.h"
 #include "GameModeHelper.h"
-
+#include "AttackBox.h"
 
 Enemy1::Enemy1()
 {
@@ -23,24 +23,46 @@ Enemy1::Enemy1()
 	die.Load("Enemy1_dead");
 	die.SetInterval(0.1f);
 	die.SetLooping(false);
+	attack.Load("Enemy1_attack");
+	react.SetInterval(0.05f);
+	attack.SetInterval(0.05f);
 
+	attack_to_idle.Init(attack, idle);
+	attack_to_idle.AddCondition(AnimTransition::Bool{ "chasing",false });
 	idle_to_react.Init(idle, react);
 	idle_to_react.AddCondition(AnimTransition::Bool{ "chasing",true });
 	//turn_to_idle.Init(turn, idle);
 	//turn_to_chase.Init(turn, chase);
 	//turn_to_chase.AddCondition(AnimTransition::Bool{ "chasing",true });
 	react_to_walk.Init(react, walk);
-	walk_to_die.Init(walk, idle);
-	walk_to_die.AddCondition(AnimTransition::Bool{ "chasing",false });
+	walk_to_idle.Init(walk, idle);
+	walk_to_idle.AddCondition(AnimTransition::Bool{ "chasing",false });
+	idle_to_attack.Init(idle, attack);
+	idle_to_attack.AddCondition(AnimTransition::Bool{ "canAttack",true });
+	attack_to_idle.Init(attack, idle);
+	attack_to_idle.AddCondition(AnimTransition::Bool{ "canAttack",false});
 
 	ani->Insert("idle", idle);
 	//ani->Insert("turn", turn);
 	ani->Insert("react", react	);
 	ani->Insert("walk", walk);
 	ani->Insert("die", die);
+	ani->Insert("attack", attack);
 	ani->SetNode("idle");
 
 	ani->AddParamater("chasing", ParamType::Bool);
+	ani->AddParamater("canAttack", ParamType::Bool);
+	// 初始化新增成员变量
+	currentState = EnemyState::Idle;
+	sightRange = 300;  // 视野范围
+	attackRange = 30.f; // 攻击范围
+	moveSpeed =80.f;   // 移动速度
+	attackCooldown = 1.f; // 攻击冷却时间
+	currentCooldown = 0.f;
+	// 初始化追击边界
+	chaseMinBoundary = FVector2D::ZeroVector;
+	chaseMaxBoundary = FVector2D::ZeroVector;
+	box->SetSize({ 44,66 });
 }
 
 void Enemy1::BeginPlay()
@@ -71,27 +93,25 @@ void Enemy1::Update(float deltaTime)
 	}
 
 	if (IsDead() || !player)return;
-
-	if (FVector2D::Distance(player->GetWorldPosition(), GetWorldPosition()) < 400)
-	{
-		//if ((player->GetWorldPosition() - GetWorldPosition()).x * GetWorldScale().x < 0)
-		//{
-		//	SetLocalScale(FVector2D(-GetWorldScale().x, 1));
-		//	ani->PlayMontage("turn");
-		//}
-		ani->SetBool("chasing", true);
-		rigid->AddImpulse((player->GetWorldPosition() - GetWorldPosition()).GetSafeNormal() * deltaTime * 500.f);
-		if (!bChasing)
-		{
-			//GameModeHelper::PlayFXSound("sound_fly_chase_" + std::to_string(FMath::RandInt(0, 1))); 
-			bChasing = true;
-		}
-	}
-	else
-	{
-		ani->SetBool("chasing", false); bChasing = false;
+	// 更新攻击冷却时间
+	if (currentCooldown > 0.f) {
+		currentCooldown -= deltaTime;
 	}
 
+	// 检查玩家是否在范围内
+	CheckPlayerInRange();
+
+	// 根据当前状态执行相应逻辑
+	switch (currentState) {
+	case EnemyState::Chasing:
+		ChasePlayer(deltaTime);
+		break;
+	case EnemyState::Attacking:
+		// 攻击逻辑可以在动画事件中处理，这里暂时不做额外处理
+		break;
+	default:
+		break;
+	}
 }
 
 void Enemy1::ExecuteDamageTakenEvent(FDamageCauseInfo extraInfo)
@@ -138,3 +158,111 @@ void Enemy1::Die()
 //{
 //
 //}
+void Enemy1::CheckPlayerInRange() {
+	if (player) {
+		FVector2D enemyPos = GetWorldPosition();
+		FVector2D playerPos = player->GetWorldPosition();
+		float distance = FVector2D::Distance(enemyPos, playerPos);
+
+		if (distance <= sightRange) {
+			if (distance <= attackRange) {
+				if (bChasing) {
+					bChasing = false;
+					ani->SetBool("chasing", false);
+				}
+				else {
+					if (currentCooldown <= 0.f) {
+						AttackPlayer();
+					}
+				}
+				currentState = EnemyState::Attacking;
+			}
+			else {
+				ani->SetBool("canAttack", false);
+				if (enemyPos.x >= chaseMinBoundary.x && enemyPos.x <= chaseMaxBoundary.x) {
+					bChasing = true;
+					if (currentState == EnemyState::Attacking) {
+						ani->SetNode("idle");
+					}
+					currentState = EnemyState::Chasing;
+				}
+				else {
+					bChasing = false;
+					currentState = EnemyState::Idle;
+					ani->SetBool("chasing", false);
+					ani->SetNode("idle");
+				}
+			}
+		}
+		else {
+			ani->SetBool("chasing", false);
+			bChasing = false;
+			currentState = EnemyState::Idle;
+			ani->SetBool("canAttack", false);
+
+		}
+	}
+}
+void Enemy1::ChasePlayer(float deltaTime) {
+	if (player) {
+		ani->SetBool("chasing", true);
+		FVector2D enemyPos = GetWorldPosition();
+		FVector2D playerPos = player->GetWorldPosition();
+		FVector2D direction = (playerPos - enemyPos).GetSafeNormal();
+
+
+		// 根据玩家位置调整敌人朝向
+		if (direction.x > 0) {
+			SetLocalScale(FVector2D(1.f, GetLocalScale().y));
+		}
+		else {
+			SetLocalScale(FVector2D(-1.f, GetLocalScale().y));
+		}
+		// 移动敌人
+		if (direction.x > 0) {
+			if (enemyPos.x + moveSpeed > chaseMaxBoundary.x) {
+				rigid->SetVelocity(direction * (chaseMaxBoundary.x- enemyPos.x));
+			}
+			else {
+			rigid->SetVelocity(direction * moveSpeed);
+			}
+		}
+		else {
+			if (enemyPos.x - moveSpeed < chaseMinBoundary.x) {
+				rigid->SetVelocity(direction * (enemyPos.x - chaseMinBoundary.x));
+			}
+			else {
+				rigid->SetVelocity(direction * moveSpeed);
+			}
+		}
+	}
+}
+
+void Enemy1::AttackPlayer() {
+	// 播放攻击动画
+	ani->SetBool("canAttack",true);
+
+	// 创建攻击框
+	AttackBox* attackBox = GameplayStatics::CreateObject<AttackBox>();
+	attackBox->SetSize({27,66});
+	attackBox->AttachTo(this);
+	// 根据敌人朝向设置攻击框位置
+
+	FVector2D enemyPos = GetWorldPosition();
+	FVector2D playerPos = player->GetWorldPosition();
+	FVector2D direction = (playerPos - enemyPos).GetSafeNormal();
+
+	//FVector2D attackBoxOffset =direction.x > 0 ? FVector2D(100, 0) : FVector2D(-300, 0);
+	FVector2D attackBoxOffset = FVector2D(25, 0);
+	attackBox->SetLocalPosition(attackBoxOffset);
+	//attackBox->Init(ECharacterDirection::LookForward, 3); // 假设攻击力为3
+
+	// 重置攻击冷却时间
+	currentCooldown = attackCooldown;
+}
+
+void Enemy1::SetChaseBoundary(FVector2D minBoundary, FVector2D maxBoundary)
+{
+	chaseMinBoundary = minBoundary;
+	chaseMaxBoundary = maxBoundary;
+}

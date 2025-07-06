@@ -40,7 +40,7 @@ void LevelManager::Initialize()
 
 
 	//level_to_create = levelMap["Boss1"]; // Example: Assign a valid callable from the map
-	SetDefaultLevel("LevelB");
+	SetDefaultLevel("LevelA");
 	//SetDefaultLevel("Boss1");
 
 	mainWorld.currentLevel = level_to_create();

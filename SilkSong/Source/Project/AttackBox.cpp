@@ -79,3 +79,11 @@ void AttackBox::OnEndOverlap(Collider* hitComp, Collider* otherComp, Actor* othe
 		box->SetCollisonMode(CollisionMode::None);
 	}
 }
+
+void AttackBox::SetSize(FVector2D size) {
+	box->SetSize(size);
+}
+
+void AttackBox::SetLocalPosition(FVector2D pos) {
+	box->SetLocalPosition(pos);
+}

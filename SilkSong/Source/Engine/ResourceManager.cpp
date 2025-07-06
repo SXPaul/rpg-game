@@ -55,7 +55,6 @@ void ResourceManager::Initialize()
 	Load("floor_tile_2", "Asset/Surroundings/Medieval_Castle/Tiles/floor_tile_2.png", 30, 30);
 	Load("floor_tile_3", "Asset/Surroundings/Medieval_Castle/Tiles/floor_tile_3.png", 30, 30);
 	Load("floor_tile_4", "Asset/Surroundings/Medieval_Castle/Tiles/floor_tile_4.png", 30, 30);
-<<<<<<< HEAD
 
 	/** µÐÈË **/
 	// Enemy1
@@ -64,9 +63,8 @@ void ResourceManager::Initialize()
 	Load("Enemy1_idle", "Asset/Enemies/Skeleton/Skeleton_Idle", 44, 66,11);
 	Load("Enemy1_hit", "Asset/Enemies/Skeleton/Skeleton_Hit", 44, 66,8);
 	Load("Enemy1_dead", "Asset/Enemies/Skeleton/Skeleton_Dead", 44, 66,15);
-	Load("Enemy1_attack", "Asset/Enemies/Skeleton/Skeleton_Attack", 44, 66,18);
+	Load("Enemy1_attack", "Asset/Enemies/Skeleton/Skeleton_Attack", 86, 66,18);
 
-=======
 	/* carpet*/
 	Load("carpet_1", "Asset/Surroundings/Medieval_Castle/Tiles/floor_tile_carpet_1.png", 30, 30);
 	Load("carpet_2", "Asset/Surroundings/Medieval_Castle/Tiles/floor_tile_carpet_2.png", 30, 30);
@@ -110,7 +108,6 @@ void ResourceManager::Initialize()
 	Load("stairs_carpet_4", "Asset/Surroundings/Medieval_Castle/Tiles/stairs_tile_carpet_4.png", 30, 30);
 	/* blank */
 	Load("blank", "Asset/Surroundings/Medieval_Castle/Tiles/blank.png", 30, 30);
->>>>>>> 9e3678195feabd0451766527e846b01a3e3e8b20
 }
 
 //*********                             **********

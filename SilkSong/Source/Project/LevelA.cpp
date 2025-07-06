@@ -36,10 +36,12 @@ level_a::level_a()
     bg0->Init("bg0", -30);
     Bg* bg1 = GameplayStatics::CreateObject<Bg>();
     bg1->Init("bg1", -15);
+    // enemy
+    Enemy1* e;
+    e=GameplayStatics::CreateObject<Enemy1>({ 400,0 });
+    e->SetChaseBoundary({ 240,0 }, {420,0});
     // map
     PlatForm* temp;
-<<<<<<< HEAD
-    GameplayStatics::CreateObject<Enemy1>({ 0,0 });
     //GameplayStatics::CreateObject<Enemy1>({ 450,500 }, 0.f, { -1.f,1.f });
     temp = GameplayStatics::CreateObject<PlatForm>({ -750.0, 50.0 });
     temp->Init("lion_column_8", { 30, 30 }, {});
@@ -96,7 +98,7 @@ level_a::level_a()
     // GameplayStatics::CreateObject<PlatForm>({ 175, 225 })->Init("floor_tile_3", { 150, 150 }, {});
     // GameplayStatics::CreateObject<PlatForm>({ 425.0, 65.0 })->Init("floor_tile_3", { 350, 470 }, {});
     // GameplayStatics::CreateObject<PlatForm>({ 0, 1075 })->Init("floor_tile_3", { 2000, 200 }, {});
-=======
+
     /* start point */
     GameplayStatics::CreateObject<PlatForm>({ -100.0, 50.0 })->Init("", { 31, 1000 }, {});
     GameplayStatics::CreateObject<PlatForm>({ -125, 85 })->Init("lion_10", { 30, 30 }, {});
@@ -189,7 +191,6 @@ level_a::level_a()
     temp->Init("blank", { 20, 30 }, {});
     temp->SetLocalScale({ 50.f / 30.0f, 60.f / 30.0f });
 
->>>>>>> 9e3678195feabd0451766527e846b01a3e3e8b20
     /* ==========coordinate========== */
     //GameplayStatics::CreateObject<PlatForm>({ 0,0 })->Init("", { 12000, 0 }, {}); // x
     //GameplayStatics::CreateObject<PlatForm>({ 100,0 })->Init("", { 0, 5 }, {});
