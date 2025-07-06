@@ -20,6 +20,10 @@ public:
 	virtual void ExecuteDamageTakenEvent(FDamageCauseInfo extraInfo)override;
 	// 添加设置追击边界的函数
 	void SetChaseBoundary(FVector2D minBoundary, FVector2D maxBoundary);
+
+	void SetSightRange(float r);
+	void SetMoveSpeed(float r);
+	void SetAttackCooldown(float r);
 protected:
 	virtual void SpawnGeos()override;
 

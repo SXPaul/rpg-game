@@ -85,9 +85,6 @@ void Enemy1::Update(float deltaTime)
 		property->AddHealth(-9999);
 		GameplayStatics::PlayCameraShake(4);
 		render->Blink(0.3f, WHITE, 100);
-		//SilkParticle* silk = GameplayStatics::CreateObject<SilkParticle>();
-		//silk->AttachTo(this);
-		//silk->Init({}, true);
 		rigid->AddImpulse({ 0,-500 });
 		Die();
 	}
@@ -136,6 +133,22 @@ void Enemy1::ExecuteDamageTakenEvent(FDamageCauseInfo extraInfo)
 	}
 }
 
+void Enemy1::SetSightRange(float r)
+{
+	sightRange = r;
+}
+
+
+void Enemy1::SetMoveSpeed(float r)
+{
+	moveSpeed = r;
+}
+
+void Enemy1::SetAttackCooldown(float r)
+{
+	attackCooldown = r;
+}
+
 void Enemy1::SpawnGeos()
 {
 	//for (int i = 0; i < 2; i++)
@@ -150,7 +163,6 @@ void Enemy1::Die()
 
 	ani->SetNode("die");
 	rigid->SetGravityEnabled(true);
-	//GameModeHelper::PlayFXSound("sound_fly_die");
 	circle->SetRadius(20);
 }
 
@@ -221,18 +233,20 @@ void Enemy1::ChasePlayer(float deltaTime) {
 		// ÒÆ¶¯µÐÈË
 		if (direction.x > 0) {
 			if (enemyPos.x + moveSpeed > chaseMaxBoundary.x) {
-				rigid->SetVelocity(direction * (chaseMaxBoundary.x- enemyPos.x));
+				{
+					rigid->SetVelocity({ direction.x * (chaseMaxBoundary.x - enemyPos.x) ,0});
+				}
 			}
 			else {
-			rigid->SetVelocity(direction * moveSpeed);
+			rigid->SetVelocity({direction.x * moveSpeed,0});
 			}
 		}
 		else {
 			if (enemyPos.x - moveSpeed < chaseMinBoundary.x) {
-				rigid->SetVelocity(direction * (enemyPos.x - chaseMinBoundary.x));
+				rigid->SetVelocity({ direction.x * (enemyPos.x - chaseMinBoundary.x),0 });
 			}
 			else {
-				rigid->SetVelocity(direction * moveSpeed);
+				rigid->SetVelocity({ direction.x * moveSpeed,0 });
 			}
 		}
 	}
