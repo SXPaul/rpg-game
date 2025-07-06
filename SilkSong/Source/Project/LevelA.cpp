@@ -15,7 +15,7 @@ level_a::level_a()
     //    //player->GetComponentByClass<Camera>()->SetTarget(player);
     //}
     SetDefaultController<Player>();
-    GameplayStatics::DontDestroyOnLoad(GameplayStatics::CreateObject<GameMode>());
+    //GameplayStatics::DontDestroyOnLoad(GameplayStatics::CreateObject<GameMode>());
     //Player* player = GameplayStatics::CreateObject<Player>();
 
 
@@ -161,7 +161,7 @@ level_a::level_a()
     // �ؿ�ɾ��ʱ�Ĵ���
     OnLevelDelete.Add([this]() {
         GameMode* gameMode = GameModeHelper::GetInstance();
-        gameMode->GetAudioPlayer(0)->Stop("new_level_music");
+        //gameMode->GetAudioPlayer(0)->Stop("new_level_music");
         });
 }
 

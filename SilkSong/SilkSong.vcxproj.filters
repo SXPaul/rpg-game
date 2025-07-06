@@ -137,6 +137,18 @@
     <ClCompile Include="Source\Project\PlatForm.cpp">
       <Filter>Project\Game</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Project\AttackBox.cpp" />
+    <ClCompile Include="Source\Project\LevelB.cpp" />
+    <ClCompile Include="Source\Project\MenuLevel.cpp" />
+    <ClCompile Include="Source\Project\MenuController.cpp">
+      <Filter>Project\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Project\MenuUI.cpp">
+      <Filter>Project\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Project\frame.cpp">
+      <Filter>Project\Menu</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Project\Bg.h" />
@@ -313,6 +325,18 @@
     </ClInclude>
     <ClInclude Include="Source\Project\PlatForm.h">
       <Filter>Project\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Project\AttackBox.h" />
+    <ClInclude Include="Source\Project\LevelB.h" />
+    <ClInclude Include="Source\Project\MenuLevel.h" />
+    <ClInclude Include="Source\Project\MenuController.h">
+      <Filter>Project\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Project\MenuUI.h">
+      <Filter>Project\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Project\frame.h">
+      <Filter>Project\Menu</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

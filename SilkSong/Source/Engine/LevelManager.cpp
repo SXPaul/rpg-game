@@ -8,6 +8,7 @@
  * 自定义场景地图头文件
  **/
 
+#include "MenuLevel.h"
 #include "boss1level.h"
 #include "FirstLevel.h"
 #include "StartLevel.h"
@@ -32,6 +33,7 @@ void LevelManager::Initialize()
 	 //*********                             **********
 	 //************************************************
 
+	AddLevel<MenuLevel>("Menu");
 	AddLevel<FirstLevel>("First");
 	AddLevel<StartLevel>("Start");
 	AddLevel<boss1level>("Boss1");
@@ -40,8 +42,9 @@ void LevelManager::Initialize()
 
 
 	//level_to_create = levelMap["Boss1"]; // Example: Assign a valid callable from the map
-	SetDefaultLevel("LevelB");
+	//SetDefaultLevel("LevelB");
 	//SetDefaultLevel("Boss1");
+	SetDefaultLevel("Menu");
 
 	mainWorld.currentLevel = level_to_create();
 	mainWorld.currentLevel->BeginPlay();

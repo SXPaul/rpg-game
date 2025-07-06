@@ -8,10 +8,10 @@ GameMode::GameMode()
 	sound = ConstructComponent<AudioPlayer>();
 	music_ = ConstructComponent<AudioPlayer>();
 
-	for (int i = 0; i < 3; i++)
-	{
-		volumes[i] = GetAudioPlayer(0)->GetVolume();
-	}
+	//for (int i = 0; i < 3; i++)
+	//{
+	//	volumes[i] = GetAudioPlayer(0)->GetVolume();
+	//}
 
 	timer = 0.5f;
 	bEarRinging = false;

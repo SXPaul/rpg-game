@@ -13,48 +13,48 @@ public:
 
 	DamageSystem* GetDamageSystem()const { return damageSystem; }
 
-	AudioPlayer* GetAudioPlayer(int32 index)const 
-	{
-		switch (index)
-		{
-		case 0: return music;
-		case 1: return sound;
-		case 2: return music_;
-		default: return nullptr;
-		}
-	}
+	//AudioPlayer* GetAudioPlayer(int32 index)const 
+	//{
+	//	switch (index)
+	//	{
+	//	case 0: return music;
+	//	case 1: return sound;
+	//	case 2: return music_;
+	//	default: return nullptr;
+	//	}
+	//}
 
-	int32 GetVolume(int32 index)const
-	{
-		return volumes[index];
-	}
+	//int32 GetVolume(int32 index)const
+	//{
+	//	return volumes[index];
+	//}
 
-	void SetVolume(int32 index, int32 vol)
-	{
-		volumes[index] = vol;
-		GetAudioPlayer(index)->SetVolume(vol);
-	}
+	//void SetVolume(int32 index, int32 vol)
+	//{
+	//	volumes[index] = vol;
+	//	GetAudioPlayer(index)->SetVolume(vol);
+	//}
 
-	void MakeEarRinging()
-	{
-		bEarRinging = true;
-		music->SetVolume(volumes[0] / 2);
-		sound->SetVolume(volumes[1] / 2);
-		music_->SetVolume(volumes[2] / 2);
-	}
+	//void MakeEarRinging()
+	//{
+	//	bEarRinging = true;
+	//	music->SetVolume(volumes[0] / 2);
+	//	sound->SetVolume(volumes[1] / 2);
+	//	music_->SetVolume(volumes[2] / 2);
+	//}
 
-	void MakeEarRinging_()
-	{
-		bEarRinging = true;
-		music->SetVolume(volumes[0] / 2);
-		music_->SetVolume(volumes[2] / 2);
-	}
+	//void MakeEarRinging_()
+	//{
+	//	bEarRinging = true;
+	//	music->SetVolume(volumes[0] / 2);
+	//	music_->SetVolume(volumes[2] / 2);
+	//}
 
-	void RefreshVolume()
-	{
-		bEarRinging = false;
-		timer = 0.f;
-	}
+	//void RefreshVolume()
+	//{
+	//	bEarRinging = false;
+	//	timer = 0.f;
+	//}
 
 protected:
 	DamageSystem* damageSystem;

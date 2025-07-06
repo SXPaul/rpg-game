@@ -98,6 +98,9 @@ void ResourceManager::Initialize()
 	Load("stairs_carpet_4", "Asset/Surroundings/Medieval_Castle/Tiles/stairs_tile_carpet_4.png", 30, 30);
 	/* blank */
 	Load("blank", "Asset/Surroundings/Medieval_Castle/Tiles/blank.png", 30, 30);
+	/* UI */
+	Load("UI_background", "Asset/UI/UI_background.png", 50, 50);
+	Load("red_1", "Asset/UI/red_1.png", 380, 162);
 }
 
 //*********                             **********

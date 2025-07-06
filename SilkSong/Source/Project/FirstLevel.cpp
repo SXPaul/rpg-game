@@ -41,7 +41,7 @@ void FirstLevel::BeginPlay()
     // 关卡删除时的处理
     OnLevelDelete.Add([this]() {
         GameMode* gameMode = GameModeHelper::GetInstance();
-        gameMode->GetAudioPlayer(0)->Stop("new_level_music");
+        //gameMode->GetAudioPlayer(0)->Stop("new_level_music");
         });
 
 

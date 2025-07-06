@@ -20,26 +20,26 @@ void GameModeHelper::ApplyDamage(IDamagable* damageCauser, IDamagable* damagedAc
 	}
 }
 
-void GameModeHelper::PlayBGMusic(std::string path)
-{
-	if (GameMode* pGameMode = GetInstance())
-	{
-		pGameMode->GetAudioPlayer(0)->Play(path, true);
-	}
-}
+//void GameModeHelper::PlayBGMusic(std::string path)
+//{
+//	if (GameMode* pGameMode = GetInstance())
+//	{
+//		pGameMode->GetAudioPlayer(0)->Play(path, true);
+//	}
+//}
 
-void GameModeHelper::PlayFXSound(std::string path)
-{
-	if (GameMode* pGameMode = GetInstance())
-	{
-		pGameMode->GetAudioPlayer(1)->Play(path);
-	}
-}
-
-void GameModeHelper::PlayBGMusic_(std::string path)
-{
-	if (GameMode* pGameMode = GetInstance())
-	{
-		pGameMode->GetAudioPlayer(2)->Play(path, true);
-	}
-}
+//void GameModeHelper::PlayFXSound(std::string path)
+//{
+//	if (GameMode* pGameMode = GetInstance())
+//	{
+//		pGameMode->GetAudioPlayer(1)->Play(path);
+//	}
+//}
+//
+//void GameModeHelper::PlayBGMusic_(std::string path)
+//{
+//	if (GameMode* pGameMode = GetInstance())
+//	{
+//		pGameMode->GetAudioPlayer(2)->Play(path, true);
+//	}
+//}

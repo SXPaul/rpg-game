@@ -15,7 +15,7 @@ level_b::level_b()
     //    //player->GetComponentByClass<Camera>()->SetTarget(player);
     //}
     SetDefaultController<Player>();
-    GameplayStatics::DontDestroyOnLoad(GameplayStatics::CreateObject<GameMode>());
+    //GameplayStatics::DontDestroyOnLoad(GameplayStatics::CreateObject<GameMode>());
     //Player* player = GameplayStatics::CreateObject<Player>();
 
 
@@ -52,21 +52,14 @@ level_b::level_b()
     GameplayStatics::CreateObject<PlatForm>({ -145, -5 })->Init("lion_2", { 30, 30 }, {});
     GameplayStatics::CreateObject<PlatForm>({ -115, -5 })->Init("lion_3", { 30, 30 }, {});
     /* platform 1, x: 300 420, y:-50 -70  */ 
-    GameplayStatics::CreateObject<PlatForm>({ 360, -60 })->Init("platform_shadow", { 120, 20 }, {200,200});
-    GameplayStatics::CreateObject<PlatForm>({ 315, -52.5 })->Init("platform_shadow", { 30, 5 }, {});
-    GameplayStatics::CreateObject<PlatForm>({ 345, -52.5 })->Init("platform_shadow", { 30, 5 }, {});
-    GameplayStatics::CreateObject<PlatForm>({ 375, -52.5 })->Init("platform_shadow", { 30, 5 }, {});
-    GameplayStatics::CreateObject<PlatForm>({ 405, -52.5 })->Init("platform_shadow", { 30, 5 }, {});
-    GameplayStatics::CreateObject<PlatForm>({ 315, -62.5 })->Init("platform_1", { 30, 15 }, {});
-    GameplayStatics::CreateObject<PlatForm>({ 345, -62.5 })->Init("platform_2", { 30, 15 }, {});
-    GameplayStatics::CreateObject<PlatForm>({ 375, -62.5 })->Init("platform_3", { 30, 15 }, {});
-    GameplayStatics::CreateObject<PlatForm>({ 405, -62.5 })->Init("platform_4", { 30, 15 }, {});
+    Draw_Platform(360, -60);
     /* platform 2, x: 450 570, y:-150 -170  */
-    GameplayStatics::CreateObject<PlatForm>({ 510, -160 })->Init("platform_shadow", { 120, 20 }, {});
+    Draw_Platform(510, -160);
     /* platform 3, x: 850 570, y:-150 -170  */
-    GameplayStatics::CreateObject<PlatForm>({ 910, -160 })->Init("platform_shadow", { 120, 20 }, {});
+    Draw_Platform(910, -160);
     /* platform 4, x: 600 720, y : -150 - 170 */
-    GameplayStatics::CreateObject<PlatForm>({ 910, -160 })->Init("platform_shadow", { 120, 20 }, {});
+    Draw_Platform(660, 80);
+    Draw_Platform(460, 280);
     ///* stairs 1 */
     //int height = 4;
     //for (float x = 615.0f; x < 720.0f; x += 30.0f, height--)
@@ -127,7 +120,7 @@ level_b::level_b()
     // �ؿ�ɾ��ʱ�Ĵ���
     OnLevelDelete.Add([this]() {
         GameMode* gameMode = GameModeHelper::GetInstance();
-        gameMode->GetAudioPlayer(0)->Stop("new_level_music");
+        //gameMode->GetAudioPlayer(0)->Stop("new_level_music");
         });
 }
 
@@ -136,4 +129,19 @@ void level_b::Update(float deltaTime)
     Level::Update(deltaTime);
 
     // ����������ӹؿ��ĸ����߼����������Ҫ�����ǽ������������ջ�����һЩ����Ч���ĸ����߼�
+}
+
+void level_b::Draw_Platform(float x, float y)
+{
+    /* platform 1, x: x-60 x+60, y: y-10 y+10  */
+    GameplayStatics::CreateObject<PlatForm>({ 360, -60 })->Init("", { 120, 20 }, {});
+    GameplayStatics::CreateObject<PlatForm>({ x, y })->Init("", { 120, 20 }, {});
+    GameplayStatics::CreateObject<PlatForm>({ x - 45, y + 7.5f })->Init("platform_shadow", { 30, 5 }, {});
+    GameplayStatics::CreateObject<PlatForm>({ x - 15, y + 7.5f })->Init("platform_shadow", { 30, 5 }, {});
+    GameplayStatics::CreateObject<PlatForm>({ x + 15, y + 7.5f })->Init("platform_shadow", { 30, 5 }, {});
+    GameplayStatics::CreateObject<PlatForm>({ x + 45, y + 7.5f })->Init("platform_shadow", { 30, 5 }, {});
+    GameplayStatics::CreateObject<PlatForm>({ x - 45, y - 2.5f })->Init("platform_1", { 30, 15 }, {});
+    GameplayStatics::CreateObject<PlatForm>({ x - 15, y - 2.5f })->Init("platform_2", { 30, 15 }, {});
+    GameplayStatics::CreateObject<PlatForm>({ x + 15, y - 2.5f })->Init("platform_3", { 30, 15 }, {});
+    GameplayStatics::CreateObject<PlatForm>({ x + 45, y - 2.5f })->Init("platform_4", { 30, 15 }, {});
 }
