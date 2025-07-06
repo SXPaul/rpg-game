@@ -32,6 +32,7 @@
     <ClInclude Include="Source\Project\MenuController.h" />
     <ClInclude Include="Source\Project\MenuLevel.h" />
     <ClInclude Include="Source\Project\MenuUI.h" />
+    <ClInclude Include="Source\Project\NightBorne.h" />
     <ClInclude Include="Source\Project\PlatForm.h" />
     <ClInclude Include="Source\Engine\Components\VideoPlayer.h" />
     <ClInclude Include="Source\Engine\Math\Segment2D.h" />
@@ -86,7 +87,6 @@
     <ClInclude Include="Source\Engine\Tools\VisualInterface.h" />
     <ClInclude Include="Source\Engine\UI\UserInterface.h" />
     <ClInclude Include="Source\Engine\UI\Widgets.h" />
-    <ClInclude Include="Source\Project\SilkParticle.h" />
     <ClInclude Include="Source\Project\StartLevel.h" />
   </ItemGroup>
   <ItemGroup>
@@ -102,6 +102,7 @@
     <ClCompile Include="Source\Project\MenuController.cpp" />
     <ClCompile Include="Source\Project\MenuLevel.cpp" />
     <ClCompile Include="Source\Project\MenuUI.cpp" />
+    <ClCompile Include="Source\Project\NightBorne.cpp" />
     <ClCompile Include="Source\Project\PlatForm.cpp" />
     <ClCompile Include="Source\Engine\Components\VideoPlayer.cpp" />
     <ClCompile Include="Source\Engine\Core\Object.cpp" />
@@ -143,7 +144,6 @@
     <ClCompile Include="Source\Engine\Tools\VisualInterface.cpp" />
     <ClCompile Include="Source\Engine\UI\UserInterface.cpp" />
     <ClCompile Include="Source\Engine\UI\Widgets.cpp" />
-    <ClCompile Include="Source\Project\SilkParticle.cpp" />
     <ClCompile Include="Source\Project\StartLevel.cpp" />
     <ClCompile Include="Source\Project\LevelA.cpp" />
   </ItemGroup>

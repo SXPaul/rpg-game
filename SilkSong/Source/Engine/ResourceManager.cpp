@@ -24,15 +24,18 @@ void ResourceManager::Initialize()
 
 	/** 图像 **/
 	//Environment
-	Load("bg0", "Asset/Surroundings/Medieval_Castle/background/layer_1.png", WIN_WIDTH + 2000, WIN_HEIGHT + 2000);
-	Load("bg1", "Asset/Surroundings/Medieval_Castle/background/layer_2.png", WIN_WIDTH + 2000, WIN_HEIGHT + 2000);
-	Load("bg2", "Asset/Surroundings/Medieval_Castle/background/layer_3.png", WIN_WIDTH + 2000, WIN_HEIGHT + 2000);
+	// Load("bg0", "Asset/Surroundings/Medieval_Castle/background/layer_1.png", WIN_WIDTH + 2000, WIN_HEIGHT + 2000);
+	// Load("bg1", "Asset/Surroundings/Medieval_Castle/background/layer_2.png", WIN_WIDTH + 2000, WIN_HEIGHT + 2000);
+	// Load("bg2", "Asset/Surroundings/Medieval_Castle/background/layer_3.png", WIN_WIDTH + 2000, WIN_HEIGHT + 2000);
 	Load("forest_1", "Asset/Surroundings/Forest_Bg/background_layer_1.png", WIN_WIDTH + 0, WIN_HEIGHT + 0);
 	Load("forest_2", "Asset/Surroundings/Forest_Bg/background_layer_2.png", WIN_WIDTH + 0, WIN_HEIGHT + 0);
 	Load("forest_3", "Asset/Surroundings/Forest_Bg/background_layer_3.png", WIN_WIDTH + 0, WIN_HEIGHT + 0);
 	Load("forest_1_max", "Asset/Surroundings/Forest_Bg/background_layer_1.png", WIN_WIDTH + 2000, WIN_HEIGHT + 2000);
 	Load("forest_2_max", "Asset/Surroundings/Forest_Bg/background_layer_2.png", WIN_WIDTH + 2000, WIN_HEIGHT + 2000);
 	Load("forest_3_max", "Asset/Surroundings/Forest_Bg/background_layer_3.png", WIN_WIDTH + 2000, WIN_HEIGHT + 2000);
+	Load("bg0", "Asset/Surroundings/Medieval_Castle/background/layer_1.png", WIN_WIDTH + 2800, WIN_HEIGHT + 2800);
+	Load("bg1", "Asset/Surroundings/Medieval_Castle/background/layer_2.png", WIN_WIDTH + 2800, WIN_HEIGHT + 2800);
+	Load("bg2", "Asset/Surroundings/Medieval_Castle/background/layer_3.png", WIN_WIDTH + 2800, WIN_HEIGHT + 2800);
 
 	// tiles
 	/* brick */
@@ -70,6 +73,13 @@ void ResourceManager::Initialize()
 	Load("Enemy1_hit", "Asset/Enemies/Skeleton/Skeleton_Hit", 44, 66,8);
 	Load("Enemy1_dead", "Asset/Enemies/Skeleton/Skeleton_Dead", 44, 66,15);
 	Load("Enemy1_attack", "Asset/Enemies/Skeleton/Skeleton_Attack", 86, 66,18);
+	// NightBorne
+	Load("NightBorne_idle", "Asset/Enemies/Night_Borne/NightBorne_idle", 280,280 ,9);
+	Load("NightBorne_run", "Asset/Enemies/Night_Borne/NightBorne_run", 280,280 ,6);
+	Load("NightBorne_attack", "Asset/Enemies/Night_Borne/NightBorne_attack", 280,280 ,12);
+	Load("NightBorne_hurt", "Asset/Enemies/Night_Borne/NightBorne_hurt", 280,280 ,5);
+	Load("NightBorne_die", "Asset/Enemies/Night_Borne/NightBorne_die", 280,280 ,23);
+
 
 	/* carpet */
 	Load("carpet_1", "Asset/Surroundings/Medieval_Castle/Tiles/floor_tile_carpet_1.png", 30, 30);

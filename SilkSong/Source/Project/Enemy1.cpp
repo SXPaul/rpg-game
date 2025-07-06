@@ -163,7 +163,6 @@ void Enemy1::Die()
 
 	ani->SetNode("die");
 	rigid->SetGravityEnabled(true);
-	circle->SetRadius(20);
 }
 
 //void Enemy::OnOverlap(Collider* hitComp, Collider* otherComp, Actor* otherActor)
@@ -266,7 +265,6 @@ void Enemy1::AttackPlayer() {
 	FVector2D playerPos = player->GetWorldPosition();
 	FVector2D direction = (playerPos - enemyPos).GetSafeNormal();
 
-	//FVector2D attackBoxOffset =direction.x > 0 ? FVector2D(100, 0) : FVector2D(-300, 0);
 	FVector2D attackBoxOffset = FVector2D(25, 0);
 	attackBox->SetLocalPosition(attackBoxOffset);
 	//attackBox->Init(ECharacterDirection::LookForward, 3); // ผูษ่นฅป๗มฆฮช3

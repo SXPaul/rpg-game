@@ -6,7 +6,7 @@
 #include "Bg.h"
 #include "GameModeHelper.h"
 #include "LevelTransformer.h"
-
+#include "NightBorne.h"
 boss1level::boss1level()
 {
     // ´´½¨Íæ¼Ò
@@ -56,6 +56,9 @@ boss1level::boss1level()
     //PlatForm* platform5 = GameplayStatics::CreateObject<PlatForm>({ -5, 200 });
     //platform5->Init("floor_tile_3", { 30, 30 }, { 0, 0 });
     //platform5->SetLocalScale({ 100.0f / 30.0f, 1.0f });
+    NightBorne* e;
+    e = GameplayStatics::CreateObject<NightBorne>({ 400,0 });
+    e->SetChaseBoundary({ -450,0 }, { 450,0 });
     PlatForm* platform6 = GameplayStatics::CreateObject<PlatForm>({ 0, 100 });
     platform6->Init("floor_tile_3", { 30, 30 }, { 0, 0 });
     platform6->SetLocalScale({ 1000.f / 30.0f, 1.0f });

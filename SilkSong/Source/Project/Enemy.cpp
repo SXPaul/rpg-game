@@ -9,7 +9,7 @@
 #include "GameplayStatics.h"
 #include "Effect.h"
 #include "Components/ParticleSystem.h"
-#include "SilkParticle.h"
+//#include "SilkParticle.h"
 #include "GameModeHelper.h"
 #include "AttackBox.h"
 
@@ -134,9 +134,9 @@ void Enemy::ExecuteDamageTakenEvent(FDamageCauseInfo extraInfo)
 		}
 	}
 
-	SilkParticle* silk = GameplayStatics::CreateObject<SilkParticle>();
-	silk->AttachTo(this);
-	silk->Init(normal, IsDead());
+	//SilkParticle* silk = GameplayStatics::CreateObject<SilkParticle>();
+	//silk->AttachTo(this);
+	//silk->Init(normal, IsDead());
 
 	Effect* effect = GameplayStatics::CreateObject<Effect>(GetWorldPosition());
 	if (effect)
@@ -162,7 +162,7 @@ PropertyComponent* Enemy::GetProperty()
 
 void Enemy::Die()
 {
-	SpawnGeos();
+	//SpawnGeos();
 
 	bIsDead = true;
 	render->SetLayer(-1);
@@ -174,10 +174,10 @@ void Enemy::Die()
 	render_death->SetOwner(nullptr);//开发者偷懒而使用的危险代码，请勿模仿
 
 	//circle->OnComponentBeginOverlap.RemoveDynamic(this, &Enemy::OnOverlap);
-	circle->SetPhysicsMaterial(FPhysicsMaterial(0.6f, 0.6f));
-	circle->SetCollisionResponseToType(CollisionType::Dart, false);
-	rigid->SetGravity(1960.f);
+	//box->SetPhysicsMaterial(FPhysicsMaterial(0.6f, 0.6f));
+	//box->SetCollisionResponseToType(CollisionType::Dart, false);
+	//rigid->SetGravity(1960.f);
 
-	Effect* effect = GameplayStatics::CreateObject<Effect>(GetWorldPosition());
-	if (effect)effect->Init("effect_death");
+	//Effect* effect = GameplayStatics::CreateObject<Effect>(GetWorldPosition());
+	//if (effect)effect->Init("effect_death");
 }
