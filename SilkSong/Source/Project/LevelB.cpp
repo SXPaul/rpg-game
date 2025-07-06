@@ -31,10 +31,9 @@ level_b::level_b()
     //GameModeHelper::PlayBGMusic("new_level_music");
 
     // background
-    Bg* bg0 = GameplayStatics::CreateObject<Bg>();
-    bg0->Init("bg0", -30);
-    Bg* bg1 = GameplayStatics::CreateObject<Bg>();
-    bg1->Init("bg1", -15);
+    GameplayStatics::CreateObject<Bg>()->Init("forest_1_max", -30);
+    GameplayStatics::CreateObject<Bg>()->Init("forest_2_max", -15);
+    GameplayStatics::CreateObject<Bg>()->Init("forest_3_max", -1);
     // map
     PlatForm* temp;
     /* start point */
@@ -60,17 +59,6 @@ level_b::level_b()
     /* platform 4, x: 600 720, y : -150 - 170 */
     Draw_Platform(660, 80);
     Draw_Platform(460, 280);
-    ///* stairs 1 */
-    //int height = 4;
-    //for (float x = 615.0f; x < 720.0f; x += 30.0f, height--)
-    //{
-    //    int count = 0;
-    //    for (float y = 145.0f; count < height; y -= 30.0f, count++)
-    //    {
-    //        if (count == height - 1) GameplayStatics::CreateObject<PlatForm>({ x, y })->Init("stairs_1", { 30, 30 }, {});
-    //        else GameplayStatics::CreateObject<PlatForm>({ x, y })->Init("brick_7", { 30, 30 }, {});
-    //    }
-    //}
     /* block 1 */
     GameplayStatics::CreateObject<PlatForm>({ -300, 200 })->Init("", { 1000, 200 }, {});
     GameplayStatics::CreateObject<PlatForm>({ -785, 115 })->Init("floor_tile_1", { 30, 30 }, {});
@@ -95,28 +83,9 @@ level_b::level_b()
     //GameplayStatics::CreateObject<PlatForm>({ 15, 1125 })->Init("arch_1", { 30, 30 }, {});
     //GameplayStatics::CreateObject<PlatForm>({ 45, 1120 })->Init("arch_2", { 30, 20 }, {});
     //GameplayStatics::CreateObject<PlatForm>({ 75, 1125 })->Init("arch_3", { 30, 30 }, {});
-    /* ==========coordinate========== */
-    //GameplayStatics::CreateObject<PlatForm>({ 0,0 })->Init("", { 12000, 0 }, {}); // x
-    //GameplayStatics::CreateObject<PlatForm>({ 100,0 })->Init("", { 0, 5 }, {});
-    //GameplayStatics::CreateObject<PlatForm>({ -100,0 })->Init("", { 0, 5 }, {});
-    //GameplayStatics::CreateObject<PlatForm>({ 200,0 })->Init("", { 0, 5 }, {});
-    //GameplayStatics::CreateObject<PlatForm>({ -200,0 })->Init("", { 0, 5 }, {});
-    //GameplayStatics::CreateObject<PlatForm>({ 300,0 })->Init("", { 0, 5 }, {});
-    //GameplayStatics::CreateObject<PlatForm>({ -300,0 })->Init("", { 0, 5 }, {});
-    //GameplayStatics::CreateObject<PlatForm>({ 400,0 })->Init("", { 0, 5 }, {});
-    //GameplayStatics::CreateObject<PlatForm>({ -400,0 })->Init("", { 0, 5 }, {});
-    //GameplayStatics::CreateObject<PlatForm>({ 500,0 })->Init("", { 0, 5 }, {});
-    //GameplayStatics::CreateObject<PlatForm>({ -500,0 })->Init("", { 0, 5 }, {});
-    //GameplayStatics::CreateObject<PlatForm>({ 600,0 })->Init("", { 0, 5 }, {});
-    //GameplayStatics::CreateObject<PlatForm>({ -600,0 })->Init("", { 0, 5 }, {});
-    //GameplayStatics::CreateObject<PlatForm>({ 0,0 })->Init("", { 0, 8000 }, {}); // y
-    //GameplayStatics::CreateObject<PlatForm>({ 0,100 })->Init("", { 5, 0 }, {});
-    //GameplayStatics::CreateObject<PlatForm>({ 0, -100 })->Init("", { 5, 0 }, {});
-    //GameplayStatics::CreateObject<PlatForm>({ 0, 200 })->Init("", { 5, 0 }, {});
-    //GameplayStatics::CreateObject<PlatForm>({ 0, -200 })->Init("", { 5, 0 }, {});
-    //GameplayStatics::CreateObject<PlatForm>({ 0, 300 })->Init("", { 5, 0 }, {});
-    //GameplayStatics::CreateObject<PlatForm>({ 0, -300 })->Init("", { 5, 0 }, {});
-    /* =========================================================================== */
+    /* net */
+    for (float x = -1000; x < 3000.f; x += 100.f)
+        GameplayStatics::CreateObject<LevelTransformer>({ x,3000.0 })->Init("LevelB", { 0,0 }, FRect({ 0.f,1110.f }, { 90.f,1400.f }));
     // �ؿ�ɾ��ʱ�Ĵ���
     OnLevelDelete.Add([this]() {
         GameMode* gameMode = GameModeHelper::GetInstance();

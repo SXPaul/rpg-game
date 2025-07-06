@@ -27,6 +27,12 @@ void ResourceManager::Initialize()
 	Load("bg0", "Asset/Surroundings/Medieval_Castle/background/layer_1.png", WIN_WIDTH + 2000, WIN_HEIGHT + 2000);
 	Load("bg1", "Asset/Surroundings/Medieval_Castle/background/layer_2.png", WIN_WIDTH + 2000, WIN_HEIGHT + 2000);
 	Load("bg2", "Asset/Surroundings/Medieval_Castle/background/layer_3.png", WIN_WIDTH + 2000, WIN_HEIGHT + 2000);
+	Load("forest_1", "Asset/Surroundings/Forest_Bg/background_layer_1.png", WIN_WIDTH + 0, WIN_HEIGHT + 0);
+	Load("forest_2", "Asset/Surroundings/Forest_Bg/background_layer_2.png", WIN_WIDTH + 0, WIN_HEIGHT + 0);
+	Load("forest_3", "Asset/Surroundings/Forest_Bg/background_layer_3.png", WIN_WIDTH + 0, WIN_HEIGHT + 0);
+	Load("forest_1_max", "Asset/Surroundings/Forest_Bg/background_layer_1.png", WIN_WIDTH + 2000, WIN_HEIGHT + 2000);
+	Load("forest_2_max", "Asset/Surroundings/Forest_Bg/background_layer_2.png", WIN_WIDTH + 2000, WIN_HEIGHT + 2000);
+	Load("forest_3_max", "Asset/Surroundings/Forest_Bg/background_layer_3.png", WIN_WIDTH + 2000, WIN_HEIGHT + 2000);
 
 	// tiles
 	/* brick */
@@ -56,7 +62,7 @@ void ResourceManager::Initialize()
 	Load("floor_tile_3", "Asset/Surroundings/Medieval_Castle/Tiles/floor_tile_3.png", 30, 30);
 	Load("floor_tile_4", "Asset/Surroundings/Medieval_Castle/Tiles/floor_tile_4.png", 30, 30);
 
-	/** µ–»À **/
+	/* enemies */
 	// Enemy1
 	Load("Enemy1_walk", "Asset/Enemies/Skeleton/Skeleton_Walk", 44, 66,13);
 	Load("Enemy1_react", "Asset/Enemies/Skeleton/Skeleton_React", 44, 66,4);
@@ -65,7 +71,7 @@ void ResourceManager::Initialize()
 	Load("Enemy1_dead", "Asset/Enemies/Skeleton/Skeleton_Dead", 44, 66,15);
 	Load("Enemy1_attack", "Asset/Enemies/Skeleton/Skeleton_Attack", 86, 66,18);
 
-	/* carpet*/
+	/* carpet */
 	Load("carpet_1", "Asset/Surroundings/Medieval_Castle/Tiles/floor_tile_carpet_1.png", 30, 30);
 	Load("carpet_2", "Asset/Surroundings/Medieval_Castle/Tiles/floor_tile_carpet_2.png", 30, 30);
 	Load("carpet_3", "Asset/Surroundings/Medieval_Castle/Tiles/floor_tile_carpet_3.png", 30, 30);

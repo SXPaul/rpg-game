@@ -1,4 +1,5 @@
 #include "frame.h"
+#include "Objects/Actor.h"
 
 Frame::Frame()
 {
@@ -10,5 +11,5 @@ Frame::Frame()
 
 void Frame::Delete()
 {
-    this->Destory();
+    render->LoadSprite("");
 }

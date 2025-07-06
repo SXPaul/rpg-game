@@ -34,11 +34,11 @@ void LevelManager::Initialize()
 	 //************************************************
 
 	AddLevel<MenuLevel>("Menu");
+	AddLevel<FirstLevel>("First");
+	AddLevel<StartLevel>("Start");
+	AddLevel<boss1level>("Boss1");
 	AddLevel<level_a>("LevelA");
 	AddLevel<level_b>("LevelB");
-	AddLevel<boss1level>("Boss1");
-	//AddLevel<StartLevel>("Start");
-	//AddLevel<FirstLevel>("First");
 
 
 	//level_to_create = levelMap["Boss1"]; // Example: Assign a valid callable from the map
