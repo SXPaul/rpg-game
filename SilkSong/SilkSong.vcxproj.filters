@@ -148,6 +148,10 @@
     <ClCompile Include="Source\Project\Effect.cpp">
       <Filter>Project</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Project\LevelB.cpp" />
+    <ClCompile Include="Source\Project\NightBorne.cpp">
+      <Filter>Project\Enemies</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Project\Bg.h" />
@@ -335,6 +339,10 @@
     </ClInclude>
     <ClInclude Include="Source\Project\Effect.h">
       <Filter>Project</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Project\LevelB.h" />
+    <ClInclude Include="Source\Project\NightBorne.h">
+      <Filter>Project\Enemies</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
