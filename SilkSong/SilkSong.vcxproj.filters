@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="Source\Project\Bg.cpp" />
     <ClCompile Include="Source\Engine\Components\ActorComponent.cpp">
       <Filter>Engine\Components</Filter>
     </ClCompile>
@@ -137,8 +136,6 @@
     <ClCompile Include="Source\Project\PlatForm.cpp">
       <Filter>Project\Game</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Project\AttackBox.cpp" />
-    <ClCompile Include="Source\Project\SilkParticle.cpp" />
     <ClCompile Include="Source\Project\Enemy.cpp">
       <Filter>Project\Enemies</Filter>
     </ClCompile>
@@ -148,13 +145,20 @@
     <ClCompile Include="Source\Project\Effect.cpp">
       <Filter>Project</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Project\LevelB.cpp" />
     <ClCompile Include="Source\Project\NightBorne.cpp">
       <Filter>Project\Enemies</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Project\LevelB.cpp">
+      <Filter>Project\Levels</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Project\AttackBox.cpp">
+      <Filter>Project\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Project\Bg.cpp">
+      <Filter>Project\Game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Source\Project\Bg.h" />
     <ClInclude Include="Source\Engine\Components\ActorComponent.h">
       <Filter>Engine\Components</Filter>
     </ClInclude>
@@ -329,8 +333,6 @@
     <ClInclude Include="Source\Project\PlatForm.h">
       <Filter>Project\Game</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Project\AttackBox.h" />
-    <ClInclude Include="Source\Project\SilkParticle.h" />
     <ClInclude Include="Source\Project\Enemy.h">
       <Filter>Project\Enemies</Filter>
     </ClInclude>
@@ -340,9 +342,17 @@
     <ClInclude Include="Source\Project\Effect.h">
       <Filter>Project</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Project\LevelB.h" />
     <ClInclude Include="Source\Project\NightBorne.h">
       <Filter>Project\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Project\LevelB.h">
+      <Filter>Project\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Project\AttackBox.h">
+      <Filter>Project\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Project\Bg.h">
+      <Filter>Project\Game</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -9,7 +9,7 @@
 #include "GameplayStatics.h"
 #include "Effect.h"
 #include "Components/ParticleSystem.h"
-#include "SilkParticle.h"
+//#include "SilkParticle.h"
 #include "GameModeHelper.h"
 #include "AttackBox.h"
 
@@ -134,9 +134,9 @@ void Enemy::ExecuteDamageTakenEvent(FDamageCauseInfo extraInfo)
 		}
 	}
 
-	SilkParticle* silk = GameplayStatics::CreateObject<SilkParticle>();
-	silk->AttachTo(this);
-	silk->Init(normal, IsDead());
+	//SilkParticle* silk = GameplayStatics::CreateObject<SilkParticle>();
+	//silk->AttachTo(this);
+	//silk->Init(normal, IsDead());
 
 	Effect* effect = GameplayStatics::CreateObject<Effect>(GetWorldPosition());
 	if (effect)

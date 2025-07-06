@@ -19,3 +19,4 @@
 	void SetAttackCooldown(float r);
 	```
 设置enemy1的移动范围边界、视野范围、移动速度、攻击冷却
+完成了第一个 Boss NightBorne 的编写，修复了部分 Enemy 中的bug
