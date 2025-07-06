@@ -355,7 +355,7 @@ void NightBorne::ChasePlayer(float deltaTime) {
 void NightBorne::AttackPlayer() {
 	// ²¥·Å¹¥»÷¶¯»­
 	ani->SetBool("canAttack", true);
-	property->AddHealth(-40);
+	//property->AddHealth(-40);
 
 	isAttacking = true;
 	attackTimer = attackDuration;
