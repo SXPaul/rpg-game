@@ -409,4 +409,413 @@
       <UniqueIdentifier>{94bb5365-8f32-40ee-901e-8c0fba022aa8}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Source\Project\Bg.cpp" />
+    <ClCompile Include="Source\Engine\Components\ActorComponent.cpp">
+      <Filter>Engine\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Engine\Components\Animator.cpp">
+      <Filter>Engine\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Engine\Components\AudioPlayer.cpp">
+      <Filter>Engine\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Engine\Objects\Actor.cpp">
+      <Filter>Engine\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Project\boss1level.cpp">
+      <Filter>Project\Levels</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Engine\Components\Camera.cpp">
+      <Filter>Engine\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Engine\Objects\Character.cpp">
+      <Filter>Engine\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Engine\Objects\Controller.cpp">
+      <Filter>Engine\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Engine\Objects\Level.cpp">
+      <Filter>Engine\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Engine\Physics\Collisions2D.cpp">
+      <Filter>Engine\Physics2D</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Engine\FileManager.cpp">
+      <Filter>Engine\Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Engine\Tools\GameplayStatics.cpp">
+      <Filter>Engine\Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Engine\Tools\Timer.cpp">
+      <Filter>Engine\Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Engine\Tools\VisualInterface.cpp">
+      <Filter>Engine\Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Engine\UI\Widgets.cpp">
+      <Filter>Engine\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Engine\UI\UserInterface.cpp">
+      <Filter>Engine\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Engine\Core\game.cpp">
+      <Filter>Engine\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Engine\Core\Math.cpp">
+      <Filter>Engine\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Engine\Core\Object.cpp">
+      <Filter>Engine\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Engine\Core\World.cpp">
+      <Filter>Engine\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Project\DamageResponseComponent.cpp">
+      <Filter>Project\Components\Actor</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Project\PlayerPropertyComponent.cpp">
+      <Filter>Project\Components\Actor</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Project\PropertyComponent.cpp">
+      <Filter>Project\Components\Actor</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Project\DamageSystem.cpp">
+      <Filter>Project\Components\GameMode</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Project\FirstLevel.cpp">
+      <Filter>Project\Levels</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Project\LevelA.cpp">
+      <Filter>Project\Levels</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Engine\CollisionManager.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Engine\ResourceManager.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Engine\LevelManager.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Engine\Components\Collider.cpp">
+      <Filter>Engine\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Engine\Components\InputComponent.cpp">
+      <Filter>Engine\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Engine\Components\ParticleSystem.cpp">
+      <Filter>Engine\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Engine\Components\RigidBody.cpp">
+      <Filter>Engine\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Engine\Components\SceneComponent.cpp">
+      <Filter>Engine\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Engine\Components\SpriteRenderer.cpp">
+      <Filter>Engine\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Engine\Components\VideoPlayer.cpp">
+      <Filter>Engine\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Engine\Components\WidgetComponent.cpp">
+      <Filter>Engine\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Project\DefaultDamageStrategy.cpp">
+      <Filter>Project\Strategies</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Project\GameMode.cpp">
+      <Filter>Project\Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Project\GameModeHelper.cpp">
+      <Filter>Project\Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Project\StartLevel.cpp">
+      <Filter>Project\Levels</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Project\PlayerAnimator.cpp">
+      <Filter>Project\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Project\Player.cpp">
+      <Filter>Project\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Project\LevelTransformer.cpp">
+      <Filter>Project\Levels</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Project\PlatForm.cpp">
+      <Filter>Project\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Project\AttackBox.cpp" />
+    <ClCompile Include="Source\Project\SilkParticle.cpp" />
+    <ClCompile Include="Source\Project\Enemy.cpp">
+      <Filter>Project\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Project\Enemy1.cpp">
+      <Filter>Project\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Project\Effect.cpp">
+      <Filter>Project</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Source\Project\Bg.h" />
+    <ClInclude Include="Source\Engine\Components\ActorComponent.h">
+      <Filter>Engine\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\Components\Animator.h">
+      <Filter>Engine\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\Components\AudioPlayer.h">
+      <Filter>Engine\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\Objects\Actor.h">
+      <Filter>Engine\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Project\boss1level.h">
+      <Filter>Project\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\Components\Camera.h">
+      <Filter>Engine\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\Objects\Character.h">
+      <Filter>Engine\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\Objects\Controller.h">
+      <Filter>Engine\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\Objects\Level.h">
+      <Filter>Engine\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\Physics\Collisions2D.h">
+      <Filter>Engine\Physics2D</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\Math\Box2D.h">
+      <Filter>Engine\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\Math\Circle.h">
+      <Filter>Engine\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\Math\Polygon.h">
+      <Filter>Engine\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\Math\Ray2D.h">
+      <Filter>Engine\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\Math\Segment2D.h">
+      <Filter>Engine\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\Math\Transform.h">
+      <Filter>Engine\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\Math\Vector2D.h">
+      <Filter>Engine\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\Tools\FileManager.h">
+      <Filter>Engine\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\GameplayStatics.h">
+      <Filter>Engine\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\Tools\LevelManager.h">
+      <Filter>Engine\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\Tools\ResourceManager.h">
+      <Filter>Engine\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\Tools\Timer.h">
+      <Filter>Engine\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\Tools\VisualInterface.h">
+      <Filter>Engine\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\UI\Widgets.h">
+      <Filter>Engine\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\UI\UserInterface.h">
+      <Filter>Engine\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\CoreMinimal.h">
+      <Filter>Engine\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\Core\Delegate.h">
+      <Filter>Engine\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\Core\Macro.h">
+      <Filter>Engine\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\Core\Math.h">
+      <Filter>Engine\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\Core\Object.h">
+      <Filter>Engine\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\Core\Struct.h">
+      <Filter>Engine\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\Core\World.h">
+      <Filter>Engine\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Project\DamageResponseComponent.h">
+      <Filter>Project\Components\Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Project\PlayerPropertyComponent.h">
+      <Filter>Project\Components\Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Project\PropertyComponent.h">
+      <Filter>Project\Components\Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Project\DamageSystem.h">
+      <Filter>Project\Components\GameMode</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Project\Damagable.h">
+      <Filter>Project\Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Project\PropertyCarrier.h">
+      <Filter>Project\Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Project\FirstLevel.h">
+      <Filter>Project\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Project\LevelA.h">
+      <Filter>Project\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\Tools\CollisionManager.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\Components\Collider.h">
+      <Filter>Engine\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\Components\InputComponent.h">
+      <Filter>Engine\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\Components\ParticleSystem.h">
+      <Filter>Engine\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\Components\RigidBody.h">
+      <Filter>Engine\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\Components\SceneComponent.h">
+      <Filter>Engine\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\Components\SpriteRenderer.h">
+      <Filter>Engine\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\Components\VideoPlayer.h">
+      <Filter>Engine\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\Components\WidgetComponent.h">
+      <Filter>Engine\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Project\DamageStrategy.h">
+      <Filter>Project\Strategies</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Project\DefaultDamageStrategy.h">
+      <Filter>Project\Strategies</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Project\GameMode.h">
+      <Filter>Project\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Project\GameModeHelper.h">
+      <Filter>Project\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Project\StartLevel.h">
+      <Filter>Project\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Project\PlayerAnimator.h">
+      <Filter>Project\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Project\Player.h">
+      <Filter>Project\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Project\LevelTransformer.h">
+      <Filter>Project\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Project\PlatForm.h">
+      <Filter>Project\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Project\AttackBox.h" />
+    <ClInclude Include="Source\Project\SilkParticle.h" />
+    <ClInclude Include="Source\Project\Enemy.h">
+      <Filter>Project\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Project\Enemy1.h">
+      <Filter>Project\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Project\Effect.h">
+      <Filter>Project</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\journal.md" />
+    <None Include="..\readme.md" />
+    <None Include="..\schedule.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Engine">
+      <UniqueIdentifier>{0a43829b-3a14-4328-a81e-c9674e0cad9d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Project">
+      <UniqueIdentifier>{7a799efd-8e9b-44f6-a5d8-66ad3628f58e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Components">
+      <UniqueIdentifier>{612dddce-227c-45d5-b3f8-ce1cde80bfc6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Core">
+      <UniqueIdentifier>{763041f8-c40d-4885-a598-638e2595fbdd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Objects">
+      <UniqueIdentifier>{46932a13-b62c-4578-a01c-26caf061d566}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Physics2D">
+      <UniqueIdentifier>{a81d2fa3-5e5d-4950-8744-d037003e1c97}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Tools">
+      <UniqueIdentifier>{def463b5-42b0-43cb-b725-d43df671066e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\UI">
+      <UniqueIdentifier>{bb27761a-69ab-454b-8e64-68c3cddac554}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Project\Components">
+      <UniqueIdentifier>{a5e55921-8092-4d38-aa5c-ad50b0b2e330}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Project\Enemies">
+      <UniqueIdentifier>{b519a4ae-6cd3-4bd3-b232-e76f8ec13285}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Project\Game">
+      <UniqueIdentifier>{6ea4fb19-1fa8-414d-a687-f8d082d1828a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Project\Interfaces">
+      <UniqueIdentifier>{6b2c6f04-0008-495e-89a1-67b2a4027f65}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Project\Levels">
+      <UniqueIdentifier>{fda0da58-0845-405c-adae-cc5d0f328937}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Project\Menu">
+      <UniqueIdentifier>{a0c596e0-ac8d-45dd-a2a7-fd78946b00b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Project\Player">
+      <UniqueIdentifier>{4f33d997-2dd9-4987-94ee-7da1ad791f0c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Project\Components\Actor">
+      <UniqueIdentifier>{0f4ef4e8-f035-418d-aa72-494e3254b536}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Project\Components\GameMode">
+      <UniqueIdentifier>{395f4abe-6c9a-4d80-abda-8a37320d0f16}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Math">
+      <UniqueIdentifier>{a187d9f9-6f58-40df-8ea3-bbed493d4770}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Project\Strategies">
+      <UniqueIdentifier>{4ca02105-f112-4a1c-b739-b351545db468}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Project\Utilities">
+      <UniqueIdentifier>{96f58687-b071-4cab-86ef-1a33719d64f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Project\Items">
+      <UniqueIdentifier>{94bb5365-8f32-40ee-901e-8c0fba022aa8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
 </Project>

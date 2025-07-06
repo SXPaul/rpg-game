@@ -42,7 +42,11 @@ void LevelManager::Initialize()
 
 
 	//level_to_create = levelMap["Boss1"]; // Example: Assign a valid callable from the map
+<<<<<<< HEAD
 	//SetDefaultLevel("LevelB");
+=======
+	SetDefaultLevel("LevelA");
+>>>>>>> refs/remotes/origin/master
 	//SetDefaultLevel("Boss1");
 	SetDefaultLevel("Menu");
 

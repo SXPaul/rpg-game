@@ -55,6 +55,16 @@ void ResourceManager::Initialize()
 	Load("floor_tile_2", "Asset/Surroundings/Medieval_Castle/Tiles/floor_tile_2.png", 30, 30);
 	Load("floor_tile_3", "Asset/Surroundings/Medieval_Castle/Tiles/floor_tile_3.png", 30, 30);
 	Load("floor_tile_4", "Asset/Surroundings/Medieval_Castle/Tiles/floor_tile_4.png", 30, 30);
+
+	/** µ–»À **/
+	// Enemy1
+	Load("Enemy1_walk", "Asset/Enemies/Skeleton/Skeleton_Walk", 44, 66,13);
+	Load("Enemy1_react", "Asset/Enemies/Skeleton/Skeleton_React", 44, 66,4);
+	Load("Enemy1_idle", "Asset/Enemies/Skeleton/Skeleton_Idle", 44, 66,11);
+	Load("Enemy1_hit", "Asset/Enemies/Skeleton/Skeleton_Hit", 44, 66,8);
+	Load("Enemy1_dead", "Asset/Enemies/Skeleton/Skeleton_Dead", 44, 66,15);
+	Load("Enemy1_attack", "Asset/Enemies/Skeleton/Skeleton_Attack", 86, 66,18);
+
 	/* carpet*/
 	Load("carpet_1", "Asset/Surroundings/Medieval_Castle/Tiles/floor_tile_carpet_1.png", 30, 30);
 	Load("carpet_2", "Asset/Surroundings/Medieval_Castle/Tiles/floor_tile_carpet_2.png", 30, 30);

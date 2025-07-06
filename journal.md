@@ -8,3 +8,14 @@
 
 2025-7-2 wsx
 写了 boss1level 文件，搭建了一个场景的背景，其他内容没做，更新了一下项目架构。
+
+2025-7-6 wsx
+完成了 enemy1 的编写，除了伤害设置部分
+提供的接口为
+	```cpp
+	void SetChaseBoundary(FVector2D minBoundary, FVector2D maxBoundary);	
+	void SetSightRange(float r);
+	void SetMoveSpeed(float r);
+	void SetAttackCooldown(float r);
+	```
+设置enemy1的移动范围边界、视野范围、移动速度、攻击冷却

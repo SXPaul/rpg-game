@@ -16,6 +16,10 @@ public:
 
 	void OnEndOverlap(class Collider* hitComp, Collider* otherComp, Actor* otherActor);
 
+	void SetSize(FVector2D size);
+
+	void SetLocalPosition(FVector2D pos);
+
 	virtual FDamageCauseInfo TakeDamage(IDamagable* damageCauser, float baseValue, EDamageType damageType)override { return{}; }
 
 	virtual void ExecuteDamageDealtEvent(FDamageCauseInfo extraInfo)override {}
