@@ -307,14 +307,17 @@ void Player::SetupInputComponent(InputComponent* inputComponent)
                     case AttackDirection::Left:
                         attackBox->Init(AttackDirection::Left);
                         attackBox->SetLocalPosition(FVector2D(110, 0));
+						ani->SetNode("player_attack1");
 						break;
                     case AttackDirection::Right:
                         attackBox->Init(AttackDirection::Right);
 						attackBox->SetLocalPosition(FVector2D(110, 0));
+						ani->SetNode("player_attack1");
                         break;
                     case AttackDirection::Up:
 						attackBox->Init(AttackDirection::Up);
                         attackBox->SetLocalPosition(FVector2D(-0, -70));
+						ani->SetNode("player_attack2");
                         break;
 					case AttackDirection::Down:
 						attackBox->Init(AttackDirection::Down);
