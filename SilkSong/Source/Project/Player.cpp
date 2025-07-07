@@ -7,7 +7,13 @@
 #include "GameplayStatics.h"
 #include <cstdlib>
 #include "AttackBox.h"
+#include "PlayerPropertyComponent.h" 
+#include "DamageResponseComponent.h"
+#include "DefaultDamageStrategy.h"
+
+
 Player::Player()
+
 {
     render = GetComponentByClass<SpriteRenderer>();
     // 创建 PlayerAnimator 组件
@@ -26,6 +32,12 @@ Player::Player()
         box->SetPhysicsMaterial(FPhysicsMaterial(0.1f, 0));
     }
 
+    hurtBox = ConstructComponent<BoxCollider>();
+    hurtBox->AttachTo(root);
+    hurtBox->SetSize({ 30, 70 });
+    hurtBox->SetLocalPosition({ -15, 10 });
+    hurtBox->SetType(CollisionType::HurtBox);
+
     rigid = GetComponentByClass<RigidBody>();
     if (rigid) {
         rigid->SetLinearDrag(0.07f);
@@ -36,6 +48,8 @@ Player::Player()
     box->OnComponentHit.AddDynamic(this, &Player::StartCollision);
     box->OnComponentStay.AddDynamic(this, &Player::StayCollision);
 
+    damageResponse = ConstructComponent<DamageResponseComponent>();
+    playerProperty = ConstructComponent<PlayerPropertyComponent>();
     ui = GameplayStatics::CreateUI<GameUI>();
     ui->AddToViewport();
 
@@ -44,8 +58,15 @@ Player::Player()
     walkLock = 0;
 	jumpLock = 0;
 
-    lastJumpTime = 0.0f; // 初始化上次跳跃时间戳
+    lastJumpTime = 0.0f; // 初始化上次跳跃时间戳.
+	lastDashTime = 0.0f; // 初始化上次冲刺时间戳.
+	lastAttackTime = 0.0f; // 初始化上次攻击时间戳.
+	isDashing = false; // 初始化冲刺状态为 false
 	isonGround = false;
+
+    blinkTimes = 0; //无敌帧时间
+
+
 }
 
 void Player::BeginPlay()
@@ -61,6 +82,20 @@ void Player::Update(float deltaTime)
     Super::Update(deltaTime);
     // 可选：可以在这里做一些速度限制或动画参数设置
     ani->SetFloat("fallingSpeed", rigid->GetVelocity().y);
+
+    if (isDashing)
+    {
+		SetMaxWalkingSpeed(1600.f); // 冲刺时增加最大行走速度
+        AddInputX(GetWorldScale().x * 10000 * deltaTime, false);
+        // 如果正在冲刺，检查是否需要结束冲刺
+        if (GameplayStatics::GetTimeSeconds() - lastDashTime > 0.2f)
+        {
+            isDashing = false; // 结束冲刺状态
+            SetMaxWalkingSpeed(400.f); // 恢复最大行走速度
+            rigid->SetGravityEnabled(true);
+            rigid->SetVelocity({ rigid->GetVelocity().x,0 });
+		}
+    }
 }
 
 void Player::SetupInputComponent(InputComponent* inputComponent)
@@ -77,10 +112,11 @@ void Player::SetupInputComponent(InputComponent* inputComponent)
 	inputComponent->SetMapping("Jumping", EKeyCode::VK_Space);
 	inputComponent->SetMapping("JumpEnd", EKeyCode::VK_Space);
 	inputComponent->SetMapping("Attack", EKeyCode::VK_J);
+	inputComponent->SetMapping("Dash", EKeyCode::VK_K);
 
 
     inputComponent->BindAction("WalkLeft", EInputType::Holding, [this]() {
-        if (walkLock == 2)
+        if (walkLock == 2 || isDashing)
         {
 			return; // 如果已经在向右走，则不允许向左走
         }
@@ -107,7 +143,7 @@ void Player::SetupInputComponent(InputComponent* inputComponent)
         ani->SetFloat("walkingSpeed", 0.f);
         });
     inputComponent->BindAction("WalkRight", EInputType::Holding, [this]() {
-        if (walkLock == 1)
+        if (walkLock == 1 ||isDashing)
         {
             return; // 如果已经在向左走，则不允许向右走
         }
@@ -165,7 +201,7 @@ void Player::SetupInputComponent(InputComponent* inputComponent)
 
     inputComponent->BindAction("JumpStart", EInputType::Pressed, [this]()
         {
-            if (isonGround)
+            if ((isonGround && (jumpLock == 0)) || (jumpLock == 1))
             {
                 // 如果玩家在地面上
                 rigid->SetVelocity(FVector2D(rigid->GetVelocity().x, -400.f)); // 向上跳跃
@@ -176,17 +212,18 @@ void Player::SetupInputComponent(InputComponent* inputComponent)
                 //
                 //
                 lastJumpTime = GameplayStatics::GetTimeSeconds(); // 记录跳跃时间
-                jumpLock = 1; // 设置跳跃锁，防止连续跳跃,jumpLock = 1 代表已经开始跳跃，但是还没结束跳跃
+                jumpLock ++; // 设置跳跃锁，防止连续跳跃,jumpLock = 1 代表已经开始跳跃，但是还没结束跳跃
             }  
 			else return; // 如果不在地面上，则不允许跳跃
         });
 
     inputComponent->BindAction("Jumping", EInputType::Holding, [this]()
         {
-            if (jumpLock == 1 && GameplayStatics::GetTimeSeconds() - lastJumpTime < 0.5f)
+            if ((jumpLock == 1 && GameplayStatics::GetTimeSeconds() - lastJumpTime < 0.5f)
+                || (jumpLock == 2) && GameplayStatics::GetTimeSeconds() - lastJumpTime < 0.5f)
             {
 				isonGround = false; // 标记玩家不在地面上
-                // 如果在跳跃状态且跳跃时间小于0.2秒
+                // 如果在跳跃状态且跳跃时间小于0.5秒
 				rigid->SetVelocity(FVector2D(rigid->GetVelocity().x, -400.f)); // 持续给一个向上的速度
                 // 跳跃动画
                 //ani->SetFloat("jumpSpeed", -1.f);
@@ -200,7 +237,6 @@ void Player::SetupInputComponent(InputComponent* inputComponent)
             if (jumpLock == 1)
             {
                 // 如果跳跃结束
-                jumpLock = 0; // 重置跳跃锁
                 isonGround = false; // 标记玩家不在地面上
                 rigid->SetVelocity(FVector2D(rigid->GetVelocity().x, 0)); // 重置垂直速度
                 // 切换到站立动画
@@ -209,6 +245,16 @@ void Player::SetupInputComponent(InputComponent* inputComponent)
                 //
                 //
             }
+            else if (jumpLock == 2)
+            {
+                // 如果跳跃结束
+                isonGround = false; // 标记玩家不在地面上
+                jumpLock = 0; // 重置跳跃锁
+                rigid->SetVelocity(FVector2D(rigid->GetVelocity().x, 0)); // 重置垂直速度
+                // 切换到站立动画
+                //ani->SetFloat("fallingSpeed", rigid->GetVelocity().y);
+            }
+			else return; // 如果没有跳跃，则不做任何操作
 		});
 
     inputComponent->BindAction("Attack", EInputType::Pressed, [this]()
@@ -246,6 +292,19 @@ void Player::SetupInputComponent(InputComponent* inputComponent)
                 }
             }
 		});
+
+    inputComponent->BindAction("Dash", EInputType::Pressed, [this]()
+        {
+            if (GameplayStatics::GetTimeSeconds() - lastDashTime > 0.5f)
+            {
+				lastDashTime = GameplayStatics::GetTimeSeconds(); // 更新上次冲刺时间
+				isDashing = true; // 标记正在冲刺
+				rigid->SetVelocity({ rigid->GetVelocity().x, 0}); // 冲刺时增加水平速度
+				rigid->SetGravityEnabled(false); // 禁用重力
+            }
+        }
+    );
+
 }
 
 FVector2D Player::GetCameraPos()
@@ -256,6 +315,11 @@ FVector2D Player::GetCameraPos()
 
 void Player::StartCollision(Collider* hitComp, Collider* otherComp, Actor* otherActor, FVector2D normalImpulse, const FHitResult& hitResult)
 {
+    if (GetHealth() <= 0)
+    {
+        return;
+    }
+
 	//处理碰撞开始的逻辑
     if (normalImpulse.y < 0 && rigid && rigid->GetVelocity().y > 0)
     {
@@ -276,7 +340,12 @@ void Player::StartCollision(Collider* hitComp, Collider* otherComp, Actor* other
 
 void Player::StayCollision(Collider* hitComp, Collider* otherComp, Actor* otherActor, FVector2D normalImpulse, const FHitResult& hitResult)
 {
+
     // 在这里处理持续碰撞的逻辑
+    if (GetHealth() <= 0)
+    {
+        return;
+    }
     // 例如，可以检查碰撞的类型并执行相应的操作
     if (normalImpulse.y < 0)
     {
@@ -284,3 +353,76 @@ void Player::StayCollision(Collider* hitComp, Collider* otherComp, Actor* otherA
     }
 }
 
+int32 Player::GetHealth() const
+{
+    return playerProperty->GetHealth();
+}
+
+void Player::AddHealth(int32 delta)
+{
+    int32 initHealth = playerProperty->GetHealth();
+    int32 realDelta = playerProperty->AddHealth(delta);
+
+}
+
+void Player::DieStart()
+{
+    EnableInput(false);
+    rigid->SetMoveable(false);
+    rigid->SetGravityEnabled(false);
+}
+
+void Player::DieEnd()
+{
+    rigid->SetMoveable(true);
+}
+
+FDamageCauseInfo Player::TakeDamage(IDamagable* damageCauser, float baseValue, EDamageType damageType)
+{
+    if (blinkTimes > 0)
+    {
+        return {};
+    }
+    FDamageCauseInfo damageInfo = damageResponse->TakeDamage(damageCauser, baseValue, damageType);
+    AddHealth(-damageInfo.realValue);
+    return damageInfo;
+}
+
+void Player::ExecuteDamageTakenEvent(FDamageCauseInfo extraInfo)
+{
+    if (!extraInfo.bIsValid)
+    {
+        return;
+    }
+
+    if (GetHealth() <= 0)
+    {
+        DieStart(); return;
+    }
+
+    blinkTimes = 10;
+    isDashing = false;
+
+    rigid->SetGravityEnabled(true);
+    rigid->SetVelocity({});
+    Actor* causer = Cast<Actor>(extraInfo.damageCauser);
+    CHECK_PTR(causer)
+        rigid->AddImpulse({ (GetWorldPosition() - causer->GetWorldPosition()).GetSafeNormal().x * 200,-200 });
+    hurtBox->SetCollisonMode(CollisionMode::None);
+    box->SetCollisionResponseToType(CollisionType::Bullet, false);
+
+}
+
+PropertyComponent* Player::GetProperty()
+{
+    if (!playerProperty)
+    {
+        playerProperty = ConstructComponent<PlayerPropertyComponent>();
+    }
+    return Cast<PropertyComponent>(playerProperty);
+}
+
+void Player::ExecuteDamageDealtEvent(FDamageCauseInfo extraInfo)
+{
+    
+}
