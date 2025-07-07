@@ -5,6 +5,7 @@
 
 MenuLevel::MenuLevel()
 {
+    //SetDefaultController<Player>();
 	SetDefaultController<MenuController>();
     Bg* bg0 = GameplayStatics::CreateObject<Bg>();
     bg0->Init("forest_1", -30);

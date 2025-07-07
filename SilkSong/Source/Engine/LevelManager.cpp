@@ -9,6 +9,7 @@
  **/
 
 #include "MenuLevel.h"
+#include "StartLevel.h"
 #include "LevelA.h"
 #include "LevelAFail.h"
 #include "LevelB.h"
@@ -36,6 +37,7 @@ void LevelManager::Initialize()
 	 //************************************************
 
 	AddLevel<MenuLevel>("Menu");
+	AddLevel<StartLevel>("Start");
 	AddLevel<level_a>("LevelA");
 	AddLevel<level_a_fail>("LevelAFail");
 	AddLevel<level_b>("LevelB");
@@ -45,10 +47,11 @@ void LevelManager::Initialize()
 
 
 	//level_to_create = levelMap["Boss1"]; // Example: Assign a valid callable from the map
-	//SetDefaultLevel("Menu");
+	SetDefaultLevel("Menu");
+	//SetDefaultLevel("Start");
 	//SetDefaultLevel("LevelA");
 	//SetDefaultLevel("LevelB");
-	SetDefaultLevel("Boss");
+	//SetDefaultLevel("Boss");
 
 	mainWorld.currentLevel = level_to_create();
 	mainWorld.currentLevel->BeginPlay();

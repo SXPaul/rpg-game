@@ -1,4 +1,4 @@
-#include "Player.h"
+﻿#include "Player.h"
 #include "Components/Collider.h"
 #include "Components/SpriteRenderer.h"
 #include "Components/RigidBody.h"
@@ -16,9 +16,9 @@ Player::Player()
 
 {
     render = GetComponentByClass<SpriteRenderer>();
-    // ���� PlayerAnimator ���
+    //      PlayerAnimator    
     ani = ConstructComponent<PlayerAnimator>();
-    //// �� PlayerAnimator ����Ⱦ������
+    ////    PlayerAnimator     Ⱦ      
     ani->SetupAttachment(render);
     if (render) render->SetLayer(1);
 	walkLock = 0;
@@ -58,14 +58,14 @@ Player::Player()
     walkLock = 0;
 	jumpLock = 0;
 
-    lastJumpTime = 0.0f; // ��ʼ���ϴ���Ծʱ���.
-	lastDashTime = 0.0f; // ��ʼ���ϴγ��ʱ���.
-	lastAttackTime = 0.0f; // ��ʼ���ϴι���ʱ���.
-	isDashing = false; // ��ʼ�����״̬Ϊ false
+    lastJumpTime = 0.0f; //   ʼ   ϴ   Ծʱ   .
+	lastDashTime = 0.0f; //   ʼ   ϴγ  ʱ   .
+	lastAttackTime = 0.0f; //   ʼ   ϴι   ʱ   .
+	isDashing = false; //   ʼ     ״̬Ϊ false
 	isonGround = false;
-	isAttacking = false; // ��ʼ������״̬Ϊ false
+	isAttacking = false; //   ʼ      ״̬Ϊ false
 
-    blinkTimes = 0; //�޵�֡ʱ��
+    blinkTimes = 0; // ޵ ֡ʱ  
 
 
 }
@@ -99,11 +99,11 @@ void Player::BeginPlay()
 void Player::Update(float deltaTime)
 {
     Super::Update(deltaTime);
-    // ��ѡ��������������һЩ�ٶ����ƻ򶯻���������
+    //   ѡ              һЩ ٶ    ƻ򶯻         
     ani->SetFloat("fallingSpeed", rigid->GetVelocity().y);
     if (GameplayStatics::GetTimeSeconds() - lastAttackTime > 0.3f)
     {
-		isAttacking = false; // �ָ�����״̬
+		isAttacking = false; //  ָ     ״̬
     }
 
     if (isonGround && walkLock == 0 && !isDashing && GetHealth() > 0 && !isAttacking)
@@ -113,13 +113,13 @@ void Player::Update(float deltaTime)
 
     if (isDashing)
     {
-		SetMaxWalkingSpeed(1600.f); // ���ʱ������������ٶ�
+		SetMaxWalkingSpeed(1600.f); //    ʱ            ٶ 
         AddInputX(GetWorldScale().x * 10000 * deltaTime, false);
-        // ������ڳ�̣�����Ƿ���Ҫ�������
+        //       ڳ ̣     Ƿ   Ҫ       
         if (GameplayStatics::GetTimeSeconds() - lastDashTime > 0.2f)
         {
-            isDashing = false; // �������״̬
-            SetMaxWalkingSpeed(400.f); // �ָ���������ٶ�
+            isDashing = false; //        ״̬
+            SetMaxWalkingSpeed(400.f); //  ָ         ٶ 
             rigid->SetGravityEnabled(true);
             rigid->SetVelocity({ rigid->GetVelocity().x,0 });
 		}
@@ -147,7 +147,7 @@ void Player::SetupInputComponent(InputComponent* inputComponent)
     inputComponent->BindAction("WalkLeft", EInputType::Holding, [this]() {
         if (walkLock == 2 || isDashing)
         {
-			return; // ����Ѿ��������ߣ�������������
+			return; //     Ѿ        ߣ             
         }
         walkLock = 1; 
         SetMaxWalkingSpeed(400.f);
@@ -155,14 +155,14 @@ void Player::SetupInputComponent(InputComponent* inputComponent)
         AddInputX(-3.f, true);
         if((curDirection != AttackDirection::Up) && (curDirection != AttackDirection::Down)) 
         {            
-            // �����ǰ���������ϻ�����
-            // �л������ҵĹ�������
-            curDirection = AttackDirection::Left; // ���õ�ǰ����Ϊ��
+            //      ǰ         ϻ     
+            //  л      ҵĹ       
+            curDirection = AttackDirection::Left; //    õ ǰ    Ϊ  
 		}
         else
         {
-			//��ǰ���������ϻ�����
-			lastDirection = AttackDirection::Left; // ��¼��ǰ����
+			//  ǰ         ϻ     
+			lastDirection = AttackDirection::Left; //   ¼  ǰ    
         }
 
         });
@@ -174,7 +174,7 @@ void Player::SetupInputComponent(InputComponent* inputComponent)
     inputComponent->BindAction("WalkRight", EInputType::Holding, [this]() {
         if (walkLock == 1 ||isDashing)
         {
-            return; // ����Ѿ��������ߣ�������������
+            return; //     Ѿ        ߣ             
         }
         walkLock = 2;
         SetMaxWalkingSpeed(400.f);
@@ -182,13 +182,13 @@ void Player::SetupInputComponent(InputComponent* inputComponent)
         AddInputX(3.f, true);
         if ((curDirection != AttackDirection::Up) && (curDirection != AttackDirection::Down))
         {
-            // �����ǰ���������ϻ�����
-            // �л������ҵĹ�������
-            curDirection = AttackDirection::Right; // ���õ�ǰ����Ϊ��
+            //      ǰ         ϻ     
+            //  л      ҵĹ       
+            curDirection = AttackDirection::Right; //    õ ǰ    Ϊ  
         }
         else
         {
-			lastDirection = AttackDirection::Right; // ��¼��ǰ����
+			lastDirection = AttackDirection::Right; //   ¼  ǰ    
         }
         });
     inputComponent->BindAction("WalkRightEnd", EInputType::Released, [this]() {
@@ -200,7 +200,7 @@ void Player::SetupInputComponent(InputComponent* inputComponent)
 
     inputComponent->BindAction("HoldUp", EInputType::Holding, [this]()
         {
-			curDirection = AttackDirection::Up; // ���õ�ǰ����Ϊ����
+			curDirection = AttackDirection::Up; //    õ ǰ    Ϊ    
             
 		});
 
@@ -208,43 +208,43 @@ void Player::SetupInputComponent(InputComponent* inputComponent)
         {
             if (curDirection == AttackDirection::Up)
             {
-                curDirection = lastDirection; // �ָ����ϴεķ���
+                curDirection = lastDirection; //  ָ    ϴεķ   
             }
             else return;
         });
 
     inputComponent->BindAction("HoldDown", EInputType::Holding, [this]()
 		{
-			if (!isonGround)// �����Ҳ��ڵ����ϣ����������¹���
-			    curDirection = AttackDirection::Down; // ���õ�ǰ����Ϊ����
+			if (!isonGround)//      Ҳ  ڵ    ϣ          ¹   
+			    curDirection = AttackDirection::Down; //    õ ǰ    Ϊ    
 		});
 
     inputComponent->BindAction("HoldDownEnd", EInputType::Released, [this]()
         {
             if (curDirection == AttackDirection::Down)
             {
-                curDirection = lastDirection; // �ָ����ϴεķ���
+                curDirection = lastDirection; //  ָ    ϴεķ   
             }
-			else return; // �����ǰ���������£������κβ���
+			else return; //      ǰ         £      κβ   
 		});
 
     inputComponent->BindAction("JumpStart", EInputType::Pressed, [this]()
         {
             if ((isonGround && (jumpLock == 0)) || (jumpLock == 1))
             {
-                // �������ڵ�����
-                rigid->SetVelocity(FVector2D(rigid->GetVelocity().x, -400.f)); // ������Ծ
-                isonGround = false; // ��Ծ���ǲ��ڵ�����
+                //        ڵ     
+                rigid->SetVelocity(FVector2D(rigid->GetVelocity().x, -400.f)); //       Ծ
+                isonGround = false; //   Ծ   ǲ  ڵ     
 
-                // �л�����Ծ����
+                //  л     Ծ    
                 //ani->SetFloat("jumpSpeed", -1.f);
                 //ani->PlayMontage("jump1");
                 //
                 //
-                lastJumpTime = GameplayStatics::GetTimeSeconds(); // ��¼��Ծʱ��
-                jumpLock ++; // ������Ծ������ֹ������Ծ,jumpLock = 1 �����Ѿ���ʼ��Ծ�����ǻ�û������Ծ
+                lastJumpTime = GameplayStatics::GetTimeSeconds(); //   ¼  Ծʱ  
+                jumpLock ++; //       Ծ      ֹ      Ծ,jumpLock = 1      Ѿ   ʼ  Ծ     ǻ û      Ծ
             }  
-			else return; // ������ڵ����ϣ���������Ծ
+			else return; //       ڵ    ϣ         Ծ
         });
 
     inputComponent->BindAction("Jumping", EInputType::Holding, [this]()
@@ -252,21 +252,21 @@ void Player::SetupInputComponent(InputComponent* inputComponent)
             if ((jumpLock == 1 && GameplayStatics::GetTimeSeconds() - lastJumpTime < 0.5f)
                 || (jumpLock == 2) && GameplayStatics::GetTimeSeconds() - lastJumpTime < 0.5f)
             {
-				isonGround = false; // �����Ҳ��ڵ�����
-                // �������Ծ״̬����Ծʱ��С��0.5��
-				rigid->SetVelocity(FVector2D(rigid->GetVelocity().x, -400.f)); // ������һ�����ϵ��ٶ�
-                // ��Ծ����
+				isonGround = false; //      Ҳ  ڵ     
+                //        Ծ״̬    Ծʱ  С  0.5  
+				rigid->SetVelocity(FVector2D(rigid->GetVelocity().x, -400.f)); //       һ     ϵ  ٶ 
+                //   Ծ    
                 //ani->SetFloat("jumpSpeed", -1.f);
                 //
                 //
                 ///*
                 if (jumpLock == 1)
                 {
-                    ani->SetNode("player_jump_1"); // �л�����Ծ����
+                    ani->SetNode("player_jump_1"); //  л     Ծ    
                 }
                 else if (jumpLock == 2)
                 {
-                    ani->SetNode("player_jump_2"); // �л�����Ծ����
+                    ani->SetNode("player_jump_2"); //  л     Ծ    
                 }
                 //*/
             }
@@ -276,35 +276,35 @@ void Player::SetupInputComponent(InputComponent* inputComponent)
         {
             if (jumpLock == 1)
             {
-                // �����Ծ����
-                isonGround = false; // �����Ҳ��ڵ�����
-                rigid->SetVelocity(FVector2D(rigid->GetVelocity().x, 0)); // ���ô�ֱ�ٶ�
-                // �л���վ������
+                //      Ծ    
+                isonGround = false; //      Ҳ  ڵ     
+                rigid->SetVelocity(FVector2D(rigid->GetVelocity().x, 0)); //    ô ֱ ٶ 
+                //  л   վ      
                 //ani->SetFloat("fallingSpeed", rigid->GetVelocity().y);
-				ani->SetNode("player_jump_falling"); // �л�����Ծ���䶯��
+				ani->SetNode("player_jump_falling"); //  л     Ծ   �? 
                 //
                 //
             }
             else if (jumpLock == 2)
             {
-                // �����Ծ����
-                isonGround = false; // �����Ҳ��ڵ�����
-                jumpLock = 0; // ������Ծ��
-                rigid->SetVelocity(FVector2D(rigid->GetVelocity().x, 0)); // ���ô�ֱ�ٶ�
-                // �л���վ������
+                //      Ծ    
+                isonGround = false; //      Ҳ  ڵ     
+                jumpLock = 0; //       Ծ  
+                rigid->SetVelocity(FVector2D(rigid->GetVelocity().x, 0)); //    ô ֱ ٶ 
+                //  л   վ      
                 //ani->SetFloat("fallingSpeed", rigid->GetVelocity().y);
             }
-			else return; // ���û����Ծ�������κβ���
+			else return; //    û    Ծ       κβ   
 		});
 
     inputComponent->BindAction("Attack", EInputType::Pressed, [this]()
         {
             if (lastAttackTime == 0 || GameplayStatics::GetTimeSeconds() - lastAttackTime > 0.3f)
             {
-                // ����ϴι���ʱ�䳬��0.5��
-                lastAttackTime = GameplayStatics::GetTimeSeconds(); // �����ϴι���ʱ��
-				isAttacking = true; // ������ڹ���
-                // ִ�й����߼�
+                //     ϴι   ʱ �? 0.5  
+                lastAttackTime = GameplayStatics::GetTimeSeconds(); //      ϴι   ʱ  
+				isAttacking = true; //       ڹ   
+                // ִ й    ߼ 
                 //
                 //
                 //
@@ -353,10 +353,10 @@ void Player::SetupInputComponent(InputComponent* inputComponent)
         {
             if (GameplayStatics::GetTimeSeconds() - lastDashTime > 0.5f)
             {
-				lastDashTime = GameplayStatics::GetTimeSeconds(); // �����ϴγ��ʱ��
-				isDashing = true; // ������ڳ��
-				rigid->SetVelocity({ rigid->GetVelocity().x, 0}); // ���ʱ����ˮƽ�ٶ�
-				rigid->SetGravityEnabled(false); // ��������
+				lastDashTime = GameplayStatics::GetTimeSeconds(); //      ϴγ  ʱ  
+				isDashing = true; //       ڳ  
+				rigid->SetVelocity({ rigid->GetVelocity().x, 0}); //    ʱ    ˮƽ ٶ 
+				rigid->SetGravityEnabled(false); //         
             }
         }
     );
@@ -365,8 +365,8 @@ void Player::SetupInputComponent(InputComponent* inputComponent)
         {
             if (playerProperty && playerProperty->GetHealth() < playerProperty->GetMaxHealth())
             {
-                AddHealth(5); // �ָ�5������ֵ
-                // �������������ӻָ���������Ч����Ч
+                AddHealth(5); //  ָ 5      ֵ
+                //              ӻָ         Ч    Ч
             }
 		});
 
@@ -385,35 +385,35 @@ void Player::StartCollision(Collider* hitComp, Collider* otherComp, Actor* other
         return;
     }
 
-	//������ײ��ʼ���߼�
+	//      ײ  ʼ   ߼ 
     if (normalImpulse.y < 0 && rigid && rigid->GetVelocity().y > 0)
     {
-        // �����ײ�Ǵ��Ϸ������ģ�����������������ƶ�
-		isonGround = true; // �������ڵ�����
-        rigid->SetVelocity(FVector2D(rigid->GetVelocity().x, 0)); // ���ô�ֱ�ٶ�
-        //�˴�����վ������
+        //      ײ Ǵ  Ϸ      ģ                 ƶ 
+		isonGround = true; //        ڵ     
+        rigid->SetVelocity(FVector2D(rigid->GetVelocity().x, 0)); //    ô ֱ ٶ 
+        // ˴     վ      
 
     }
     else if (normalImpulse.y > 0 && rigid && rigid->GetVelocity().y < 0)
     {
-        // �����ײ�Ǵ��·������ģ�����������������ƶ�
-		isonGround = false; // �����Ҳ��ڵ�����
-        rigid->SetVelocity(FVector2D(rigid->GetVelocity().x, 0)); // ���ô�ֱ�ٶ�
+        //      ײ Ǵ  ·      ģ                 ƶ 
+		isonGround = false; //      Ҳ  ڵ     
+        rigid->SetVelocity(FVector2D(rigid->GetVelocity().x, 0)); //    ô ֱ ٶ 
 	}
     
 }
 
 void Player::StayCollision(Collider* hitComp, Collider* otherComp, Actor* otherActor, FVector2D normalImpulse, const FHitResult& hitResult)
 {
-    // �����ﴦ��������ײ���߼�
+    //      �?       ײ   ߼ 
     if (GetHealth() <= 0)
     {
         return;
     }
-    // ���磬���Լ����ײ�����Ͳ�ִ����Ӧ�Ĳ���
+    //    �?  Լ    ײ     Ͳ ִ    Ӧ Ĳ   
     if (normalImpulse.y < 0)
     {
-        isonGround = true; // �������ڵ�����
+        isonGround = true; //        ڵ     
     }
 }
 
@@ -426,6 +426,9 @@ void Player::AddHealth(int32 delta)
 {
     int32 initHealth = playerProperty->GetHealth();
     int32 realDelta = playerProperty->AddHealth(delta);
+    int32 currentHealth = playerProperty->GetHealth();
+    int32 maxHealth = playerProperty->GetMaxHealth();
+    ui->Update(currentHealth, maxHealth);
 
 }
 

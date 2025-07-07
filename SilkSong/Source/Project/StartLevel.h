@@ -6,4 +6,5 @@ class StartLevel :public Level
 {
 public:
 	StartLevel();
+	void Update(float deltaTime);
 };

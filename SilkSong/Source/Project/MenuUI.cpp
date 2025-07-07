@@ -103,7 +103,7 @@ void MenuUI::Update(float deltaTime)
 
 		switch (startFlag)
 		{
-		case 1:GameplayStatics::OpenLevel("LevelA");
+		case 1:GameplayStatics::OpenLevel("Start");
 			break;
 		case 3:GameplayStatics::QuitGame();
 			break;

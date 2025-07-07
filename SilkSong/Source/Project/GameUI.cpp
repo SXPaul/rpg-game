@@ -23,3 +23,9 @@ GameUI::GameUI()
 	Health_Bar->LoadSprite("health_bar");
 	Health_Bar->SetLayer(25);
 }
+
+void GameUI::Update(int32 current_life, int32 max_life)
+{
+	Health_Bar->SetRelativeScale(FVector2D((current_life * 1.0f) / max_life, 1.f));
+	Health_Bar->SetRelativePosition(FVector2D(20 + (current_life * 100.f) / max_life, 40));
+}

@@ -11,4 +11,5 @@ class GameUI :public UserInterface
 
 public:
 	GameUI();
+	void Update(int32 current_life, int32 max_life);
 };

@@ -71,6 +71,7 @@ level_a::level_a()
     /* block 1 end */
     /* block 2 */
     GameplayStatics::CreateObject<PlatForm>({ 300.0, 575.0 })->Init("", { 200, 850 }, {});
+    GameplayStatics::CreateObject<PlatForm>({ 395.5, 575 })->Init("", { 31, 850 }, {});
     for (float x = 215.0f; x < 380.0f; x += 30.0f)
         GameplayStatics::CreateObject<PlatForm>({ x, 165 })->Init("carpet_2", { 30, 30 }, {});
     GameplayStatics::CreateObject<PlatForm>({ 395, 165 })->Init("carpet_4", { 30, 30 }, {});
@@ -80,6 +81,7 @@ level_a::level_a()
     /* block 2 end */
     /* block 3 */
     GameplayStatics::CreateObject<PlatForm>({ 700.0, 675.0 })->Init("", { 200, 1050 }, {});
+    GameplayStatics::CreateObject<PlatForm>({ 614.5, 675.0 })->Init("", { 31, 1050 }, {});
     for (float y = 165.0f; y < 1200.0f; y += 30.0f)
         for (float x = 615.0f; x < 800.0f; x += 30.0f)
             GameplayStatics::CreateObject<PlatForm>({ x, y })->Init("brick_3", { 30, 30 }, {});

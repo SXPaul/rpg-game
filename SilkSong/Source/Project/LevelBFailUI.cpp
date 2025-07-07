@@ -102,7 +102,7 @@ void LevelBFailUI::Update(float deltaTime)
 
 		switch (startFlag)
 		{
-		case 1:GameplayStatics::OpenLevel("LevelA");
+		case 1:GameplayStatics::OpenLevel("Start");
 			break;
 		case 2:GameplayStatics::OpenLevel("LevelB");
 			break;

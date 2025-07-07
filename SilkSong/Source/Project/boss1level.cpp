@@ -78,6 +78,9 @@ boss1level::boss1level()
     book->Init("bookshelf_1", 1);
     book->SetLocalPosition({ 150,61.5 });
     book = GameplayStatics::CreateObject<Bg>();
+    book->Init("bookshelf_2", 1);
+    book->SetLocalPosition({ 700,-258.5});
+    book = GameplayStatics::CreateObject<Bg>();
     book->Init("flag_blue", 1);
     book->SetLocalPosition({ 340,-166.5 });
     /* net */
