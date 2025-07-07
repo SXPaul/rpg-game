@@ -53,8 +53,11 @@ private:
     class DamageResponseComponent* damageResponse;
     class PlayerPropertyComponent* playerProperty;
 
+
+    bool isAttacking; // 是否正在攻击
     bool isonGround;
     bool isDashing; // 是否正在冲刺
+
 
     AttackDirection curDirection;
     AttackDirection lastDirection;

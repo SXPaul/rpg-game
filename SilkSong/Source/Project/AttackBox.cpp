@@ -12,7 +12,7 @@ AttackBox::AttackBox()
 {
 	box = ConstructComponent<BoxCollider>();
 	box->AttachTo(root);
-	box->SetSize({ 220,150 });
+	box->SetSize({ 50,90 });
 	box->SetType(CollisionType::HurtBox);
 	box->SetCollisonMode(CollisionMode::None);
 
@@ -28,8 +28,8 @@ void AttackBox::Init(AttackDirection direction, int32 damage)
 	this->direction = direction;
 	if (direction == AttackDirection::Up)
 	{
-		box->SetSize({ 150, 220 });
-		box->AddPosition({ 0, -70 });
+		box->SetSize({ 150, 100 });
+		box->AddPosition({ 0, 70 });
 	}
 	else if (direction == AttackDirection::Down)
 	{

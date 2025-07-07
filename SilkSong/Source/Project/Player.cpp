@@ -63,6 +63,7 @@ Player::Player()
 	lastAttackTime = 0.0f; // 初始化上次攻击时间戳.
 	isDashing = false; // 初始化冲刺状态为 false
 	isonGround = false;
+	isAttacking = false; // 初始化攻击状态为 false
 
     blinkTimes = 0; //无敌帧时间
 
@@ -100,10 +101,16 @@ void Player::Update(float deltaTime)
     Super::Update(deltaTime);
     // 可选：可以在这里做一些速度限制或动画参数设置
     ani->SetFloat("fallingSpeed", rigid->GetVelocity().y);
-    if (isonGround && walkLock == 0 && !isDashing && GetHealth() > 0)
+    if (GameplayStatics::GetTimeSeconds() - lastAttackTime > 0.3f)
+    {
+		isAttacking = false; // 恢复攻击状态
+    }
+
+    if (isonGround && walkLock == 0 && !isDashing && GetHealth() > 0 && !isAttacking)
     {
 		ani->SetNode("idle");
     }
+
     if (isDashing)
     {
 		SetMaxWalkingSpeed(1600.f); // 冲刺时增加最大行走速度
@@ -292,10 +299,11 @@ void Player::SetupInputComponent(InputComponent* inputComponent)
 
     inputComponent->BindAction("Attack", EInputType::Pressed, [this]()
         {
-            if (lastAttackTime == 0 || GameplayStatics::GetTimeSeconds() - lastAttackTime > 0.1f)
+            if (lastAttackTime == 0 || GameplayStatics::GetTimeSeconds() - lastAttackTime > 0.3f)
             {
                 // 如果上次攻击时间超过0.5秒
                 lastAttackTime = GameplayStatics::GetTimeSeconds(); // 更新上次攻击时间
+				isAttacking = true; // 标记正在攻击
                 // 执行攻击逻辑
                 //
                 //
@@ -306,17 +314,29 @@ void Player::SetupInputComponent(InputComponent* inputComponent)
                 {
                     case AttackDirection::Left:
                         attackBox->Init(AttackDirection::Left);
-                        attackBox->SetLocalPosition(FVector2D(110, 0));
+                        attackBox->SetLocalPosition(FVector2D(25, 0));
 						ani->SetNode("player_attack1");
 						break;
                     case AttackDirection::Right:
                         attackBox->Init(AttackDirection::Right);
-						attackBox->SetLocalPosition(FVector2D(110, 0));
+						attackBox->SetLocalPosition(FVector2D(25, 0));
 						ani->SetNode("player_attack1");
                         break;
                     case AttackDirection::Up:
 						attackBox->Init(AttackDirection::Up);
-                        attackBox->SetLocalPosition(FVector2D(-0, -70));
+                        if (lastDirection == AttackDirection::Left)
+                        {
+                            attackBox->SetLocalPosition(FVector2D(-15, 0));
+                        }
+                        else if (lastDirection == AttackDirection::Right)
+                        {
+                            attackBox->SetLocalPosition(FVector2D(-15, 0));
+						}
+                        else
+                        {
+                            attackBox->SetLocalPosition(FVector2D(0, 0));
+						}
+
 						ani->SetNode("player_attack2");
                         break;
 					case AttackDirection::Down:

@@ -24,6 +24,8 @@ PlayerAnimator::PlayerAnimator()
 	jump_falling.SetInterval(0.1f);
 	die.SetInterval(0.1f);
 	dead.SetInterval(0.1f);
+	attack1.SetInterval(0.035f);
+	attack_up.SetInterval(0.035f);
 
 	Insert("idle", idle);
 	Insert("run", run);
