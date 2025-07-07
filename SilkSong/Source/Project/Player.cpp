@@ -75,6 +75,25 @@ void Player::BeginPlay()
     if (ani) {
         ani->SetNode("idle");
     }
+
+    BlinkTimer.Bind(0.2f, [this]()
+        {
+            if (blinkTimes > 0)
+            {
+                render->Blink(0.1f, BLACK);
+                if (--blinkTimes == 0 )
+                {
+                    hurtBox->SetCollisonMode(CollisionMode::Trigger);
+                    box->SetCollisionResponseToType(CollisionType::Bullet, true);
+                    //GameModeHelper::GetInstance()->RefreshVolume();
+                    //if (playerProperty->GetHealth() != 1)particle->SetIsLoop(false);
+                }
+            }
+        }, true);
+
+    box->OnComponentHit.AddDynamic(this, &Player::StartCollision);
+    box->OnComponentStay.AddDynamic(this, &Player::StayCollision);
+
 }
 
 void Player::Update(float deltaTime)
@@ -310,7 +329,7 @@ void Player::SetupInputComponent(InputComponent* inputComponent)
         {
             if (playerProperty && playerProperty->GetHealth() < playerProperty->GetMaxHealth())
             {
-                AddHealth(5); // 恢复1点生命值
+                AddHealth(5); // 恢复5点生命值
                 // 可以在这里添加恢复生命的特效或音效
             }
 		});
