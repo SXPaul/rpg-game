@@ -25,11 +25,11 @@ public:
 	virtual void ExecuteDamageDealtEvent(FDamageCauseInfo extraInfo)override {}
 
 	virtual void ExecuteDamageTakenEvent(FDamageCauseInfo extraInfo)override {}
-
+	float GetDamage();
 private:
 	class BoxCollider* box;
 	Timer AttackTimerHandle;
 	Timer DestroyTimerHandle;
 	AttackDirection direction;
-	int32 damage;
+	float damage;
 };

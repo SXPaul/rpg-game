@@ -89,7 +89,9 @@ void Enemy1::Update(float deltaTime)
 		Die();
 	}
 
-	if (IsDead() || !player)return;
+	if (IsDead() || !player) {
+		return;
+	}
 	// 更新攻击冷却时间
 	if (currentCooldown > 0.f) {
 		currentCooldown -= deltaTime;
@@ -113,7 +115,7 @@ void Enemy1::Update(float deltaTime)
 
 void Enemy1::ExecuteDamageTakenEvent(FDamageCauseInfo extraInfo)
 {
-	//Super::ExecuteDamageTakenEvent(extraInfo);
+	Super::ExecuteDamageTakenEvent(extraInfo);
 
 	if (!extraInfo.bIsValid)
 	{
@@ -165,10 +167,6 @@ void Enemy1::Die()
 	rigid->SetGravityEnabled(true);
 }
 
-//void Enemy::OnOverlap(Collider* hitComp, Collider* otherComp, Actor* otherActor)
-//{
-//
-//}
 void Enemy1::CheckPlayerInRange() {
 	if (player) {
 		FVector2D enemyPos = GetWorldPosition();
@@ -267,7 +265,7 @@ void Enemy1::AttackPlayer() {
 
 	FVector2D attackBoxOffset = FVector2D(25, 0);
 	attackBox->SetLocalPosition(attackBoxOffset);
-	//attackBox->Init(ECharacterDirection::LookForward, 3); // 假设攻击力为3
+	attackBox->Init(direction.x>0?AttackDirection::Right: AttackDirection::Left, 3); // 假设攻击力为3
 
 	// 重置攻击冷却时间
 	currentCooldown = attackCooldown;

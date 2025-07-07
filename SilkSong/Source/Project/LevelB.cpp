@@ -25,6 +25,7 @@ level_b::level_b()
     //    //player->GetComponentByClass<Camera>()->SetTarget(player);
     //}
     SetDefaultController<Player>();
+    GameplayStatics::DontDestroyOnLoad(GameplayStatics::CreateObject<GameMode>());
     //FVector2D  a = GetPosition();
     //std::string str = a.ToString();
 

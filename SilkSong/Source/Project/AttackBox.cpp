@@ -92,3 +92,8 @@ void AttackBox::SetSize(FVector2D size) {
 void AttackBox::SetLocalPosition(FVector2D pos) {
 	box->SetLocalPosition(pos);
 }
+
+float AttackBox::GetDamage()
+{
+	return damage;
+}
