@@ -14,6 +14,7 @@ PlayerAnimator::PlayerAnimator()
 	die.Load("player_die");
 	dead.Load("player_dead");
 
+
 	idle.SetInterval(0.1f);
 	run.SetInterval(0.1f);
 	jump1.SetInterval(0.1f);

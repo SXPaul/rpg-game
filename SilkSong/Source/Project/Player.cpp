@@ -100,7 +100,10 @@ void Player::Update(float deltaTime)
     Super::Update(deltaTime);
     // 可选：可以在这里做一些速度限制或动画参数设置
     ani->SetFloat("fallingSpeed", rigid->GetVelocity().y);
-
+    if (isonGround && walkLock == 0 && !isDashing)
+    {
+		ani->SetNode("idle");
+    }
     if (isDashing)
     {
 		SetMaxWalkingSpeed(1600.f); // 冲刺时增加最大行走速度
@@ -225,6 +228,7 @@ void Player::SetupInputComponent(InputComponent* inputComponent)
                 // 如果玩家在地面上
                 rigid->SetVelocity(FVector2D(rigid->GetVelocity().x, -400.f)); // 向上跳跃
                 isonGround = false; // 跳跃后标记不在地面上
+
                 // 切换到跳跃动画
                 //ani->SetFloat("jumpSpeed", -1.f);
                 //ani->PlayMontage("jump1");
@@ -248,6 +252,16 @@ void Player::SetupInputComponent(InputComponent* inputComponent)
                 //ani->SetFloat("jumpSpeed", -1.f);
                 //
                 //
+                ///*
+                if (jumpLock == 1)
+                {
+                    ani->SetNode("player_jump_1"); // 切换到跳跃动画
+                }
+                else if (jumpLock == 2)
+                {
+                    ani->SetNode("player_jump_2"); // 切换到跳跃动画
+                }
+                //*/
             }
 		});
 
@@ -260,7 +274,7 @@ void Player::SetupInputComponent(InputComponent* inputComponent)
                 rigid->SetVelocity(FVector2D(rigid->GetVelocity().x, 0)); // 重置垂直速度
                 // 切换到站立动画
                 //ani->SetFloat("fallingSpeed", rigid->GetVelocity().y);
-
+				ani->SetNode("player_jump_falling"); // 切换到跳跃下落动画
                 //
                 //
             }
