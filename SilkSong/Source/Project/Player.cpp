@@ -100,7 +100,7 @@ void Player::Update(float deltaTime)
     Super::Update(deltaTime);
     // 可选：可以在这里做一些速度限制或动画参数设置
     ani->SetFloat("fallingSpeed", rigid->GetVelocity().y);
-    if (isonGround && walkLock == 0 && !isDashing)
+    if (isonGround && walkLock == 0 && !isDashing && GetHealth() > 0)
     {
 		ani->SetNode("idle");
     }

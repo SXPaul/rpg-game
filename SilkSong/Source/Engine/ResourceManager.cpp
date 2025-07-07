@@ -137,7 +137,7 @@ void ResourceManager::Initialize()
 	Load("red_1", "Asset/UI/red_1.png", 380, 162);
 
 	/* particle*/
-	Load("particle","Asset/FX/Hit/Hits_0/SP103_01.png", 98, 87, 1, 1, 1)
+	Load("particle", "Asset/FX/Hit/Hits_0/SP103_01.png", 98, 87, 1, 1, 1);
 }
 
 //*********                             **********
