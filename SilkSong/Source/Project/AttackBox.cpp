@@ -71,7 +71,7 @@ void AttackBox::OnOverlap(Collider* hitComp, Collider* otherComp, Actor* otherAc
 		}
 	}
 	*/
-	else if (otherComp->GetType() == CollisionType::Chest)
+	else if (otherComp->GetType() == CollisionType::Treasure)
 	{
 		GameModeHelper::ApplyDamage(this, Cast<IDamagable>(otherActor), 1, EDamageType::Player);
 	}

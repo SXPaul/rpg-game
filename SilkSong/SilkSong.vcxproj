@@ -90,6 +90,7 @@
     <ClInclude Include="Source\Engine\UI\UserInterface.h" />
     <ClInclude Include="Source\Engine\UI\Widgets.h" />
     <ClInclude Include="Source\Project\StartLevel.h" />
+    <ClInclude Include="Source\Project\Treasure.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Project\AttackBox.cpp" />
@@ -150,6 +151,7 @@
     <ClCompile Include="Source\Engine\UI\Widgets.cpp" />
     <ClCompile Include="Source\Project\StartLevel.cpp" />
     <ClCompile Include="Source\Project\LevelA.cpp" />
+    <ClCompile Include="Source\Project\Treasure.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\journal.md" />
