@@ -52,8 +52,10 @@ void AttackBox::OnOverlap(Collider* hitComp, Collider* otherComp, Actor* otherAc
 		}
 		//if (direction == AttackDirection::Down)Cast<Player>(GetOwner())->Bounce();
 		GameModeHelper::ApplyDamage(this, enemy, this->damage, EDamageType::Player);
+		/*
 		if (FMath::RandInt(0, 10) > 5)GameModeHelper::PlayFXSound("sound_damage_0");
 		else GameModeHelper::PlayFXSound("sound_damage_1");
+		*/
 	}
 	/*
 	else if (Cast<Dart>(otherActor))

@@ -113,6 +113,7 @@ void Player::SetupInputComponent(InputComponent* inputComponent)
 	inputComponent->SetMapping("JumpEnd", EKeyCode::VK_Space);
 	inputComponent->SetMapping("Attack", EKeyCode::VK_J);
 	inputComponent->SetMapping("Dash", EKeyCode::VK_K);
+	inputComponent->SetMapping("Heal", EKeyCode::VK_H);
 
 
     inputComponent->BindAction("WalkLeft", EInputType::Holding, [this]() {
@@ -304,6 +305,15 @@ void Player::SetupInputComponent(InputComponent* inputComponent)
             }
         }
     );
+
+    inputComponent->BindAction("Heal", EInputType::Pressed, [this]()
+        {
+            if (playerProperty && playerProperty->GetHealth() < playerProperty->GetMaxHealth())
+            {
+                AddHealth(5); // 恢复1点生命值
+                // 可以在这里添加恢复生命的特效或音效
+            }
+		});
 
 }
 
