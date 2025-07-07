@@ -411,8 +411,8 @@ void Player::DieEnd()
 void Player::Recover()
 {
     EnableInput(true);
-    GameplayStatics::OpenLevel("RuinHouse");
-    SetLocalPosition({ 0,920 });
+    GameplayStatics::OpenLevel("LevelB");
+    SetLocalPosition({ 0,0 });
     rigid->SetVelocity({});
     AddHealth(5);
     camera->SetRectFrame(FRect({ -100.f,250.f }, { 100.f,750.f }));
