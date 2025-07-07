@@ -47,9 +47,9 @@ NightBorne::NightBorne()
 	ani->AddParamater("hurt", ParamType::Bool);
 	// 初始化新增成员变量
 	currentState = EnemyState::Idle;
-	sightRange = 300;  // 视野范围
+	sightRange = 1000.f;  // 视野范围
 	attackRange = 80.f; // 攻击范围
-	moveSpeed = 90.f;   // 移动速度
+	moveSpeed = 100.f;   // 移动速度
 	attackCooldown = 1.f; // 攻击冷却时间
 	currentCooldown = 0.f;
 	// 初始化追击边界
@@ -372,7 +372,8 @@ void NightBorne::AttackPlayer() {
 	//FVector2D attackBoxOffset =direction.x > 0 ? FVector2D(100, 0) : FVector2D(-300, 0);
 	FVector2D attackBoxOffset = FVector2D(50, 30);
 	attackBox->SetLocalPosition(attackBoxOffset);
-	//attackBox->Init(ECharacterDirection::LookForward, 3); // 假设攻击力为3
+	attackBox->Init(direction.x > 0 ? AttackDirection::Right : AttackDirection::Left, 1); // 假设攻击力为3
+
 
 	// 重置攻击冷却时间
 	currentCooldown = attackCooldown;

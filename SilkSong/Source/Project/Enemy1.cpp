@@ -265,7 +265,7 @@ void Enemy1::AttackPlayer() {
 
 	FVector2D attackBoxOffset = FVector2D(25, 0);
 	attackBox->SetLocalPosition(attackBoxOffset);
-	attackBox->Init(direction.x>0?AttackDirection::Right: AttackDirection::Left, 10); // 假设攻击力为3
+	attackBox->Init(direction.x>0?AttackDirection::Right: AttackDirection::Left, 1); // 假设攻击力为3
 
 	// 重置攻击冷却时间
 	currentCooldown = attackCooldown;

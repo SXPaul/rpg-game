@@ -450,7 +450,6 @@ void Player::ExecuteDamageTakenEvent(FDamageCauseInfo extraInfo)
     rigid->AddImpulse({ (GetWorldPosition() - causer->GetWorldPosition()).GetSafeNormal().x * 200,-200 });
     hurtBox->SetCollisonMode(CollisionMode::None);
     box->SetCollisionResponseToType(CollisionType::Bullet, false);
-
 }
 
 PropertyComponent* Player::GetProperty()
