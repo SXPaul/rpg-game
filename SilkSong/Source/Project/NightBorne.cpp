@@ -8,7 +8,7 @@
 //#include "SilkParticle.h"
 #include "Components/SpriteRenderer.h"
 #include "GameModeHelper.h"
-#include "AttackBox.h"
+#include "EnemyAtkBox.h"
 
 NightBorne::NightBorne()
 {
@@ -360,7 +360,7 @@ void NightBorne::AttackPlayer() {
 	isAttacking = true;
 	attackTimer = attackDuration;
 	// 创建攻击框
-	AttackBox* attackBox = GameplayStatics::CreateObject<AttackBox>();
+	EnemyAtkBox* attackBox = GameplayStatics::CreateObject<EnemyAtkBox>();
 	attackBox->SetSize({ 120,150 });
 	attackBox->AttachTo(this);
 	// 根据敌人朝向设置攻击框位置

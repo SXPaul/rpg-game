@@ -415,7 +415,6 @@ void Player::Recover()
     SetLocalPosition({ 0,0 });
     rigid->SetVelocity({});
     AddHealth(5);
-    camera->SetRectFrame(FRect({ -100.f,250.f }, { 100.f,750.f }));
 }
 
 FDamageCauseInfo Player::TakeDamage(IDamagable* damageCauser, float baseValue, EDamageType damageType)
