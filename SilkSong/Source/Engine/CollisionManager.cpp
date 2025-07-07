@@ -14,7 +14,7 @@ void CollisionManager::Initialize()
 	AddMapping(CollisionType::Enemy, CollisionType::Block);
 	AddMapping(CollisionType::Item, CollisionType::Block);
 	AddMapping(CollisionType::Item, CollisionType::HurtBox);
-	AddMapping(CollisionType::Chest, CollisionType::HurtBox);
+	AddMapping(CollisionType::Treasure, CollisionType::HurtBox);
 	AddMapping(CollisionType::Dart, CollisionType::Block);
 	AddMapping(CollisionType::Dart, CollisionType::Enemy);
 	AddMapping(CollisionType::Dart, CollisionType::HurtBox);

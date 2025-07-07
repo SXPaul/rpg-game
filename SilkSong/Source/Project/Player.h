@@ -1,5 +1,7 @@
 #pragma once
 #include "Objects/Character.h"
+#include "Damagable.h"
+#include "PropertyCarrier.h"
 #include "GameUI.h"
 
 enum class AttackDirection
@@ -10,7 +12,7 @@ enum class AttackDirection
     Down,
 };
 
-class Player : public Character
+class Player : public Character, public IDamagable, public IPropertyCarrier
 {
     DEFINE_SUPER(Character)
 
@@ -19,6 +21,19 @@ public:
     virtual void Update(float deltaTime) override;
     FVector2D GetCameraPos();
     virtual void BeginPlay()override;
+
+    int32 GetHealth()const;
+    void AddHealth(int32 delta);
+    void DieStart();
+    void DieEnd();
+    void Recover();
+
+    virtual FDamageCauseInfo TakeDamage(IDamagable* damageCauser, float baseValue, EDamageType damageType) override;
+    virtual void ExecuteDamageTakenEvent(FDamageCauseInfo extraInfo) override;
+
+    virtual PropertyComponent* GetProperty() override;
+
+    virtual void ExecuteDamageDealtEvent(FDamageCauseInfo extraInfo) override;
 
 protected:
     virtual void SetupInputComponent(InputComponent* inputComponent) override;
@@ -29,18 +44,33 @@ protected:
 private:
     class SpriteRenderer* render;
     class BoxCollider* box;
+    class BoxCollider* hurtBox;
     class RigidBody* rigid;
     class Camera* camera;
     class PlayerAnimator* ani;
     class GameUI* ui;
 
-	bool isonGround;
+    class DamageResponseComponent* damageResponse;
+    class PlayerPropertyComponent* playerProperty;
+
+
+    bool isAttacking; // 是否正在攻击
+    bool isonGround;
+    bool isDashing; // 是否正在冲刺
+
 
     AttackDirection curDirection;
     AttackDirection lastDirection;
 
+    Timer BlinkTimer;
+    Timer DieTimer;
+    Timer RecoverTimer;
+    int blinkTimes;
+
+
     int32 walkLock = 0;
     int32 jumpLock = 0;
-	float lastJumpTime = 0.0f; // 上次跳跃的时间戳
-	float lastAttackTime = 0.0f; // 上次攻击的时间戳
+    float lastJumpTime = 0.0f; // 上次跳跃的时间戳
+    float lastAttackTime = 0.0f; // 上次攻击的时间戳
+    float lastDashTime = 0.0f;
 };

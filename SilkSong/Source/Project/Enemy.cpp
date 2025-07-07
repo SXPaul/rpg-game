@@ -19,7 +19,6 @@ Enemy::Enemy()
 {
 	render = ConstructComponent<SpriteRenderer>();
 	render->SetLayer(1);
-	//circle = ConstructComponent<CircleCollider>();
 	box = ConstructComponent<BoxCollider>();
 	rigid = ConstructComponent<RigidBody>();
 	ani = ConstructComponent<Animator>();
@@ -36,11 +35,8 @@ Enemy::Enemy()
 	box->SetSize({ 15, 1000 });
 	box->SetType(CollisionType::Enemy);
 	box->SetCollisonMode(CollisionMode::Collision);
-	//circle->AttachTo(root);
-	//circle->SetRadius(40);
-	//circle->SetType(CollisionType::Enemy);
-	//circle->SetCollisonMode(CollisionMode::Collision);
 	rigid->SetAngularDrag(0.5f);
+	rigid->SetRotatable(false);
 
 	damageResponse = ConstructComponent<DamageResponseComponent>();
 	property = ConstructComponent<PropertyComponent>();
@@ -52,7 +48,7 @@ void Enemy::BeginPlay()
 {
 	Super::BeginPlay();
 
-	//circle->OnComponentBeginOverlap.AddDynamic(this, &Enemy::OnOverlap);
+	//box->OnComponentBeginOverlap.AddDynamic(this, &Enemy::OnOverlap);
 
 	if (!player)
 	{
@@ -91,7 +87,8 @@ FDamageCauseInfo Enemy::TakeDamage(IDamagable* damageCauser, float baseValue, ED
 		return {};
 	}
 	FDamageCauseInfo damageInfo = damageResponse->TakeDamage(damageCauser, baseValue, damageType);
-	property->AddHealth(-damageInfo.realValue);
+	property->AddHealth(-baseValue);
+
 	return damageInfo;
 }
 
@@ -108,10 +105,10 @@ void Enemy::ExecuteDamageTakenEvent(FDamageCauseInfo extraInfo)
 	hurtTimer = 0.1f;
 	Actor* causer = Cast<Actor>(extraInfo.damageCauser);
 	CHECK_PTR(causer)
-		if (AttackBox* box = Cast<AttackBox>(causer))
+	AttackBox * atkbox = Cast<AttackBox>(causer);
+		if (atkbox)
 		{
 			causer = box->GetOwner();
-			//player->AddSilk(1);
 		}
 	FVector2D normal = (GetWorldPosition() - causer->GetWorldPosition()).GetSafeNormal();
 	float delta_x = causer->GetWorldPosition().x - GetWorldPosition().x;
@@ -125,26 +122,16 @@ void Enemy::ExecuteDamageTakenEvent(FDamageCauseInfo extraInfo)
 	}
 	else
 	{
-		Effect* effect = GameplayStatics::CreateObject<Effect>(GetWorldPosition() + normal * 250);
-		if (effect)
-		{
-			effect->Init("effect_attack_", 0.01f);
-			effect->SetLocalScale(FVector2D::UnitVector * FMath::RandReal(0.9, 1.3));
-			effect->SetLocalRotation(FVector2D::VectorToDegree(normal));
-		}
+		
 	}
 
-	//SilkParticle* silk = GameplayStatics::CreateObject<SilkParticle>();
-	//silk->AttachTo(this);
-	//silk->Init(normal, IsDead());
-
-	Effect* effect = GameplayStatics::CreateObject<Effect>(GetWorldPosition());
-	if (effect)
-	{
-		effect->SetLocalRotation(FMath::RandInt(-15, 15) + FVector2D::VectorToDegree(normal));
-		effect->Init("effect_attack", -0.03f);
-		effect->SetLocalScale(FVector2D{ delta_x < 0 ? 1.f : -1.f ,1.f }*FMath::RandReal(1, 1.5));
-	}
+	//Effect* effect = GameplayStatics::CreateObject<Effect>(GetWorldPosition());
+	//if (effect)
+	//{
+	//	effect->SetLocalRotation(FMath::RandInt(-15, 15) + FVector2D::VectorToDegree(normal));
+	//	effect->Init("effect_attack", -0.03f);
+	//	effect->SetLocalScale(FVector2D{ delta_x < 0 ? 1.f : -1.f ,1.f }*FMath::RandReal(1, 1.5));
+	//}
 }
 
 PropertyComponent* Enemy::GetProperty()
@@ -152,13 +139,13 @@ PropertyComponent* Enemy::GetProperty()
 	return property;
 }
 
-//void Enemy::OnOverlap(Collider* hitComp, Collider* otherComp, Actor* otherActor)
-//{
-//	if (Player* player = Cast<Player>(otherActor))
-//	{
-//		GameModeHelper::ApplyDamage(this, player, 1, EDamageType::Enemy);
-//	}
-//}
+void Enemy::OnOverlap(Collider* hitComp, Collider* otherComp, Actor* otherActor)
+{
+	//if (Player* player = Cast<Player>(otherActor))
+	//{
+	//	GameModeHelper::ApplyDamage(this, player, 1, EDamageType::Enemy);
+	//}
+}
 
 void Enemy::Die()
 {
@@ -173,10 +160,10 @@ void Enemy::Die()
 	render_death->DetachFrom(root);
 	render_death->SetOwner(nullptr);//开发者偷懒而使用的危险代码，请勿模仿
 
-	//circle->OnComponentBeginOverlap.RemoveDynamic(this, &Enemy::OnOverlap);
-	//box->SetPhysicsMaterial(FPhysicsMaterial(0.6f, 0.6f));
-	//box->SetCollisionResponseToType(CollisionType::Dart, false);
-	//rigid->SetGravity(1960.f);
+	box->OnComponentBeginOverlap.RemoveDynamic(this, &Enemy::OnOverlap);
+	box->SetPhysicsMaterial(FPhysicsMaterial(0.6f, 0.6f));
+	box->SetCollisionResponseToType(CollisionType::Dart, false);
+	rigid->SetGravity(1960.f);
 
 	//Effect* effect = GameplayStatics::CreateObject<Effect>(GetWorldPosition());
 	//if (effect)effect->Init("effect_death");

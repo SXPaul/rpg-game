@@ -3,12 +3,12 @@
 #include "Damagable.h"
 
 
-class AttackBox :public Actor, public IDamagable
+class EnemyAtkBox :public Actor, public IDamagable
 {
 	DEFINE_SUPER(Actor)
 
 public:
-	AttackBox();
+	EnemyAtkBox();
 
 	void Init(AttackDirection direction, int32 damage = 3);
 

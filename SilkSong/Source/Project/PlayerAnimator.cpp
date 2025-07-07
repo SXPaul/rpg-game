@@ -11,6 +11,10 @@ PlayerAnimator::PlayerAnimator()
 	jump1.Load("player_jump_1");
 	jump2.Load("player_jump_2");
 	jump_falling.Load("player_jump_falling");
+	die.Load("player_die");
+	dead.Load("player_dead");
+	attack1.Load("player_attack1");
+	attack_up.Load("player_attack2");
 
 
 	idle.SetInterval(0.1f);
@@ -18,12 +22,20 @@ PlayerAnimator::PlayerAnimator()
 	jump1.SetInterval(0.1f);
 	jump2.SetInterval(0.1f);
 	jump_falling.SetInterval(0.1f);
+	die.SetInterval(0.1f);
+	dead.SetInterval(0.1f);
+	attack1.SetInterval(0.035f);
+	attack_up.SetInterval(0.035f);
 
 	Insert("idle", idle);
 	Insert("run", run);
 	Insert("player_jump_1", jump1);
 	Insert("player_jump_2", jump2);
 	Insert("player_jump_falling", jump_falling);
+	Insert("player_die", die);
+	Insert("player_dead", dead); 
+	Insert("player_attack1", attack1);
+	Insert("player_attack2", attack_up);
 
 
 	SetNode("idle");

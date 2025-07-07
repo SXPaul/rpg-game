@@ -6,6 +6,7 @@
 #include "GameModeHelper.h"
 #include "LevelTransformer.h"
 #include "UI/UserInterface.h"
+#include "Treasure.h"
 level_b::level_b()
 {
     //Image* Title;
@@ -25,6 +26,9 @@ level_b::level_b()
     //    //player->GetComponentByClass<Camera>()->SetTarget(player);
     //}
     SetDefaultController<Player>();
+    GameplayStatics::DontDestroyOnLoad(GameplayStatics::CreateObject<GameMode>());
+    GameplayStatics::CreateObject<Treasure>({ 918,-420 });
+
     //FVector2D  a = GetPosition();
     //std::string str = a.ToString();
 

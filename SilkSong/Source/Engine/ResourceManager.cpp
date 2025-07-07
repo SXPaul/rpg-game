@@ -19,7 +19,13 @@ void ResourceManager::Initialize()
 	Load("player_runstart", "Asset/Main Character/Sword+Aim+Throw/idle_to_runstart/", 138, 88, 4);
 	Load("player_run", "Asset/Main Character/Sword+Aim+Throw/run/", 138, 88, 4);
 	Load("player_idle_to_jump", "Asset/Main Character/Sword+Aim+Throw/idle_to_jump/", 138, 88, 12);
-	Load("player_die", "Asset/Main Character/Sword+Aim+Throw/die/", 138, 88, 11);
+	Load("player_die", "Asset/Main Character/Sword+Aim+Throw/die/", 138, 88, 30);
+	Load("player_dead", "Asset/Main Character/Sword+Aim+Throw/dead/", 138, 88, 1);
+	Load("player_attack1", "Asset/Main Character/Sword+Aim+Throw/light_attack_1/", 138, 88, 7);
+	Load("player_attack2", "Asset/Main Character/Sword+Aim+Throw/light_attack_2/", 138, 88, 5);
+	Load("player_jump_1", "Asset/Main Character/Sword+Aim+Throw/jump_up_1/", 138, 88, 4);
+	Load("player_jump_2", "Asset/Main Character/Sword+Aim+Throw/jump_up_2/", 138, 88, 8);
+	Load("player_jump_falling", "Asset/Main Character/Sword+Aim+Throw/jump_falling/", 138, 88, 4);
 	/* life */
 	Load("bar", "Asset/Surroundings/Medieval_Castle/HUD/bar.png", 118*2, 13*2);
 	Load("bar_background", "Asset/Surroundings/Medieval_Castle/HUD/bar_background.png", 100*2, 7*2);
@@ -140,6 +146,9 @@ void ResourceManager::Initialize()
 	/* UI */
 	Load("UI_background", "Asset/UI/UI_background.png", 50, 50);
 	Load("red_1", "Asset/UI/red_1.png", 380, 162);
+
+	/* particle*/
+	Load("particle", "Asset/FX/Hit/Hits_0/SP103_01.png", 98, 87, 1, 1, 1);
 }
 
 //*********                             **********

@@ -20,7 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Project\AttackBox.h" />
-    <ClInclude Include="Source\Project\Boss1UI.h" />
+    <ClInclude Include="Source\Project\EnemyAtkBox.h" />
     <ClInclude Include="Source\Project\frame.h" />
     <ClInclude Include="Source\Project\Effect.h" />
     <ClInclude Include="Source\Project\Enemy.h" />
@@ -96,6 +96,7 @@
     <ClInclude Include="Source\Engine\UI\UserInterface.h" />
     <ClInclude Include="Source\Engine\UI\Widgets.h" />
     <ClInclude Include="Source\Project\StartLevel.h" />
+    <ClInclude Include="Source\Project\Treasure.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Project\AttackBox.cpp" />
@@ -104,6 +105,7 @@
     <ClCompile Include="Source\Project\Effect.cpp" />
     <ClCompile Include="Source\Project\Enemy.cpp" />
     <ClCompile Include="Source\Project\Enemy1.cpp" />
+    <ClCompile Include="Source\Project\EnemyAtkBox.cpp" />
     <ClCompile Include="Source\Project\FirstLevel.cpp" />
     <ClCompile Include="Source\Project\frame.cpp" />
     <ClCompile Include="Source\Project\GameUI.cpp" />
@@ -162,6 +164,7 @@
     <ClCompile Include="Source\Engine\UI\Widgets.cpp" />
     <ClCompile Include="Source\Project\StartLevel.cpp" />
     <ClCompile Include="Source\Project\LevelA.cpp" />
+    <ClCompile Include="Source\Project\Treasure.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\journal.md" />

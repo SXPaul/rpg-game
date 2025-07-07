@@ -3,7 +3,7 @@
 #include "Components/Animator.h"
 #include "Damagable.h"
 #include "PropertyCarrier.h"
-
+#include <string>
 
 class Enemy :public Actor, public IDamagable, public IPropertyCarrier
 {
@@ -26,7 +26,8 @@ public:
 
 	bool IsDead()const { return bIsDead; }
 
-	//void OnOverlap(class Collider* hitComp, Collider* otherComp, Actor* otherActor);
+	void OnOverlap(class Collider* hitComp, Collider* otherComp, Actor* otherActor);
+
 
 protected:
 	virtual void Die();
@@ -44,7 +45,6 @@ protected:
 	class PropertyComponent* property;
 
 	class Player* player;
-
 	bool bIsDead = false;
 	float hurtTimer;
 };

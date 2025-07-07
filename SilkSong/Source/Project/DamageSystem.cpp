@@ -10,6 +10,7 @@ void DamageSystem::ApplyDamage(IDamagable* damageCauser, IDamagable* damagedActo
 {
 	CHECK_PTR(damageCauser)
 	CHECK_PTR(damagedActor)
+		//exit(1);
 	FDamageCauseInfo causeInfo = damagedActor->TakeDamage(damageCauser, baseValue, damageType);
 	damagedActor->ExecuteDamageTakenEvent(causeInfo);
 	damageCauser->ExecuteDamageDealtEvent(causeInfo);

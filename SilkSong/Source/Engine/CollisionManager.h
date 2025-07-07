@@ -21,7 +21,7 @@ enum class CollisionType :uint8_t
 	Enemy,
 	Block,
 	Item,
-	Chest,
+	Treasure,
 	Dart,
 	Bullet
 };
