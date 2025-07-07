@@ -368,7 +368,6 @@ void Player::StartCollision(Collider* hitComp, Collider* otherComp, Actor* other
 
 void Player::StayCollision(Collider* hitComp, Collider* otherComp, Actor* otherActor, FVector2D normalImpulse, const FHitResult& hitResult)
 {
-
     // 在这里处理持续碰撞的逻辑
     if (GetHealth() <= 0)
     {
@@ -437,7 +436,8 @@ void Player::ExecuteDamageTakenEvent(FDamageCauseInfo extraInfo)
 
     if (GetHealth() <= 0)
     {
-        DieStart(); return;
+        DieStart(); 
+        return;
     }
 
     blinkTimes = 10;
