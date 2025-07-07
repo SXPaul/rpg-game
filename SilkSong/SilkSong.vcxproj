@@ -24,6 +24,7 @@
     <ClInclude Include="Source\Project\Effect.h" />
     <ClInclude Include="Source\Project\Enemy.h" />
     <ClInclude Include="Source\Project\Enemy1.h" />
+    <ClInclude Include="Source\Project\GameUI.h" />
     <ClInclude Include="Source\Project\LevelA.h" />
     <ClInclude Include="Source\Project\boss1level.h" />
     <ClInclude Include="Source\Project\FirstLevel.h" />
@@ -97,6 +98,7 @@
     <ClCompile Include="Source\Project\Enemy1.cpp" />
     <ClCompile Include="Source\Project\FirstLevel.cpp" />
     <ClCompile Include="Source\Project\frame.cpp" />
+    <ClCompile Include="Source\Project\GameUI.cpp" />
     <ClCompile Include="Source\Project\LevelB.cpp" />
     <ClCompile Include="Source\Project\LevelTransformer.cpp" />
     <ClCompile Include="Source\Project\MenuController.cpp" />

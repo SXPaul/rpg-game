@@ -5,8 +5,18 @@
 #include "Bg.h"
 #include "GameModeHelper.h"
 #include "LevelTransformer.h"
+#include "UI/UserInterface.h"
 level_b::level_b()
 {
+    //Image* Title;
+    //Title = 
+    //Title = AddWidget<Image>();
+    //Title->AttachTo(rootCanvas);
+    //Title->SetLayoutPattern(LayoutPattern::Center);
+    //Title->SetRelativePosition(FVector2D(0, -175));
+    //Title->SetSize(FVector2D(800, 150));
+    //Title->LoadSprite("carpet_1");
+    //Title->SetLayer(0);
     // �������
     //if (!GameplayStatics::FindObjectOfClass<Player>())
     //{
@@ -15,9 +25,11 @@ level_b::level_b()
     //    //player->GetComponentByClass<Camera>()->SetTarget(player);
     //}
     SetDefaultController<Player>();
-    //GameplayStatics::DontDestroyOnLoad(GameplayStatics::CreateObject<GameMode>());
-    //Player* player = GameplayStatics::CreateObject<Player>();
+    //FVector2D  a = GetPosition();
+    //std::string str = a.ToString();
 
+    // 输出到终端
+    //std::cout << "FVector2D a: " << str << std::endl;
 
     // ��ȡ��Ϸģʽʵ��
     //GameMode* gameMode = GameModeHelper::GetInstance();
@@ -30,6 +42,10 @@ level_b::level_b()
     // �����¹ؿ��ı�������
     //GameModeHelper::PlayBGMusic("new_level_music");
 
+    //MenuUI* menuUI = GameplayStatics::CreateUI<MenuUI>();
+    //if (menuUI) {
+    //    menuUI->AddToViewport();
+    //}
     // background
     GameplayStatics::CreateObject<Bg>()->Init("forest_1_max", -30);
     GameplayStatics::CreateObject<Bg>()->Init("forest_2_max", -15);
@@ -58,7 +74,15 @@ level_b::level_b()
     Draw_Platform(910, -160);
     /* platform 4, x: 600 720, y : -150 - 170 */
     Draw_Platform(660, 80);
+    /* platform 5 */
     Draw_Platform(460, 280);
+    /* 6 */
+    Draw_Platform(710, -360);
+    /* 7 */
+    Draw_Platform(900, -500);
+    Draw_Platform(710, -700);
+    GameplayStatics::CreateObject<PlatForm>({ 710, -740 })->Init("door", { 40, 60 }, {});
+    GameplayStatics::CreateObject<LevelTransformer>({ 710,-740 })->Init("Boss", { 0,0 }, FRect({ 10000.f,1110.f }, { 9000.f,1400.f }));
     /* block 1 */
     GameplayStatics::CreateObject<PlatForm>({ -300, 200 })->Init("", { 1000, 200 }, {});
     GameplayStatics::CreateObject<PlatForm>({ -785, 115 })->Init("floor_tile_1", { 30, 30 }, {});
@@ -85,7 +109,7 @@ level_b::level_b()
     //GameplayStatics::CreateObject<PlatForm>({ 75, 1125 })->Init("arch_3", { 30, 30 }, {});
     /* net */
     for (float x = -1000; x < 3000.f; x += 100.f)
-        GameplayStatics::CreateObject<LevelTransformer>({ x,3000.0 })->Init("LevelB", { 0,0 }, FRect({ 0.f,1110.f }, { 90.f,1400.f }));
+        GameplayStatics::CreateObject<LevelTransformer>({ x,3000.0 })->Init("Menu", { 0,0 }, FRect({ 0.f,1110.f }, { 90.f,1400.f }));
     // �ؿ�ɾ��ʱ�Ĵ���
     OnLevelDelete.Add([this]() {
         GameMode* gameMode = GameModeHelper::GetInstance();
@@ -96,7 +120,6 @@ level_b::level_b()
 void level_b::Update(float deltaTime)
 {
     Level::Update(deltaTime);
-
     // ����������ӹؿ��ĸ����߼����������Ҫ�����ǽ������������ջ�����һЩ����Ч���ĸ����߼�
 }
 

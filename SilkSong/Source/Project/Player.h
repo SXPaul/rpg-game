@@ -1,5 +1,6 @@
 #pragma once
 #include "Objects/Character.h"
+#include "GameUI.h"
 
 enum class AttackDirection
 {
@@ -31,6 +32,7 @@ private:
     class RigidBody* rigid;
     class Camera* camera;
     class PlayerAnimator* ani;
+    class GameUI* ui;
 
 	bool isonGround;
 

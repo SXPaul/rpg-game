@@ -20,13 +20,13 @@ void ResourceManager::Initialize()
 	Load("player_run", "Asset/Main Character/Sword+Aim+Throw/run/", 138, 88, 4);
 	Load("player_idle_to_jump", "Asset/Main Character/Sword+Aim+Throw/idle_to_jump/", 138, 88, 12);
 	Load("player_die", "Asset/Main Character/Sword+Aim+Throw/die/", 138, 88, 11);
-	
+	/* life */
+	Load("bar", "Asset/Surroundings/Medieval_Castle/HUD/bar.png", 118*2, 13*2);
+	Load("bar_background", "Asset/Surroundings/Medieval_Castle/HUD/bar_background.png", 100*2, 7*2);
+	Load("health_bar", "Asset/Surroundings/Medieval_Castle/HUD/health_bar.png", 100*2, 7*2);
 
 	/** 图像 **/
 	//Environment
-	// Load("bg0", "Asset/Surroundings/Medieval_Castle/background/layer_1.png", WIN_WIDTH + 2000, WIN_HEIGHT + 2000);
-	// Load("bg1", "Asset/Surroundings/Medieval_Castle/background/layer_2.png", WIN_WIDTH + 2000, WIN_HEIGHT + 2000);
-	// Load("bg2", "Asset/Surroundings/Medieval_Castle/background/layer_3.png", WIN_WIDTH + 2000, WIN_HEIGHT + 2000);
 	Load("forest_1", "Asset/Surroundings/Forest_Bg/background_layer_1.png", WIN_WIDTH + 0, WIN_HEIGHT + 0);
 	Load("forest_2", "Asset/Surroundings/Forest_Bg/background_layer_2.png", WIN_WIDTH + 0, WIN_HEIGHT + 0);
 	Load("forest_3", "Asset/Surroundings/Forest_Bg/background_layer_3.png", WIN_WIDTH + 0, WIN_HEIGHT + 0);
@@ -124,6 +124,8 @@ void ResourceManager::Initialize()
 	Load("stairs_carpet_4", "Asset/Surroundings/Medieval_Castle/Tiles/stairs_tile_carpet_4.png", 30, 30);
 	/* blank */
 	Load("blank", "Asset/Surroundings/Medieval_Castle/Tiles/blank.png", 30, 30);
+	/* Decorations */
+	Load("door", "Asset/Surroundings/Medieval_Castle/Decorations/door.png", 40, 60);
 	/* UI */
 	Load("UI_background", "Asset/UI/UI_background.png", 50, 50);
 	Load("red_1", "Asset/UI/red_1.png", 380, 162);

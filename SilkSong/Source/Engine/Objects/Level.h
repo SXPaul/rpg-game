@@ -9,6 +9,7 @@
 #include"CoreMinimal.h"
 #include"GameplayStatics.h"
 #include"Tools/Timer.h"
+#include "Player.h"
 
 
 DECLARE_NO_PARAM_MULTICAST_DELEGATE_CLASS(LevelEvent)
@@ -34,7 +35,10 @@ public:
 	{
 		callback = [this]() {return mainController = GameplayStatics::CreateObject<T>(); };
 	}
-
+	FVector2D GetPosition()
+	{
+		return ((Player*)mainController)->GetCameraPos();
+	}
 	LevelEvent OnLevelLoad;
 	LevelEvent OnLevelDelete;
 };

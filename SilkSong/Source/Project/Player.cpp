@@ -36,6 +36,8 @@ Player::Player()
     box->OnComponentHit.AddDynamic(this, &Player::StartCollision);
     box->OnComponentStay.AddDynamic(this, &Player::StayCollision);
 
+    ui = GameplayStatics::CreateUI<GameUI>();
+    ui->AddToViewport();
 
     curDirection = AttackDirection::Right;
 	lastDirection = curDirection;
