@@ -19,7 +19,8 @@ void ResourceManager::Initialize()
 	Load("player_runstart", "Asset/Main Character/Sword+Aim+Throw/idle_to_runstart/", 138, 88, 4);
 	Load("player_run", "Asset/Main Character/Sword+Aim+Throw/run/", 138, 88, 4);
 	Load("player_idle_to_jump", "Asset/Main Character/Sword+Aim+Throw/idle_to_jump/", 138, 88, 12);
-	Load("player_die", "Asset/Main Character/Sword+Aim+Throw/die/", 138, 88, 11);
+	Load("player_die", "Asset/Main Character/Sword+Aim+Throw/die/", 138, 88, 30);
+	Load("player_dead", "Asset/Main Character/Sword+Aim+Throw/dead/", 138, 88, 1);
 	/* life */
 	Load("bar", "Asset/Surroundings/Medieval_Castle/HUD/bar.png", 118*2, 13*2);
 	Load("bar_background", "Asset/Surroundings/Medieval_Castle/HUD/bar_background.png", 100*2, 7*2);

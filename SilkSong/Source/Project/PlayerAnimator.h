@@ -30,6 +30,9 @@ private:
 	Animation jump1;
 	Animation jump2;
 	Animation jump_falling;
+	Animation die;
+	Animation dead;
+
 	AnimEdge idle_to_runstart;
 	AnimEdge run_to_idle;
 	AnimEdge idle_to_jump1;

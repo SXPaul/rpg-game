@@ -397,21 +397,19 @@ void Player::DieStart()
     EnableInput(false);
     rigid->SetMoveable(false);
     rigid->SetGravityEnabled(false);
-    DieTimer.Bind(3.f, this, &Player::DieEnd);
+    DieTimer.Bind(3.0f, this, &Player::Recover);
     hurtBox->SetCollisonMode(CollisionMode::None);
+    ani->SetNode("player_die");
+	//ani->SetNode("player_dead");
 }
 
-void Player::DieEnd()
-{
-    rigid->SetMoveable(true);
-    RecoverTimer.Bind(2.f, this, &Player::Recover);
-}
 
 void Player::Recover()
 {
     EnableInput(true);
-    GameplayStatics::OpenLevel("LevelB");
+    GameplayStatics::OpenLevel("Menu");
     SetLocalPosition({ 0,0 });
+    rigid->SetMoveable(true);
     rigid->SetVelocity({});
     AddHealth(5);
 }
@@ -440,7 +438,7 @@ void Player::ExecuteDamageTakenEvent(FDamageCauseInfo extraInfo)
         return;
     }
 
-    blinkTimes = 10;
+    blinkTimes = 2;
     isDashing = false;
 
     rigid->SetGravityEnabled(true);
