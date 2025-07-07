@@ -26,6 +26,7 @@ public:
     void AddHealth(int32 delta);
     void DieStart();
     void DieEnd();
+    void Recover();
 
     virtual FDamageCauseInfo TakeDamage(IDamagable* damageCauser, float baseValue, EDamageType damageType) override;
     virtual void ExecuteDamageTakenEvent(FDamageCauseInfo extraInfo) override;
@@ -59,6 +60,8 @@ private:
     AttackDirection lastDirection;
 
     Timer BlinkTimer;
+    Timer DieTimer;
+    Timer RecoverTimer;
     int blinkTimes;
 
 

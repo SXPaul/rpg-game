@@ -93,7 +93,6 @@ void Player::BeginPlay()
 
     box->OnComponentHit.AddDynamic(this, &Player::StartCollision);
     box->OnComponentStay.AddDynamic(this, &Player::StayCollision);
-
 }
 
 void Player::Update(float deltaTime)
@@ -399,11 +398,24 @@ void Player::DieStart()
     EnableInput(false);
     rigid->SetMoveable(false);
     rigid->SetGravityEnabled(false);
+    DieTimer.Bind(3.f, this, &Player::DieEnd);
+    hurtBox->SetCollisonMode(CollisionMode::None);
 }
 
 void Player::DieEnd()
 {
     rigid->SetMoveable(true);
+    RecoverTimer.Bind(2.f, this, &Player::Recover);
+}
+
+void Player::Recover()
+{
+    EnableInput(true);
+    GameplayStatics::OpenLevel("RuinHouse");
+    SetLocalPosition({ 0,920 });
+    rigid->SetVelocity({});
+    AddHealth(5);
+    camera->SetRectFrame(FRect({ -100.f,250.f }, { 100.f,750.f }));
 }
 
 FDamageCauseInfo Player::TakeDamage(IDamagable* damageCauser, float baseValue, EDamageType damageType)
@@ -433,10 +445,10 @@ void Player::ExecuteDamageTakenEvent(FDamageCauseInfo extraInfo)
     isDashing = false;
 
     rigid->SetGravityEnabled(true);
-    rigid->SetVelocity({});
+    rigid->SetVelocity({0,0});
     Actor* causer = Cast<Actor>(extraInfo.damageCauser);
     CHECK_PTR(causer)
-        rigid->AddImpulse({ (GetWorldPosition() - causer->GetWorldPosition()).GetSafeNormal().x * 200,-200 });
+    rigid->AddImpulse({ (GetWorldPosition() - causer->GetWorldPosition()).GetSafeNormal().x * 200,-200 });
     hurtBox->SetCollisonMode(CollisionMode::None);
     box->SetCollisionResponseToType(CollisionType::Bullet, false);
 

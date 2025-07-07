@@ -152,13 +152,13 @@ PropertyComponent* Enemy::GetProperty()
 	return property;
 }
 
-//void Enemy::OnOverlap(Collider* hitComp, Collider* otherComp, Actor* otherActor)
-//{
-//	if (Player* player = Cast<Player>(otherActor))
-//	{
-//		GameModeHelper::ApplyDamage(this, player, 1, EDamageType::Enemy);
-//	}
-//}
+void Enemy::OnOverlap(Collider* hitComp, Collider* otherComp, Actor* otherActor)
+{
+	if (Player* player = Cast<Player>(otherActor))
+	{
+		GameModeHelper::ApplyDamage(this, player, 1, EDamageType::Enemy);
+	}
+}
 
 void Enemy::Die()
 {
