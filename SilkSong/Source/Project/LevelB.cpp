@@ -109,7 +109,7 @@ level_b::level_b()
     //GameplayStatics::CreateObject<PlatForm>({ 75, 1125 })->Init("arch_3", { 30, 30 }, {});
     /* net */
     for (float x = -1000; x < 3000.f; x += 100.f)
-        GameplayStatics::CreateObject<LevelTransformer>({ x,3000.0 })->Init("Menu", { 0,0 }, FRect({ 0.f,1110.f }, { 90.f,1400.f }));
+        GameplayStatics::CreateObject<LevelTransformer>({ x,3000.0 })->Init("LevelBFail", { 0,0 }, FRect({ 0.f,1110.f }, { 90.f,1400.f }));
     // �ؿ�ɾ��ʱ�Ĵ���
     OnLevelDelete.Add([this]() {
         GameMode* gameMode = GameModeHelper::GetInstance();
@@ -126,7 +126,6 @@ void level_b::Update(float deltaTime)
 void level_b::Draw_Platform(float x, float y)
 {
     /* platform 1, x: x-60 x+60, y: y-10 y+10  */
-    GameplayStatics::CreateObject<PlatForm>({ 360, -60 })->Init("", { 120, 20 }, {});
     GameplayStatics::CreateObject<PlatForm>({ x, y })->Init("", { 120, 20 }, {});
     GameplayStatics::CreateObject<PlatForm>({ x - 45, y + 7.5f })->Init("platform_shadow", { 30, 5 }, {});
     GameplayStatics::CreateObject<PlatForm>({ x - 15, y + 7.5f })->Init("platform_shadow", { 30, 5 }, {});

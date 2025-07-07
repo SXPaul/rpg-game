@@ -183,7 +183,7 @@ void Player::SetupInputComponent(InputComponent* inputComponent)
 
     inputComponent->BindAction("Jumping", EInputType::Holding, [this]()
         {
-            if (jumpLock == 1 && GameplayStatics::GetTimeSeconds() - lastJumpTime < 0.5f)
+            if (jumpLock == 1 && GameplayStatics::GetTimeSeconds() - lastJumpTime < 1.5f)
             {
 				isonGround = false; // 标记玩家不在地面上
                 // 如果在跳跃状态且跳跃时间小于0.2秒

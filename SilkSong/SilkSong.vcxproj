@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Project\AttackBox.h" />
+    <ClInclude Include="Source\Project\Boss1UI.h" />
     <ClInclude Include="Source\Project\frame.h" />
     <ClInclude Include="Source\Project\Effect.h" />
     <ClInclude Include="Source\Project\Enemy.h" />
@@ -28,7 +29,13 @@
     <ClInclude Include="Source\Project\LevelA.h" />
     <ClInclude Include="Source\Project\boss1level.h" />
     <ClInclude Include="Source\Project\FirstLevel.h" />
+    <ClInclude Include="Source\Project\LevelAFail.h" />
+    <ClInclude Include="Source\Project\LevelAFailController.h" />
+    <ClInclude Include="Source\Project\LevelAFailUI.h" />
     <ClInclude Include="Source\Project\LevelB.h" />
+    <ClInclude Include="Source\Project\LevelBFail.h" />
+    <ClInclude Include="Source\Project\LevelBFailController.h" />
+    <ClInclude Include="Source\Project\LevelBFailUI.h" />
     <ClInclude Include="Source\Project\LevelTransformer.h" />
     <ClInclude Include="Source\Project\MenuController.h" />
     <ClInclude Include="Source\Project\MenuLevel.h" />
@@ -93,13 +100,20 @@
   <ItemGroup>
     <ClCompile Include="Source\Project\AttackBox.cpp" />
     <ClCompile Include="Source\Project\boss1level.cpp" />
+    <ClCompile Include="Source\Project\Boss1UI.cpp" />
     <ClCompile Include="Source\Project\Effect.cpp" />
     <ClCompile Include="Source\Project\Enemy.cpp" />
     <ClCompile Include="Source\Project\Enemy1.cpp" />
     <ClCompile Include="Source\Project\FirstLevel.cpp" />
     <ClCompile Include="Source\Project\frame.cpp" />
     <ClCompile Include="Source\Project\GameUI.cpp" />
+    <ClCompile Include="Source\Project\LevelAFail.cpp" />
+    <ClCompile Include="Source\Project\LevelAFailController.cpp" />
+    <ClCompile Include="Source\Project\LevelAFailUI.cpp" />
     <ClCompile Include="Source\Project\LevelB.cpp" />
+    <ClCompile Include="Source\Project\LevelBFail.cpp" />
+    <ClCompile Include="Source\Project\LevelBFailController.cpp" />
+    <ClCompile Include="Source\Project\LevelBFailUI.cpp" />
     <ClCompile Include="Source\Project\LevelTransformer.cpp" />
     <ClCompile Include="Source\Project\MenuController.cpp" />
     <ClCompile Include="Source\Project\MenuLevel.cpp" />

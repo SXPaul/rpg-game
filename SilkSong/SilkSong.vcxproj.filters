@@ -58,6 +58,13 @@
     <ClCompile Include="Source\Project\StartLevel.cpp" />
     <ClCompile Include="Source\Project\LevelA.cpp" />
     <ClCompile Include="Source\Project\GameUI.cpp" />
+    <ClCompile Include="Source\Project\LevelAFail.cpp" />
+    <ClCompile Include="Source\Project\LevelAFailController.cpp" />
+    <ClCompile Include="Source\Project\LevelAFailUI.cpp" />
+    <ClCompile Include="Source\Project\Boss1UI.cpp" />
+    <ClCompile Include="Source\Project\LevelBFail.cpp" />
+    <ClCompile Include="Source\Project\LevelBFailController.cpp" />
+    <ClCompile Include="Source\Project\LevelBFailUI.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Project\AttackBox.h" />
@@ -130,6 +137,13 @@
     <ClInclude Include="Source\Engine\UI\Widgets.h" />
     <ClInclude Include="Source\Project\StartLevel.h" />
     <ClInclude Include="Source\Project\GameUI.h" />
+    <ClInclude Include="Source\Project\LevelAFail.h" />
+    <ClInclude Include="Source\Project\LevelAFailController.h" />
+    <ClInclude Include="Source\Project\LevelAFailUI.h" />
+    <ClInclude Include="Source\Project\Boss1UI.h" />
+    <ClInclude Include="Source\Project\LevelBFail.h" />
+    <ClInclude Include="Source\Project\LevelBFailController.h" />
+    <ClInclude Include="Source\Project\LevelBFailUI.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\journal.md" />

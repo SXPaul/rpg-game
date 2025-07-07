@@ -36,6 +36,9 @@ void ResourceManager::Initialize()
 	Load("bg0", "Asset/Surroundings/Medieval_Castle/background/layer_1.png", WIN_WIDTH + 2800, WIN_HEIGHT + 2800);
 	Load("bg1", "Asset/Surroundings/Medieval_Castle/background/layer_2.png", WIN_WIDTH + 2800, WIN_HEIGHT + 2800);
 	Load("bg2", "Asset/Surroundings/Medieval_Castle/background/layer_3.png", WIN_WIDTH + 2800, WIN_HEIGHT + 2800);
+	Load("bg0_pro", "Asset/Surroundings/Medieval_Castle/background/layer_1.png", WIN_WIDTH + 500, WIN_HEIGHT + 500);
+	Load("bg1_pro", "Asset/Surroundings/Medieval_Castle/background/layer_2.png", WIN_WIDTH + 500, WIN_HEIGHT + 500);
+	Load("bg2_pro", "Asset/Surroundings/Medieval_Castle/background/layer_3.png", WIN_WIDTH + 500, WIN_HEIGHT + 500);
 
 	// tiles
 	/* brick */
@@ -126,6 +129,14 @@ void ResourceManager::Initialize()
 	Load("blank", "Asset/Surroundings/Medieval_Castle/Tiles/blank.png", 30, 30);
 	/* Decorations */
 	Load("door", "Asset/Surroundings/Medieval_Castle/Decorations/door.png", 40, 60);
+	Load("door_pro", "Asset/Surroundings/Medieval_Castle/Decorations/door.png", 80, 120);
+	Load("curtain_blue_left", "Asset/Surroundings/Medieval_Castle/Decorations/curtain_blue_1.png", 70, 160);
+	Load("curtain_blue_right", "Asset/Surroundings/Medieval_Castle/Decorations/curtain_blue_2.png", 70, 160);
+	Load("curtain_red_left", "Asset/Surroundings/Medieval_Castle/Decorations/curtain_red_1.png", 122, 280);
+	Load("curtain_red_right", "Asset/Surroundings/Medieval_Castle/Decorations/curtain_red_2.png", 122, 280);
+	Load("bookshelf_1", "Asset/Surroundings/Medieval_Castle/Decorations/bookshelf_1.png", 64, 77);
+	Load("bookshelf_2", "Asset/Surroundings/Medieval_Castle/Decorations/bookshelf_2.png", 64, 77);
+	Load("flag_blue", "Asset/Surroundings/Medieval_Castle/Decorations/flag_blue.png", 38, 67);
 	/* UI */
 	Load("UI_background", "Asset/UI/UI_background.png", 50, 50);
 	Load("red_1", "Asset/UI/red_1.png", 380, 162);

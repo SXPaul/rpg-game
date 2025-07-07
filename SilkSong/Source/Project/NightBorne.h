@@ -1,5 +1,6 @@
 #pragma once
 #include "Enemy.h"
+#include "Boss1UI.h"
 
 enum class EnemyState {
 	Idle,
@@ -48,6 +49,7 @@ protected:
 
 private:
 	void AdjustColliderOnDeath();
+	class Boss1UI* ui;
 	Animation idle;
 	Animation hurt;
 	Animation run;

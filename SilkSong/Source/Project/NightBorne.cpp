@@ -58,6 +58,8 @@ NightBorne::NightBorne()
 	box->SetSize({ 95,95 });
 	box->SetLocalPosition({ 3, 30 });
 
+	ui = GameplayStatics::CreateUI<Boss1UI>();
+	ui->AddToViewport();
 }
 
 void NightBorne::BeginPlay()

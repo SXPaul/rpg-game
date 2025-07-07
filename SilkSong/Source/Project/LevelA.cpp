@@ -31,7 +31,6 @@ level_a::level_a()
     PlatForm* temp;
 
     /* start point */
-    GameplayStatics::CreateObject<PlatForm>({ -150.0, 50.0 })->Init("", { 31, 1000 }, {});
     GameplayStatics::CreateObject<PlatForm>({ -175, 85 })->Init("lion_10", { 30, 30 }, {});
     GameplayStatics::CreateObject<PlatForm>({ -145, 85 })->Init("lion_11", { 30, 30 }, {});
     GameplayStatics::CreateObject<PlatForm>({ -115, 85 })->Init("lion_12", { 30, 30 }, {});
@@ -44,6 +43,16 @@ level_a::level_a()
     GameplayStatics::CreateObject<PlatForm>({ -175, -5 })->Init("lion_1", { 30, 30 }, {});
     GameplayStatics::CreateObject<PlatForm>({ -145, -5 })->Init("lion_2", { 30, 30 }, {});
     GameplayStatics::CreateObject<PlatForm>({ -115, -5 })->Init("lion_3", { 30, 30 }, {});
+    GameplayStatics::CreateObject<PlatForm>({ -114.5, 40.0 })->Init("", { 31, 120 }, {});
+    /* boundary */
+    GameplayStatics::CreateObject<PlatForm>({ -235.0, 40.0 })->Init("", { 90, 120 }, {});
+    for (float x = -265.0f; x < -190.0f; x += 30.0f)
+        for (float y = -5.0f; y < 100.0f; y += 30.0f)
+            GameplayStatics::CreateObject<PlatForm>({ x, y })->Init("brick_8", { 30, 30 }, {});
+    GameplayStatics::CreateObject<PlatForm>({ -190.0, -270.0 })->Init("", { 180, 500 }, {});
+    for (float x = -265.0f; x < -100.0f; x += 30.0f)
+        for (float y = -505.0f; y < -20.0f; y += 30.0f)
+            GameplayStatics::CreateObject<PlatForm>({ x, y })->Init("brick_7", { 30, 30 }, {});
     /* block 1 */
     GameplayStatics::CreateObject<PlatForm>({ -300, 200 })->Init("", { 1000, 200 }, {});
     GameplayStatics::CreateObject<PlatForm>({ -785, 115 })->Init("floor_tile_1", { 30, 30 }, {});
@@ -120,38 +129,9 @@ level_a::level_a()
     temp->SetLocalScale({ 50.f / 30.0f, 60.f / 30.0f });
 
     /* net */
-    for(float x = -1000; x < 3000.f; x += 100.f)
-        GameplayStatics::CreateObject<LevelTransformer>({ x,3000.0 })->Init("LevelA", { 0,0 }, FRect({ 0.f,1110.f }, { 90.f,1400.f }));
+    for (float x = -1000; x < 3000.f; x += 100.f)
+        GameplayStatics::CreateObject<LevelTransformer>({ x,3000.0 })->Init("LevelAFail", { 0,0 }, FRect({ 0.f,1110.f }, { 90.f,1400.f }));
 
-    /* ==========coordinate========== */
-    //GameplayStatics::CreateObject<PlatForm>({ 0,0 })->Init("", { 12000, 0 }, {}); // x
-    //GameplayStatics::CreateObject<PlatForm>({ 100,0 })->Init("", { 0, 5 }, {});
-    //GameplayStatics::CreateObject<PlatForm>({ -100,0 })->Init("", { 0, 5 }, {});
-    //GameplayStatics::CreateObject<PlatForm>({ 200,0 })->Init("", { 0, 5 }, {});
-    //GameplayStatics::CreateObject<PlatForm>({ -200,0 })->Init("", { 0, 5 }, {});
-    //GameplayStatics::CreateObject<PlatForm>({ 300,0 })->Init("", { 0, 5 }, {});
-    //GameplayStatics::CreateObject<PlatForm>({ -300,0 })->Init("", { 0, 5 }, {});
-    //GameplayStatics::CreateObject<PlatForm>({ 400,0 })->Init("", { 0, 5 }, {});
-    //GameplayStatics::CreateObject<PlatForm>({ -400,0 })->Init("", { 0, 5 }, {});
-    //GameplayStatics::CreateObject<PlatForm>({ 500,0 })->Init("", { 0, 5 }, {});
-    //GameplayStatics::CreateObject<PlatForm>({ -500,0 })->Init("", { 0, 5 }, {});
-    //GameplayStatics::CreateObject<PlatForm>({ 600,0 })->Init("", { 0, 5 }, {});
-    //GameplayStatics::CreateObject<PlatForm>({ -600,0 })->Init("", { 0, 5 }, {});
-    //GameplayStatics::CreateObject<PlatForm>({ 0,0 })->Init("", { 0, 8000 }, {}); // y
-    //GameplayStatics::CreateObject<PlatForm>({ 0,100 })->Init("", { 5, 0 }, {});
-    //GameplayStatics::CreateObject<PlatForm>({ 0, -100 })->Init("", { 5, 0 }, {});
-    //GameplayStatics::CreateObject<PlatForm>({ 0, 200 })->Init("", { 5, 0 }, {});
-    //GameplayStatics::CreateObject<PlatForm>({ 0, -200 })->Init("", { 5, 0 }, {});
-    //GameplayStatics::CreateObject<PlatForm>({ 0, 300 })->Init("", { 5, 0 }, {});
-    //GameplayStatics::CreateObject<PlatForm>({ 0, -300 })->Init("", { 5, 0 }, {});
-    /* =========================================================================== */
-    // item and enemy
-    //GameplayStatics::CreateObject<Bug>({ 1100,890 }, 0.f, { -1.f,1.f });
-    //GameplayStatics::CreateObject<Bug>({ 650,300 });
-    //GameplayStatics::CreateObject<Bug>({ -500,890 });
-
-    //GameplayStatics::CreateObject<Fly>({ 0,800 });
-    //GameplayStatics::CreateObject<Fly>({ 450,500 }, 0.f, { -1.f,1.f });
     // �ؿ�ɾ��ʱ�Ĵ���
     OnLevelDelete.Add([this]() {
         GameMode* gameMode = GameModeHelper::GetInstance();

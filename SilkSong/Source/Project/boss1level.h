@@ -8,4 +8,5 @@ public:
     boss1level();
 
     virtual void Update(float deltaTime) override;
+    void Draw_Platform(float x, float y);
 };

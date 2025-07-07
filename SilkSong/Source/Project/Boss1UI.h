@@ -3,12 +3,12 @@
 #include "Components/Animator.h"
 
 
-class GameUI :public UserInterface
+class Boss1UI :public UserInterface
 {
 	Image* Bar;
 	Image* Bar_Background;
 	Image* Health_Bar;
 
 public:
-	GameUI();
+	Boss1UI();
 };
