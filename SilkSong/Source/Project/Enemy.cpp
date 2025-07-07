@@ -48,7 +48,7 @@ void Enemy::BeginPlay()
 {
 	Super::BeginPlay();
 
-	box->OnComponentBeginOverlap.AddDynamic(this, &Enemy::OnOverlap);
+	//box->OnComponentBeginOverlap.AddDynamic(this, &Enemy::OnOverlap);
 
 	if (!player)
 	{
@@ -88,9 +88,7 @@ FDamageCauseInfo Enemy::TakeDamage(IDamagable* damageCauser, float baseValue, ED
 	}
 	FDamageCauseInfo damageInfo = damageResponse->TakeDamage(damageCauser, baseValue, damageType);
 	property->AddHealth(-baseValue);
-	//if (baseValue == 3) {
-		//exit(1);
-	//}
+
 	return damageInfo;
 }
 
@@ -143,10 +141,10 @@ PropertyComponent* Enemy::GetProperty()
 
 void Enemy::OnOverlap(Collider* hitComp, Collider* otherComp, Actor* otherActor)
 {
-	if (Player* player = Cast<Player>(otherActor))
-	{
-		GameModeHelper::ApplyDamage(this, player, 1, EDamageType::Enemy);
-	}
+	//if (Player* player = Cast<Player>(otherActor))
+	//{
+	//	GameModeHelper::ApplyDamage(this, player, 1, EDamageType::Enemy);
+	//}
 }
 
 void Enemy::Die()

@@ -425,7 +425,7 @@ FDamageCauseInfo Player::TakeDamage(IDamagable* damageCauser, float baseValue, E
         return {};
     }
     FDamageCauseInfo damageInfo = damageResponse->TakeDamage(damageCauser, baseValue, damageType);
-    AddHealth(-damageInfo.realValue);
+    AddHealth(-baseValue);
     return damageInfo;
 }
 

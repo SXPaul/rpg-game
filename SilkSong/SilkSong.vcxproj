@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Project\AttackBox.h" />
+    <ClInclude Include="Source\Project\EnemyAtkBox.h" />
     <ClInclude Include="Source\Project\frame.h" />
     <ClInclude Include="Source\Project\Effect.h" />
     <ClInclude Include="Source\Project\Enemy.h" />
@@ -96,6 +97,7 @@
     <ClCompile Include="Source\Project\Effect.cpp" />
     <ClCompile Include="Source\Project\Enemy.cpp" />
     <ClCompile Include="Source\Project\Enemy1.cpp" />
+    <ClCompile Include="Source\Project\EnemyAtkBox.cpp" />
     <ClCompile Include="Source\Project\FirstLevel.cpp" />
     <ClCompile Include="Source\Project\frame.cpp" />
     <ClCompile Include="Source\Project\GameUI.cpp" />

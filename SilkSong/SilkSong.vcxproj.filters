@@ -166,6 +166,9 @@
     <ClCompile Include="Source\Project\NightBorne.cpp">
       <Filter>Project\Enemies</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Project\EnemyAtkBox.cpp">
+      <Filter>Project\Enemies</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Project\frame.h" />
@@ -370,6 +373,9 @@
       <Filter>Project\Enemies</Filter>
     </ClInclude>
     <ClInclude Include="Source\Project\NightBorne.h">
+      <Filter>Project\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Project\EnemyAtkBox.h">
       <Filter>Project\Enemies</Filter>
     </ClInclude>
   </ItemGroup>
