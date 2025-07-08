@@ -45,3 +45,15 @@
 
 - 2025-7-7 djw
 成功将Player的攻击绑定到上海系统，现在可以攻击敌人&被敌人攻击，添加了Player的攻击，跳跃，死亡动画
+
+- 2025-7-6 Saure
+在关卡中增加小怪，完善单个关卡的失败结算菜单（LevelXFailLevel），提供选项Start, Quit, Continue。
+
+- 2025-7-7 Saure
+完善Boss关卡设计，设计角色血条与显示效果。
+
+- 2025-7-2 Saure
+搭建地图Level A, Level B.
+
+- 2025-7-4 Saure
+制作菜单页（MenuLevel），提供选项Start, Quit, Achievements。
