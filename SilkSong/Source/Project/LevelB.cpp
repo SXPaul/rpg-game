@@ -26,7 +26,7 @@ level_b::level_b()
     //    //player->GetComponentByClass<Camera>()->SetTarget(player);
     //}
     SetDefaultController<Player>();
-    GameplayStatics::DontDestroyOnLoad(GameplayStatics::CreateObject<GameMode>());
+    
     GameplayStatics::CreateObject<Treasure>({ 918,-420 });
 
     //FVector2D  a = GetPosition();

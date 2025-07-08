@@ -9,7 +9,7 @@
 StartLevel::StartLevel()
 {
     SetDefaultController<Player>();
-
+    GameplayStatics::DontDestroyOnLoad(GameplayStatics::CreateObject<GameMode>());
     // 创建背景对象
     Bg* bg0 = GameplayStatics::CreateObject<Bg>();
     bg0->Init("forest_1", -30);

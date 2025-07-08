@@ -263,7 +263,7 @@ void Enemy1::AttackPlayer() {
 	FVector2D playerPos = player->GetWorldPosition();
 	FVector2D direction = (playerPos - enemyPos).GetSafeNormal();
 
-	FVector2D attackBoxOffset = FVector2D(25, 0);
+	FVector2D attackBoxOffset = FVector2D(30, 0);
 	attackBox->SetLocalPosition(attackBoxOffset);
 	attackBox->Init(direction.x>0?AttackDirection::Right: AttackDirection::Left, 1); // ¼ÙÉè¹¥»÷Á¦Îª3
 
