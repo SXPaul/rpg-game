@@ -27,7 +27,7 @@ level_b::level_b()
     //}
     SetDefaultController<Player>();
     
-    GameplayStatics::CreateObject<Treasure>({ 918,-420 });
+    GameplayStatics::CreateObject<Treasure>({ 900,-190 });
 
     //FVector2D  a = GetPosition();
     //std::string str = a.ToString();

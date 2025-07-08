@@ -113,25 +113,25 @@
       <Filter>Project\Game</Filter>
     </ClCompile>
     <ClCompile Include="Source\Project\boss1level.cpp">
-      <Filter>Project\Item\Levels</Filter>
+      <Filter>Project\Levels</Filter>
     </ClCompile>
     <ClCompile Include="Source\Project\FirstLevel.cpp">
-      <Filter>Project\Item\Levels</Filter>
+      <Filter>Project\Levels</Filter>
     </ClCompile>
     <ClCompile Include="Source\Project\LevelA.cpp">
-      <Filter>Project\Item\Levels</Filter>
+      <Filter>Project\Levels</Filter>
     </ClCompile>
     <ClCompile Include="Source\Project\LevelB.cpp">
-      <Filter>Project\Item\Levels</Filter>
+      <Filter>Project\Levels</Filter>
     </ClCompile>
     <ClCompile Include="Source\Project\LevelTransformer.cpp">
-      <Filter>Project\Item\Levels</Filter>
+      <Filter>Project\Levels</Filter>
     </ClCompile>
     <ClCompile Include="Source\Project\MenuLevel.cpp">
-      <Filter>Project\Item\Levels</Filter>
+      <Filter>Project\Levels</Filter>
     </ClCompile>
     <ClCompile Include="Source\Project\StartLevel.cpp">
-      <Filter>Project\Item\Levels</Filter>
+      <Filter>Project\Levels</Filter>
     </ClCompile>
     <ClCompile Include="Source\Project\MenuController.cpp">
       <Filter>Project\Menu</Filter>
@@ -172,6 +172,13 @@
     <ClCompile Include="Source\Project\Treasure.cpp">
       <Filter>Project\Item</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Project\Boss1UI.cpp" />
+    <ClCompile Include="Source\Project\LevelAFail.cpp" />
+    <ClCompile Include="Source\Project\LevelAFailController.cpp" />
+    <ClCompile Include="Source\Project\LevelAFailUI.cpp" />
+    <ClCompile Include="Source\Project\LevelBFail.cpp" />
+    <ClCompile Include="Source\Project\LevelBFailController.cpp" />
+    <ClCompile Include="Source\Project\LevelBFailUI.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Project\frame.h" />
@@ -322,25 +329,25 @@
       <Filter>Project\Interfaces</Filter>
     </ClInclude>
     <ClInclude Include="Source\Project\boss1level.h">
-      <Filter>Project\Item\Levels</Filter>
+      <Filter>Project\Levels</Filter>
     </ClInclude>
     <ClInclude Include="Source\Project\FirstLevel.h">
-      <Filter>Project\Item\Levels</Filter>
+      <Filter>Project\Levels</Filter>
     </ClInclude>
     <ClInclude Include="Source\Project\LevelA.h">
-      <Filter>Project\Item\Levels</Filter>
+      <Filter>Project\Levels</Filter>
     </ClInclude>
     <ClInclude Include="Source\Project\LevelB.h">
-      <Filter>Project\Item\Levels</Filter>
+      <Filter>Project\Levels</Filter>
     </ClInclude>
     <ClInclude Include="Source\Project\LevelTransformer.h">
-      <Filter>Project\Item\Levels</Filter>
+      <Filter>Project\Levels</Filter>
     </ClInclude>
     <ClInclude Include="Source\Project\MenuLevel.h">
-      <Filter>Project\Item\Levels</Filter>
+      <Filter>Project\Levels</Filter>
     </ClInclude>
     <ClInclude Include="Source\Project\StartLevel.h">
-      <Filter>Project\Item\Levels</Filter>
+      <Filter>Project\Levels</Filter>
     </ClInclude>
     <ClInclude Include="Source\Project\MenuController.h">
       <Filter>Project\Menu</Filter>
@@ -384,6 +391,12 @@
     <ClInclude Include="Source\Project\Treasure.h">
       <Filter>Project\Item</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Project\LevelAFail.h" />
+    <ClInclude Include="Source\Project\LevelAFailController.h" />
+    <ClInclude Include="Source\Project\LevelAFailUI.h" />
+    <ClInclude Include="Source\Project\LevelBFail.h" />
+    <ClInclude Include="Source\Project\LevelBFailController.h" />
+    <ClInclude Include="Source\Project\LevelBFailUI.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\journal.md" />
@@ -451,7 +464,7 @@
     <Filter Include="Project\Item">
       <UniqueIdentifier>{0c10ca8f-7ef2-493c-9723-8ee9e11f5dac}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Project\Item\Levels">
+    <Filter Include="Project\Levels">
       <UniqueIdentifier>{2c70b592-749a-467e-97f3-775222d2c0dd}</UniqueIdentifier>
     </Filter>
   </ItemGroup>

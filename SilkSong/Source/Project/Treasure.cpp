@@ -21,7 +21,7 @@ Treasure::Treasure()
 	box = ConstructComponent<BoxCollider>();
 	box->AttachTo(root);
 	box->SetType(CollisionType::Treasure);
-	box->SetSize({ 100,140 });
+	box->SetSize({ 50,45 });
 
 	particle = ConstructComponent<ParticleSystem>();
 	particle->AttachTo(root);

@@ -149,6 +149,9 @@ void ResourceManager::Initialize()
 
 	/* particle*/
 	Load("particle", "Asset/FX/Hit/Hits_0/SP103_01.png", 98, 87, 1, 1, 1);
+	Load("chest", "Asset/Surroundings/Medieval_Castle/Decorations/crate_1.png", 50, 45);
+	Load("chest_", "Asset/Surroundings/Medieval_Castle/Decorations/crate_1_damaged.png", 50, 45);
+
 }
 
 //*********                             **********
